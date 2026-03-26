@@ -24,10 +24,9 @@ The core deliverable is `black_box_risk_engine.R`: a single plug-and-play functi
 │   ├── DELIVERY.md                      # Engagement model, GRC mappings, SDLC gates
 │   ├── ARCHITECTURE.md                  # System invariants and design rationale
 │   ├── WORKER_COMPAT.md                 # Audit and implementation narrative
-│   └── cyber-risk-controls.md           # Essential Eight control coverage
-├── JPMC-tech-task-1-py3/
-├── JPMC-tech-task-2-py3/
-└── JPMC-tech-task-3-py3/
+├── MPI-task-1-py3/
+├── MPI-task-2-py3/
+└── MPI-task-3-py3/
 ```
 
 ---
@@ -134,5 +133,4 @@ Full GRC mappings and SDLC gate criteria: [docs/DELIVERY.md](docs/DELIVERY.md).
 
 - [docs/ETHOS.md](docs/ETHOS.md) — architectural philosophy and stack rationale
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — system invariants and design rationale
-- [docs/cyber-risk-controls.md](docs/cyber-risk-controls.md) — Essential Eight control coverage
 - [STOCHASTIC_INVALIDATION_RISK_ARCHITECTURE.md](STOCHASTIC_INVALIDATION_RISK_ARCHITECTURE.md) — full case study
