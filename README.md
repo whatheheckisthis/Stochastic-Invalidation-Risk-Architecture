@@ -1,4 +1,4 @@
-# SIRA — Stochastic Invalidation & Risk Architecture
+# Stochastic Invalidation & Risk Architecture (SIRA)
 
 A black box recovery probability engine for distressed asset portfolios under extreme market stress.
 
