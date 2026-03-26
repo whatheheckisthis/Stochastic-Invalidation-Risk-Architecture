@@ -1,49 +1,309 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+
+:root {
+  --ink: #0a0a0f;
+  --paper: #f4f1ea;
+  --rule: #c8c0b0;
+  --accent: #b8341b;
+  --green: #1a6644;
+  --amber: #a05c10;
+  --red: #8b1a1a;
+  --muted: #6b6560;
+  --mono: #2a3a5c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.report-root {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 60px 40px 120px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.cover {
+  border-top: 3px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding: 48px 0 40px;
+  margin-bottom: 64px;
+}
+
+.cover-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.cover h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 46px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+}
+
+.cover h1 em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.cover-sub {
+  font-size: 18px;
+  color: var(--muted);
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.cover-meta {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--rule);
+  padding-top: 20px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.cover-meta span b {
+  color: var(--ink);
+  display: block;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.section {
+  margin-bottom: 72px;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 28px;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 10px;
+}
+
+.section-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0 0 16px;
+  color: #2a2520;
+}
+
+.statement {
+  border-left: 3px solid var(--accent);
+  padding: 18px 24px;
+  background: rgba(184, 52, 27, 0.05);
+  margin: 24px 0;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 28px 0;
+}
+
+.method-card,
+.res-card,
+.qa-block {
+  border: 1px solid var(--rule);
+  padding: 24px 20px;
+  background: #fff;
+}
+
+.card-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.method-card p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.formula {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  background: #f0ede6;
+  border: 1px solid var(--rule);
+  padding: 16px 20px;
+  margin: 16px 0;
+  color: var(--mono);
+  line-height: 2;
+}
+
+.scenario-table,
+.signal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 13px;
+}
+
+.scenario-table th,
+.signal-table th {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 2px solid var(--ink);
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.scenario-table td,
+.signal-table td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+.sc-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 2px 7px;
+  letter-spacing: 0.05em;
+}
+
+.sc-tag.bs {
+  background: var(--accent);
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.res-card {
+  padding: 18px 14px;
   text-align: center;
-  min-height: 100vh;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.sc-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
 }
 
-.App-header {
+.rec-val {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.rec-green {
+  color: var(--green);
+}
+
+.rec-red {
+  color: var(--red);
+}
+
+.rec-label {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.sell-count {
+  margin-top: 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  padding: 3px 8px;
+  display: inline-block;
+}
+
+.sell-count.none {
+  background: #e8f5ee;
+  color: var(--green);
+}
+
+.sell-count.crit {
+  background: #fdecea;
+  color: var(--red);
+}
+
+.footer {
+  border-top: 1px solid var(--rule);
+  padding-top: 24px;
+  margin-top: 80px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  margin-bottom: 12px;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-.App-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
-}
-
-.Stream-button {
-  margin-bottom: 12px;
-}
-
-.Graph {
-  min-height: 50vh;
-  width: 700px;
-  margin-bottom: 12px;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 900px) {
+  .method-grid {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .report-root {
+    padding: 30px 20px 80px;
+  }
+
+  .cover h1 {
+    font-size: 34px;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
   }
 }
