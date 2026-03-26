@@ -1,66 +1,120 @@
-# JP-Morgan-Project
-[Course Outline](https://www.theforage.com/simulations/jpmorgan/cybersecurity-0acj)
+# SIRA
+
+## Stochastic Invalidation & Risk Architecture
+### A Black Box Recovery Probability Engine
+
+## Primary documents
+Read these first:
+- [docs/ETHOS.md](docs/ETHOS.md) — architectural philosophy and stack rationale.
+- [docs/DELIVERY.md](docs/DELIVERY.md) — engagement model, delivery artefacts, GRC control mappings, and SDLC gating controls matrix.
+
+Everything else in this repository is the operational substrate that supports those documents.
+
+## Top-level assets
+- [black_box_risk_engine.R](black_box_risk_engine.R)
+- [STOCHASTIC_INVALIDATION_RISK_ARCHITECTURE.md](STOCHASTIC_INVALIDATION_RISK_ARCHITECTURE.md)
+- [LICENSE](LICENSE)
+
 ---
 
-This project is part of the J.P. Morgan Chase & Co virtual experience program, aimed at giving students a glimpse into the role of a software engineer at JPMorgan Chase, while enhancing their technology skills.
+## Motivation
+This project is framed around **Marginal Propensity to Invest (MPI)** as a decision lens for distressed asset recovery and risk posture design.
 
-JPMorgan Chase invests $10 billion annually to enable technologists to develop diverse solutions in areas such as strategic technology initiatives, big data, mobile, electronic payments, machine learning, cybersecurity, enterprise cloud development, and other cutting-edge technologies.
-
-### Objectives:
-
-1. **Interface with a Stock Price Data Feed:** Set up and analyze stock price data.
-2. **Use JPMorgan Chase Frameworks and Tools:** Implement the Perspective open-source code for data visualization.
-3. **Display Data Visually for Traders:** Use Perspective to create a chart for the trader’s dashboard.
+- **Definition:** MPI describes the incremental change in investment resulting from a change in expected return, confidence, or available capital under uncertainty.
+- **Calculation (working form):**
+  - `MPI = ΔInvestment / ΔExpected_Income` (macro framing), and
+  - scenario-adjusted variants for recovery models where expected income is replaced by risk-adjusted return signals.
+- **Economic impact:**
+  - Higher MPI can accelerate capital deployment into recovery pathways.
+  - Lower MPI can indicate tightening liquidity preference, elevated perceived risk, or control uncertainty.
+  - In this repository, MPI-oriented framing is used to connect recovery probability outputs with governance and control decisions.
 
 ---
-<ol>
-	<li>Please clone this repository to start the task</li>
-	<li>Adjust the getRatio, getDataPoint, and main functions</li>
-	<li>Bonus: Pass all unit tests and add more to cover edge cases</li>
-	<li>Upload a git patch file as the submission to this task</li>
-	
-</ol>
 
-<h2 id="installation" >Set up / Installation</h2>
+## Project purpose
+SIRA is documented as an **Intent-to-Auditable-Trust-Object (IATO)** workflow so each material change is traceable across:
+1. Intent.
+2. Control mapping.
+3. SDLC gating.
+4. Verification evidence.
+5. Provenance.
 
-<p> To get the server and client application code working on your machine, <a href="https://insidesherpa.s3.amazonaws.com/vinternships/companyassets/Sj7temL583QAYpHXD/setup_devenv_m1_v6.pdf">follow the setup here</a></p>
-<p><b>Note:</b>This is the Python 3 version of the JPM 1 exercise. The Python 2.7 version is in <a href="https://github.com/insidesherpa/JPMC-tech-task-1">this other repo</a></p>
+---
 
-<h2>How to Run</h2>
-To start the server, run
+## Control mapping (summary)
+| Component | Risk | Control expectation | Evidence |
+|---|---|---|---|
+| `getDataPoint` | Data interpretation drift | Deterministic extraction and formatting | Unit tests + sample runtime output |
+| `getRatio` | Divide-by-zero / denominator edge failure | Explicit boundary behavior | Unit tests for edge cases |
+| `main` flow | Silent pipeline drift | Repeatable request-transform-output sequence | Client run + regression outputs |
+| Delivery workflow | Untraceable change | Commit-scoped rationale and review metadata | Git history + PR record |
 
-	python server3.py
+For full mappings and gates, use [docs/DELIVERY.md](docs/DELIVERY.md).
 
-this will create random market called 'test.csv' in your working directory if one does not already exist.
+---
 
-If you encounter an issue with `datautil.parser`, run this command: 
+## SDLC gating (summary)
+| Gate | Stage | Required outcome |
+|---|---|---|
+| G1 | Plan | Intent, scope, and non-goals defined |
+| G2 | Design | Threat model and control mapping defined |
+| G3 | Build | Diff aligns with declared scope |
+| G4 | Verify | Tests executed and outcomes captured |
+| G5 | Release | Provenance and residual risk recorded |
+| G6 | Operate | Runbook commands validated |
 
-	pip install python-dateutil
+Detailed criteria and evidence requirements are maintained in [docs/DELIVERY.md](docs/DELIVERY.md).
 
-If you don't have pip yet, you can install it from: https://pip.pypa.io/en/stable/installing/
+---
 
-To start the example client, run:
+## Repository structure
+```text
+.
+├── README.md
+├── docs/
+│   ├── ETHOS.md
+│   ├── DELIVERY.md
+│   ├── ARCHITECTURE.md
+│   ├── WORKER_COMPAT.md
+│   └── cyber-risk-controls.md
+├── JPMC-tech-task-1-py3/
+├── JPMC-tech-task-2-py3/
+├── JPMC-tech-task-3-py3/
+├── black_box_risk_engine.R
+└── STOCHASTIC_INVALIDATION_RISK_ARCHITECTURE.md
+```
 
-	python client3.py
+---
 
-To unit test the example client, run:
-	python client_test.py
+## Runbook (terminal-first)
+Commands:
 
-<h2>How to request from the server using curl</h2>
-<!--See also [client.py](https://github.com/texodus/exchange_simulator/blob/master/client.py)-->
-Query:
+```bash
+python JPMC-tech-task-1-py3/server3.py
+python JPMC-tech-task-1-py3/client3.py
+python JPMC-tech-task-1-py3/client_test.py
+curl 'http://localhost:8080/query?id=1'
+```
 
-	$ curl 'http://localhost:8080/query?id=1'
-	{"id": "1", "top_ask": {"price": 129.18, "size": 70}, "timestamp": "2016-08-06 12:32:11.821574", "top_bid": {"price": 128.79, "size": 61}}
+Dependency remediation:
 
-<h2>How to fix the code to meet objectives</h2>
-<p>To make the changes necessary to complete the objectives of this task, <a href="https://insidesherpa.s3.amazonaws.com/vinternships/companyassets/Sj7temL583QAYpHXD/making_changes_m1_v4a.pdf">follow this guide</a>.</p>
-<p>To do the bonus task, <a href="https://insidesherpa.s3.amazonaws.com/vinternships/companyassets/Sj7temL583QAYpHXD/client_test_m1_v1a.pdf">read this</a>.</p>
+```bash
+pip install python-dateutil
+```
 
+---
 
+## Cross references
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — system invariants and design rationale.
+- [docs/WORKER_COMPAT.md](docs/WORKER_COMPAT.md) — audit and implementation narrative.
+- [docs/cyber-risk-controls.md](docs/cyber-risk-controls.md) — Essential Eight control coverage.
 
+---
 
-## Stochastic Invalidation & Risk Architecture (R)
-This repository now includes a standalone R-based Black Box risk engine for distressed asset recovery stress testing:
-- `black_box_risk_engine.R`
-- `STOCHASTIC_INVALIDATION_RISK_ARCHITECTURE.md`
+## Non-Goals
+- **NG-001:** Not a replacement for a full organisational SDLC or security programme.
+- **NG-002:** Not a runtime hardening guarantee across all environments.
+- **NG-003:** Not formal verification of third-party or external system behaviour.
+- **NG-004:** Not automatic compliance attestation — organisation-specific controls and evidence are required.
+- **NG-005:** Not affiliated with or endorsed by Common Criteria.
+
