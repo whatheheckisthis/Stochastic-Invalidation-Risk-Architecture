@@ -59,3 +59,8 @@ Query:
 
 
 
+
+## Stochastic Invalidation & Risk Architecture (R)
+This repository now includes a standalone R-based Black Box risk engine for distressed asset recovery stress testing:
+- `black_box_risk_engine.R`
+- `STOCHASTIC_INVALIDATION_RISK_ARCHITECTURE.md`
