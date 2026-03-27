@@ -1,14 +1,25 @@
+# ============================================================================
+# Script Name : run_all.R
+# Purpose     : Orchestrate load -> analysis -> visualization workflow.
+# Author      : Codex Assistant
+# Created     : 2026-03-27
+# R Version   : 3.6+
+# ============================================================================
+
 source("scripts/01_load_data.R")
 source("scripts/02_analysis.R")
 source("scripts/03_visualize.R")
 
-data_bundle <- load_stress_data(data_dir = "data", seed = 42)
-analysis <- run_stress_analysis(data_bundle = data_bundle, n_sim = 10000, seed = 42)
+loaded_data <- load_data(data_dir = "data", seed = 42)
+analysis_results <- run_analysis(price_data = loaded_data$bond_prices)
 
-cat("=== Scenario Summary ===\n")
-print(analysis$summary)
+cat("=== Analysis Summary ===\n")
+print(analysis_results$summary)
 
-plot_path <- plot_stress_signals(analysis, output_file = "output/sell_hold_signals.png")
-if (!is.null(plot_path)) {
-  cat(sprintf("Saved signal plot to: %s\n", plot_path))
-}
+output_file <- visualize_signals(
+  analysis_results = analysis_results,
+  output_dir = "output",
+  filename = "sell_hold_signals.png"
+)
+
+cat(sprintf("Generated file: %s\n", output_file))
