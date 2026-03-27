@@ -1,6 +1,6 @@
-# Distressed Asset Recovery Stress Engine
+# Stochastic-Invalidation-Risk-Architecture (SIRA)
 
-Modular quant workflow for distressed bond recovery stress testing and signal generation across five adverse market scenarios.
+Distressed bond recovery, stress testing, and signal generation across five adverse market scenarios.
 
 [![Focus](https://img.shields.io/badge/Focus-Quant%20Risk%20Modelling-0A66C2?style=flat-square)](#)
 [![Approach](https://img.shields.io/badge/Approach-Auditability%20by%20Design-2E7D32?style=flat-square)](#)
