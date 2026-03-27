@@ -1,36 +1,31 @@
-# Visualization stage: render SELL/HOLD stress signals by scenario.
+# ============================================================================
+# Script Name : 03_visualize.R
+# Purpose     : Render SELL/HOLD signal chart using Base R graphics only.
+# Author      : Codex Assistant
+# Created     : 2026-03-27
+# R Version   : 3.6+
+# ============================================================================
 
-plot_stress_signals <- function(analysis_result, output_file = "output/sell_hold_signals.png") {
-  if (!requireNamespace("ggplot2", quietly = TRUE)) {
-    warning("ggplot2 is not available; skipping visualization.")
-    return(invisible(NULL))
+visualize_signals <- function(analysis_results, output_dir = "output", filename = "sell_hold_signals.png") {
+  if (!dir.exists(output_dir)) {
+    dir.create(output_dir, recursive = TRUE)
   }
 
-  dir.create(dirname(output_file), showWarnings = FALSE, recursive = TRUE)
+  output_file <- file.path(output_dir, filename)
 
-  detail <- analysis_result$detailed
+  sell_count <- as.integer(analysis_results$signal_counts["SELL"])
+  hold_count <- as.integer(analysis_results$signal_counts["HOLD"])
 
-  signal_summary <- aggregate(
-    asset_id ~ scenario + signal,
-    data = detail,
-    FUN = length
+  png(filename = output_file, width = 1000, height = 600)
+  barplot(
+    height = c(sell_count, hold_count),
+    names.arg = c("SELL", "HOLD"),
+    col = c("#C62828", "#2E7D32"),
+    main = "Distressed Asset Signals",
+    ylab = "Count",
+    ylim = c(0, max(1, sell_count, hold_count) * 1.15)
   )
-  names(signal_summary)[names(signal_summary) == "asset_id"] <- "count"
+  dev.off()
 
-  p <- ggplot2::ggplot(signal_summary, ggplot2::aes(x = scenario, y = count, fill = signal)) +
-    ggplot2::geom_col(position = "stack", width = 0.7) +
-    ggplot2::scale_fill_manual(values = c(Sell = "#D32F2F", Hold = "#2E7D32")) +
-    ggplot2::labs(
-      title = "Distressed Bond Stress Signals",
-      subtitle = "SELL/HOLD counts by stress scenario",
-      x = "Scenario",
-      y = "Asset Count",
-      fill = "Signal"
-    ) +
-    ggplot2::theme_minimal(base_size = 11) +
-    ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 15, hjust = 1))
-
-  ggplot2::ggsave(output_file, plot = p, width = 10, height = 6, dpi = 300)
-
-  invisible(output_file)
+  output_file
 }
