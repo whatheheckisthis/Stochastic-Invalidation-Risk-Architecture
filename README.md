@@ -1,64 +1,35 @@
-# Stochastic-Invalidation-Risk-Architecture (SIRA)
+# JPMorgan-Stock-Viewer
 
-Distressed bond recovery, stress testing, and signal generation across five adverse market scenarios.
-
-[![Focus](https://img.shields.io/badge/Focus-Quant%20Risk%20Modelling-0A66C2?style=flat-square)](#)
-[![Approach](https://img.shields.io/badge/Approach-Auditability%20by%20Design-2E7D32?style=flat-square)](#)
-[![Runtime](https://img.shields.io/badge/Runtime-R%20%2B%20ggplot2-276DC3?style=flat-square)](#)
-[![Env](https://img.shields.io/badge/Env-Air--Gapped%20Compatible-333333?style=flat-square)](#)
----
-
-## Executive summary
-
-The engine evaluates a bond portfolio under five stress scenarios and produces scenario-level and asset-level outputs:
-
-- **Stochastic recovery simulation** using Beta and Power Law distributions to capture non-normal, tail-heavy recovery behaviour.
-- **Z-score diagnostics** to identify assets with materially weak recovery outcomes relative to the scenario cross-section.
-- **Ruin threshold logic** to classify invalidation events where recovery falls below scenario-specific survival levels.
-- **SELL/HOLD signals** to support risk triage.
+A lightweight R workflow that loads a price series, computes simple SELL/HOLD signals from downside returns, and exports a bar chart summary.
 
 ---
 
-## Methodology
+## What this project does
 
-**1. Load inputs (`scripts/01_load_data.R`)**
+The pipeline runs in three stages:
 
-Reads CSV, RDS, or RData files from `/data` when provided. Falls back to deterministic synthetic defaults when `/data` is empty — the engine produces valid output in either case.
+1. **Load data** (`scripts/01_load_data.R`)
+   - Reads the first CSV file from `data/`.
+   - Uses the `price` column when available (otherwise the first column).
+   - Falls back to a synthetic default price series when no CSV exists.
 
-**2. Run analysis (`scripts/02_analysis.R`)**
+2. **Analyze signals** (`scripts/02_analysis.R`)
+   - Computes first differences (`returns <- diff(price_data)`).
+   - Sets a SELL threshold at the 10th percentile of returns.
+   - Labels each return as:
+     - `SELL` if return is at or below the threshold
+     - `HOLD` otherwise
+   - Produces summary metrics:
+     - observations
+     - sell_count
+     - hold_count
+     - sell_ratio
 
-Generates stressed recoveries per scenario:
+3. **Visualize output** (`scripts/03_visualize.R`)
+   - Creates a PNG bar chart of SELL vs HOLD counts.
+   - Writes output to `output/sell_hold_signals.png`.
 
-- Beta distribution for baseline and liquidity-driven conditions.
-- Power law tails for jump-risk regimes.
-
-Applies scenario shocks — price gap-down, currency devaluation, scenario-specific ruin thresholds — then computes:
-
-```
-z_score  = scale(stressed_recovery)
-ruin_flag = stressed_recovery <= ruin_threshold
-signal   ∈ {SELL, HOLD}
-```
-
-**3. Visualize (`scripts/03_visualize.R`)**
-
-Produces a stacked SELL/HOLD scenario chart via ggplot2.
-
-**4. Orchestrate (`run_all.R`)**
-
-Executes all modules in sequence.
-
----
-
-## Five stress scenarios
-
-| Scenario | Stress mechanism |
-|----------|-----------------|
-| Baseline | Normal market functioning |
-| Liquidity Crunch | Elevated volatility, compressed recoveries |
-| Jurisdictional Freeze | Recovery collapses toward ruin threshold |
-| Counterparty Default | Gap-down valuation shock |
-| Hyper-Inflationary | FX devaluation impairs real bond value |
+`run_all.R` orchestrates the full load → analyze → visualize flow.
 
 ---
 
@@ -67,39 +38,69 @@ Executes all modules in sequence.
 ```text
 .
 ├── README.md
-├── run_all.R                  # Orchestration entry point
+├── run_all.R
 ├── data/
-│   └── .gitkeep               # Drop CSV/RDS/RData here; synthetic defaults used if empty
+│   └── .gitkeep
 ├── scripts/
 │   ├── 01_load_data.R
 │   ├── 02_analysis.R
 │   └── 03_visualize.R
-└── output/
-    └── sell_hold_signals.png  # Generated on run
+├── output/
+│   └── sell_hold_signals.png
+└── docs/
+    ├── ARCHITECTURE.md
+    ├── DEFENSE_APPENDIX.md
+    ├── DELIVERY.md
+    ├── ETHOS.md
+    ├── STOCHASTIC_SIMULATION_EXTENSION.md
+    └── WORKER_COMPAT.md
 ```
 
 ---
 
-## Run
+## Quick start
+
+### Prerequisites
+
+- R 3.6+
+- No external packages required (visualization uses Base R graphics)
+
+### Run the full pipeline
 
 ```bash
 Rscript run_all.R
 ```
 
-Output written to:
+You should see a console summary and a generated file at:
 
 ```text
 output/sell_hold_signals.png
 ```
 
-Requires ggplot2. No external data sources or live feeds required.
+---
+
+## Input format
+
+Place a CSV in `data/` with either:
+
+- a `price` column (recommended), or
+- a first column containing numeric prices.
+
+Example:
+
+```csv
+price
+100
+99.5
+100.2
+98.7
+```
+
+If no CSV is provided, synthetic data is used automatically.
 
 ---
 
-## Non-goals
+## Notes
 
-- **NG-001:** Not a live risk system — recovery outputs are stochastic simulations against synthetic or user-supplied data, not real-time market valuations.
-- **NG-002:** Not a trading system — SELL/HOLD signals are analytical indicators for risk triage, not executable instructions.
-- **NG-003:** Not a full credit model — scenarios capture directional stress behaviour; they do not substitute for instrument-level credit analysis.
-- **NG-004:** Not compliance attestation — the ruin threshold and Z-score logic documents analytical intent, not certified regulatory conformance.
-- **NG-005:** Not environment-agnostic — reproducibility is guaranteed within the declared runtime (R + ggplot2); behaviour under untested configurations is out of scope.
+- This is a simple, rules-based demo workflow for signal labeling.
+- Signals are analytical outputs and not investment advice.
