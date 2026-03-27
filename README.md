@@ -1,14 +1,28 @@
+
 # Stochastic Invalidation & Risk Architecture (SIRA)
 
 A black box recovery probability engine for distressed asset portfolios under extreme market stress.
 
+[![Focus](https://img.shields.io/badge/Focus-Security%20Tooling-0A66C2?style=flat-square)](docs/ETHOS.md)
+[![Approach](https://img.shields.io/badge/Approach-Auditability%20by%20Design-2E7D32?style=flat-square)](docs/DELIVERY.md)
+[![Runtime](https://img.shields.io/badge/Runtime-R%20%2B%20ggplot2-276DC3?style=flat-square)](black_box_risk_engine.R)
+[![Env](https://img.shields.io/badge/Env-Air--Gapped%20Compatible-333333?style=flat-square)](docs/ETHOS.md)
 ---
+
 
 ## What this is
 
 SIRA simulates asset recovery distributions across five stress scenarios using internal synthetic data structures — no API calls, no live feeds, no external dependencies that can fail during a crisis. The engine runs in any environment, including fully air-gapped or degraded connectivity conditions.
 
 The core deliverable is `black_box_risk_engine.R`: a single plug-and-play function (`black_box_engine()`) that accepts a portfolio and a scenario definition, runs 10,000 Monte Carlo draws per asset, and returns mean net recovery, standard deviation, Z-score distance from the invalidation threshold, a weighted Risk/Stress Score, and a SELL/WATCH/HOLD signal per asset.
+
+**Primary documents:**
+
+- [`docs/ETHOS.md`](docs/ETHOS.md) — architectural philosophy and stack rationale
+- [`docs/DELIVERY.md`](docs/DELIVERY.md) — engagement model, delivery artefacts, and GRC control mappings
+
+Read those two documents first. Everything else in this repository is the operational substrate
+that supports them.
 
 ---
 
@@ -76,12 +90,12 @@ Dependencies: R, ggplot2. No external data sources required.
 
 ---
 
-## Python tasks (JPMC)
+## Configuration 
 
 ```bash
-python JPMC-tech-task-1-py3/server3.py
-python JPMC-tech-task-1-py3/client3.py
-python JPMC-tech-task-1-py3/client_test.py
+python MPI-task-1-py3/server3.py
+python MPI-task-1-py3/client3.py
+python MPI-task-1-py3/client_test.py
 curl 'http://localhost:8080/query?id=1'
 ```
 
@@ -121,16 +135,14 @@ Full GRC mappings and SDLC gate criteria: [docs/DELIVERY.md](docs/DELIVERY.md).
 
 ## Non-goals
 
-- NG-001: Not a replacement for a full organisational SDLC or security programme.
-- NG-002: Not a runtime hardening guarantee across all environments.
-- NG-003: Not formal verification of third-party or external system behaviour.
-- NG-004: Not automatic compliance attestation — organisation-specific controls and evidence required.
-- NG-005: Not affiliated with or endorsed by Common Criteria.
+- **NG-001:** Not a substitute for organisation-wide SDLC controls — the gating model here is demonstrative, not exhaustive.
+- **NG-002:** Not a live risk system — outputs are deterministic and synthetic by design, not sourced from market feeds.
+- **NG-003:** Not compliance attestation — control mappings document intent and traceability, not certified conformance.
+- **NG-004:** Not a portfolio management system — signal outputs (SELL/WATCH/HOLD) are analytical indicators, not executable trade instructions.
+- **NG-005:** Not environment-agnostic — reproducibility is guaranteed within the declared runtime (R + ggplot2); behaviour under untested configurations is out of scope.
 
 ---
 
 ## Further reading
 
-- [docs/ETHOS.md](docs/ETHOS.md) — architectural philosophy and stack rationale
-- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — system invariants and design rationale
-- [STOCHASTIC_INVALIDATION_RISK_ARCHITECTURE.md](STOCHASTIC_INVALIDATION_RISK_ARCHITECTURE.md) — full case study
+> For system invariants, audit narrative, and Essential Eight control coverage, see `docs/ARCHITECTURE.md`, `docs/WORKER_COMPAT.md`, and `docs/cyber-risk-controls.md`.
