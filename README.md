@@ -83,29 +83,28 @@ Rscript run_all.R
 
 ## Non-goals
 
-- **NG-001:** Not a live risk system — outputs are stochastic simulations against synthetic 
+- **NG-001:** Not a live risk system — outputs are stochastic simulations against synthetic
   or operator-supplied data; no MtM or real-time feed integration.
-  - *Exception:* External data may be substituted via `/data`; synthetic fallback activates 
+  - *Exception:* External data may be substituted via `/data`; synthetic fallback activates
     only on empty input.
 
-- **NG-002:** Not an OMS or EMS — SELL/HOLD signals are pre-trade analytical indicators, 
-  not executable order instructions.
-  - *Exception:* Signals may inform execution where the operator has accepted analytical 
+- **NG-002:** Not an OMS or EMS — SELL/HOLD signals are pre-trade analytical indicators,
+  not executable order instructions. A three-state signal set (SELL/WATCH/HOLD) was evaluated
+  during development; WATCH was excluded from this implementation as the two-state set is
+  sufficient for the declared analytical scope.
+  - *Exception:* Signals may inform execution where the operator has accepted analytical
     risk and applied independent instrument-level validation (ILV).
 
-- **NG-003:** Not a full credit model — scenarios model directional LGD/PD stress behaviour; 
+- **NG-003:** Not a full credit model — scenarios model directional LGD/PD stress behaviour;
   no substitute for instrument-level credit analysis or IRB model validation.
 
-- **NG-004:** Not a compliance attestation — ruin threshold and Z-score logic expresses 
+- **NG-004:** Not a compliance attestation — ruin threshold and Z-score logic expresses
   analytical intent; no certified conformance to SR 11-7, FRTB, or equivalent MRM frameworks.
 
-- **NG-005:** Not environment-agnostic — reproducibility guaranteed within declared runtime 
-  (R + ggplot2)OOS configurations require operator validation and a documented deviation log.
+- **NG-005:** Not environment-agnostic — reproducibility guaranteed within declared runtime
+  (R + ggplot2); OOS configurations require operator validation and a documented deviation log.
 
-> Runtime boundary declaration — not a hardening claim or certified assurance posture. Not 
-> affiliated with or endorsed by CC, Basel II/III, BCBS 239, FRTB, ISO 27001/27005, 
-> E8 ML3/ML4, SOC 2, or SR 11-7.
-> This describes a runtime boundary, not a hardening claim or certified assurance posture. 
-> It is not affiliated with or endorsed by Common Criteria, Basel II/III, BCBS 239, FRTB, 
-> ISO 27001, ISO 27005, Essential Eight ML3/ML4, SOC 2, SR 11-7, or any equivalent 
+> This describes a runtime boundary, not a hardening claim or certified assurance posture.
+> Not affiliated with or endorsed by Common Criteria, Basel II/III, BCBS 239, FRTB,
+> ISO 27001, ISO 27005, Essential Eight ML3/ML4, SOC 2, SR 11-7, or any equivalent
 > evaluation framework.
