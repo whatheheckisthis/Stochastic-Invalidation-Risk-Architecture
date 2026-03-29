@@ -1,58 +1,60 @@
 # ============================================================================
 # Script Name : run_all.R
 # Purpose     : Terminal-native orchestration for full SIRA workflow.
-# Purpose     : Orchestrate full SIRA load -> analysis -> visualization flow.
 # ============================================================================
 
-run_start <- Sys.time()
 ptm <- proc.time()
-
-cat("==============================================\n")
-cat("Stochastic Invalidation & Risk Architecture\n")
-cat(sprintf("Runtime: %s\n", R.version.string))
-cat(sprintf("Started: %s\n", format(run_start, "%Y-%m-%d %H:%M:%S")))
-cat("==============================================\n")
 
 safe_stage <- function(stage_name, expr) {
   tryCatch(
     expr,
     error = function(e) {
-      message(sprintf("[FATAL] %s failed -- %s", stage_name, conditionMessage(e)))
+      if (exists("NEON", inherits = TRUE)) {
+        message(sprintf("%s%s[ERROR] %s failed -- %s%s", NEON$bold, NEON$red, stage_name, conditionMessage(e), NEON$reset))
+      } else {
+        message(sprintf("[ERROR] %s failed -- %s", stage_name, conditionMessage(e)))
+      }
       elapsed <- proc.time() - ptm
-      cat("==============================================\n")
-      cat(sprintf("Exit status: FAILURE\nElapsed: %.2fs\n", as.numeric(elapsed["elapsed"])))
-      cat("==============================================\n")
+      if (exists("NEON", inherits = TRUE)) {
+        cat(sprintf("%s==============================================%s\n", NEON$bold, NEON$reset))
+        cat(sprintf("%sElapsed: %.2fs | Exit status: FAILURE%s\n", NEON$bold, as.numeric(elapsed["elapsed"]), NEON$reset))
+        cat(sprintf("%s==============================================%s\n", NEON$bold, NEON$reset))
+      } else {
+        cat("==============================================\n")
+        cat(sprintf("Elapsed: %.2fs | Exit status: FAILURE\n", as.numeric(elapsed["elapsed"])))
+        cat("==============================================\n")
+      }
       quit(save = "no", status = 1)
     }
   )
 }
 
 safe_stage("source scripts/00_env_check.R", source("scripts/00_env_check.R"))
-safe_stage("env_check", run_env_check(min_r_version = "4.0.0", data_dir = "data", output_dir = "output"))
-
+safe_stage("env_check", run_env_check())
+safe_stage("source scripts/00_config.R", source("scripts/00_config.R"))
+safe_stage("config_load", load_sira_config())
 safe_stage("source scripts/01_load_data.R", source("scripts/01_load_data.R"))
 safe_stage("source scripts/02_analysis.R", source("scripts/02_analysis.R"))
 safe_stage("source scripts/03_visualize.R", source("scripts/03_visualize.R"))
 
-loaded <- safe_stage("load_data", load_portfolio_data(data_dir = "data", seed = 20260329))
-cat(sprintf("Data mode: %s\n", loaded$metadata$data_mode))
+run_start <- Sys.time()
+cat(sprintf("%s%s==============================================%s\n", NEON$bold, NEON$cyan, NEON$reset))
+cat(sprintf("%s%sStochastic Invalidation & Risk Architecture%s\n", NEON$bold, NEON$cyan, NEON$reset))
+cat(sprintf("%s%sRuntime: %s%s\n", NEON$bold, NEON$cyan, R.version.string, NEON$reset))
+cat(sprintf("%s%sStarted: %s%s\n", NEON$bold, NEON$cyan, format(run_start, "%Y-%m-%d %H:%M:%S"), NEON$reset))
+cat(sprintf("%s%s==============================================%s\n", NEON$bold, NEON$cyan, NEON$reset))
 
-results <- safe_stage("analysis", run_sira_analysis(load_output = loaded, seed = 20260329))
-plot_file <- safe_stage("visualize", visualize_sira(results_df = results, output_dir = "output", filename = "sell_hold_signals.png"))
+loaded <- safe_stage("load_data", load_portfolio_data())
+cat(sprintf("%s%sData mode: %s%s\n", NEON$bold, NEON$cyan, loaded$metadata$data_mode, NEON$reset))
+
+results <- safe_stage("analysis", run_sira_analysis(load_output = loaded))
+plot_file <- safe_stage("visualize", visualize_sira(results_df = results))
 
 elapsed <- proc.time() - ptm
-cat("==============================================\n")
-cat("SIRA run completed\n")
-cat(sprintf("Finished: %s\n", format(Sys.time(), "%Y-%m-%d %H:%M:%S")))
-cat(sprintf("Elapsed: %.2fs\n", as.numeric(elapsed["elapsed"])))
-cat(sprintf("Output: %s\n", plot_file))
-cat("Exit status: SUCCESS\n")
-cat("==============================================\n")
-loaded <- load_portfolio_data(data_dir = "data", seed = 20260329)
-results <- run_sira_analysis(load_output = loaded, seed = 20260329)
-plot_file <- visualize_sira(results_df = results, output_dir = "output", filename = "sell_hold_signals.png")
-
-cat("SIRA run completed.\n")
-cat(sprintf("Source: %s\n", loaded$metadata$source_file))
-cat(sprintf("Assets: %d\n", loaded$metadata$row_count))
-cat(sprintf("Output: %s\n", plot_file))
+cat(sprintf("%s==============================================%s\n", NEON$bold, NEON$reset))
+cat(sprintf("%sSIRA run completed%s\n", NEON$bold, NEON$reset))
+cat(sprintf("%sFinished: %s%s\n", NEON$bold, format(Sys.time(), "%Y-%m-%d %H:%M:%S"), NEON$reset))
+cat(sprintf("%sElapsed: %.2fs%s\n", NEON$bold, as.numeric(elapsed["elapsed"]), NEON$reset))
+cat(sprintf("%sOutput: %s%s\n", NEON$green, plot_file, NEON$reset))
+cat(sprintf("%sExit status: SUCCESS%s\n", NEON$bold, NEON$reset))
+cat(sprintf("%s==============================================%s\n", NEON$bold, NEON$reset))

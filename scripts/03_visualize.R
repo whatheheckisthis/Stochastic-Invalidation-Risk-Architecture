@@ -3,24 +3,20 @@
 # Purpose     : Visualize per-asset per-scenario SELL/HOLD output.
 # ============================================================================
 
-visualize_sira <- function(results_df, output_dir = "output", filename = "sell_hold_signals.png") {
-  cat(sprintf("[03/03] visualize -- %s\n", format(Sys.time(), "%Y-%m-%d %H:%M:%S")))
+visualize_sira <- function(results_df) {
+  cat(sprintf("%s%s[03/03] visualize -- %s%s\n",
+              NEON$bold, NEON$cyan, format(Sys.time(), "%Y-%m-%d %H:%M:%S"), NEON$reset))
 
+  output_dir <- sub("/$", "", CFG$data$output_path)
   if (!dir.exists(output_dir)) {
     dir.create(output_dir, recursive = TRUE)
   }
 
   if (!requireNamespace("ggplot2", quietly = TRUE)) {
-    stop("[FATAL] ggplot2 is required but not installed.")
+    stop("[ERROR] ggplot2 is required but not installed.")
   }
 
-  scenario_order <- c(
-    "Baseline",
-    "Liquidity Crunch",
-    "Jurisdictional Freeze",
-    "Counterparty Default",
-    "Hyper-Inflationary"
-  )
+  scenario_order <- CFG$scenarios$names
 
   plot_df <- results_df
   plot_df$scenario <- factor(plot_df$scenario, levels = scenario_order)
@@ -56,12 +52,18 @@ visualize_sira <- function(results_df, output_dir = "output", filename = "sell_h
       strip.text = ggplot2::element_text(face = "bold")
     )
 
-  out_path <- file.path(output_dir, filename)
-  ggplot2::ggsave(out_path, plot = p, width = 14, height = 8.5, dpi = 300)
+  out_path <- file.path(output_dir, "sell_hold_signals.png")
+  ggplot2::ggsave(
+    out_path,
+    plot = p,
+    width = as.numeric(CFG$output$png_width),
+    height = as.numeric(CFG$output$png_height),
+    dpi = as.numeric(CFG$output$png_dpi)
+  )
 
   fi <- file.info(out_path)
   file_size <- if (!is.na(fi$size)) sprintf("%d bytes", as.integer(fi$size)) else "unknown size"
-  cat(sprintf("[OUTPUT] %s -- written -- %s\n", out_path, file_size))
+  cat(sprintf("%s%s[OUTPUT] %s -- written -- %s%s\n", NEON$bold, NEON$green, out_path, file_size, NEON$reset))
 
   scenario_signal <- as.data.frame.matrix(xtabs(~ scenario + signal, data = plot_df))
   mean_rec <- aggregate(stressed_recovery ~ scenario, data = plot_df, FUN = mean)
@@ -83,14 +85,14 @@ visualize_sira <- function(results_df, output_dir = "output", filename = "sell_h
   cat(sprintf("%-24s %8s %8s %14s\n", strrep("-", 24), strrep("-", 8), strrep("-", 8), strrep("-", 14)))
 
   for (i in seq_len(nrow(table_df))) {
-    cat(sprintf("%-24s %8d %8d %14.6f\n",
+    cat(sprintf("%-24s %s%8d%s %s%8d%s %14.6f\n",
                 table_df$scenario[i],
-                as.integer(table_df$SELL[i]),
-                as.integer(table_df$HOLD[i]),
+                NEON$red, as.integer(table_df$SELL[i]), NEON$reset,
+                NEON$cyan, as.integer(table_df$HOLD[i]), NEON$reset,
                 as.numeric(table_df$mean_recovery[i])))
   }
 
-  cat("[03/03] visualize -- complete\n")
+  cat(sprintf("%s%s[03/03] visualize -- complete%s\n", NEON$bold, NEON$cyan, NEON$reset))
 
   invisible(out_path)
 }

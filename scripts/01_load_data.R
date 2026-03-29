@@ -1,11 +1,14 @@
 # ============================================================================
 # Script Name : 01_load_data.R
-# Purpose     : Load portfolio data from /data or create deterministic fallback.
+# Purpose     : Load portfolio data from configured path or deterministic fallback.
 # ============================================================================
 
-load_portfolio_data <- function(data_dir = "data", seed = 20260329) {
-  cat(sprintf("[01/03] load_data -- %s\n", format(Sys.time(), "%Y-%m-%d %H:%M:%S")))
-  set.seed(seed)
+load_portfolio_data <- function() {
+  cat(sprintf("%s%s[01/03] load_data -- %s%s\n",
+              NEON$bold, NEON$cyan, format(Sys.time(), "%Y-%m-%d %H:%M:%S"), NEON$reset))
+
+  data_dir <- sub("/$", "", CFG$data$path)
+  set.seed(as.integer(CFG$runtime$seed))
 
   if (!dir.exists(data_dir)) {
     dir.create(data_dir, recursive = TRUE)
@@ -25,7 +28,6 @@ load_portfolio_data <- function(data_dir = "data", seed = 20260329) {
 
     nm <- tolower(names(df))
     names(df) <- nm
-
     n <- nrow(df)
 
     out <- data.frame(
@@ -46,7 +48,6 @@ load_portfolio_data <- function(data_dir = "data", seed = 20260329) {
     out$price[!is.finite(out$price)] <- 95
     out$notional[is.na(out$notional)] <- 100
     out$notional[!is.finite(out$notional)] <- 100
-
     out$recovery_anchor <- pmin(0.95, pmax(0.05, out$price / 100))
 
     out
@@ -92,6 +93,8 @@ load_portfolio_data <- function(data_dir = "data", seed = 20260329) {
   }
 
   if (is.null(portfolio)) {
+    cat(sprintf("%s%s[WARN] No data in /data — synthetic defaults active%s\n", NEON$bold, NEON$yellow, NEON$reset))
+
     asset_n <- 24L
     issuer_pool <- c("Andes Capital", "BlueHarbor", "Crux Lending", "Deltaline", "Eastbridge")
     ccy_pool <- c("USD", "EUR", "GBP", "JPY", "BRL")
@@ -116,13 +119,17 @@ load_portfolio_data <- function(data_dir = "data", seed = 20260329) {
     portfolio$recovery_anchor <- pmin(0.95, pmax(0.05, portfolio$price / 100))
   }
 
+  cat(sprintf("%s%s[01/03] load_data -- complete -- rows=%d assets=%d%s\n",
+              NEON$bold, NEON$cyan, nrow(portfolio), length(unique(portfolio$asset_id)), NEON$reset))
+
   list(
     portfolio = portfolio,
     metadata = list(
       source_file = source_file,
       generated_at_utc = as.character(Sys.time()),
-      seed = seed,
-      row_count = nrow(portfolio)
+      seed = as.integer(CFG$runtime$seed),
+      row_count = nrow(portfolio),
+      data_mode = data_mode
     )
   )
 }

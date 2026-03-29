@@ -1,0 +1,52 @@
+[runtime]
+seed          = 42
+min_r_version = "4.0.0"
+
+[data]
+path        = "data/"
+output_path = "output/"
+
+[scenarios]
+names = ["Baseline", "Liquidity Crunch", "Jurisdictional Freeze", "Counterparty Default", "Hyper-Inflationary"]
+
+[scenarios.Baseline]
+distribution     = "beta"
+shape1           = 5.0
+shape2           = 2.0
+ruin_threshold   = 0.10
+shock_multiplier = 1.0
+
+[scenarios.Liquidity_Crunch]
+distribution     = "beta"
+shape1           = 2.0
+shape2           = 5.0
+ruin_threshold   = 0.15
+shock_multiplier = 0.85
+
+[scenarios.Jurisdictional_Freeze]
+distribution     = "beta"
+shape1           = 1.5
+shape2           = 8.0
+ruin_threshold   = 0.20
+shock_multiplier = 0.75
+
+[scenarios.Counterparty_Default]
+distribution     = "powerlaw"
+exponent         = 2.5
+ruin_threshold   = 0.25
+shock_multiplier = 0.65
+
+[scenarios.Hyper_Inflationary]
+distribution     = "powerlaw"
+exponent         = 3.0
+ruin_threshold   = 0.30
+fx_devaluation   = 0.40
+shock_multiplier = 0.60
+
+[signals]
+sell_zscore_threshold = -1.5
+
+[output]
+png_width  = 12
+png_height = 8
+png_dpi    = 150
