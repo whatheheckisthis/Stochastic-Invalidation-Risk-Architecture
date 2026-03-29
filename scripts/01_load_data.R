@@ -1,49 +1,135 @@
 # ============================================================================
 # Script Name : 01_load_data.R
-# Purpose     : Load distressed-asset price data from data/.
-#               If no CSV is provided, build a synthetic default series.
-# Author      : Codex Assistant
-# Created     : 2026-03-27
-# R Version   : 3.6+
+# Purpose     : Load portfolio data from configured path or deterministic fallback.
 # ============================================================================
 
-load_data <- function(data_dir = "data", seed = 42) {
-  set.seed(seed)
+load_portfolio_data <- function() {
+  cat(sprintf("%s%s[01/03] load_data -- %s%s\n",
+              NEON$bold, NEON$cyan, format(Sys.time(), "%Y-%m-%d %H:%M:%S"), NEON$reset))
+
+  data_dir <- sub("/$", "", CFG$data$path)
+  set.seed(as.integer(CFG$runtime$seed))
 
   if (!dir.exists(data_dir)) {
     dir.create(data_dir, recursive = TRUE)
   }
 
-  csv_files <- list.files(data_dir, pattern = "\\.csv$", full.names = TRUE)
+  recognized <- list.files(
+    data_dir,
+    pattern = "\\.(csv|rds|RData|rda)$",
+    ignore.case = TRUE,
+    full.names = TRUE
+  )
 
-  if (length(csv_files) > 0) {
-    raw_data <- utils::read.csv(csv_files[1], stringsAsFactors = FALSE)
-
-    if ("price" %in% names(raw_data)) {
-      price_vector <- as.numeric(raw_data$price)
-    } else {
-      first_col <- raw_data[[1]]
-      price_vector <- as.numeric(first_col)
+  normalize_portfolio <- function(df) {
+    if (!is.data.frame(df) || nrow(df) == 0) {
+      return(NULL)
     }
 
-    price_vector <- price_vector[!is.na(price_vector)]
+    nm <- tolower(names(df))
+    names(df) <- nm
+    n <- nrow(df)
 
-    if (length(price_vector) == 0) {
-      stop("Input CSV does not contain numeric price observations.")
-    }
-  } else {
-    number_of_days <- 1000L
-    price_vector <- numeric(number_of_days)
-    price_vector[1] <- 1.0
+    out <- data.frame(
+      asset_id = if ("asset_id" %in% nm) as.character(df$asset_id) else sprintf("BOND_%03d", seq_len(n)),
+      issuer = if ("issuer" %in% nm) as.character(df$issuer) else sprintf("Issuer_%02d", (seq_len(n) %% 10) + 1),
+      currency = if ("currency" %in% nm) as.character(df$currency) else "USD",
+      region = if ("region" %in% nm) as.character(df$region) else "NA",
+      sector = if ("sector" %in% nm) as.character(df$sector) else "Corporate",
+      notional = if ("notional" %in% nm) as.numeric(df$notional) else rep(100, n),
+      price = if ("price" %in% nm) as.numeric(df$price) else rep(95, n),
+      coupon = if ("coupon" %in% nm) as.numeric(df$coupon) else rep(0.05, n),
+      maturity_years = if ("maturity_years" %in% nm) as.numeric(df$maturity_years) else rep(5, n),
+      rating = if ("rating" %in% nm) as.character(df$rating) else rep("BBB", n),
+      stringsAsFactors = FALSE
+    )
 
-    for (day_index in 2:number_of_days) {
-      daily_step <- rnorm(1, mean = 0, sd = 0.02)
-      price_vector[day_index] <- max(0, price_vector[day_index - 1] + daily_step)
+    out$price[is.na(out$price)] <- median(out$price, na.rm = TRUE)
+    out$price[!is.finite(out$price)] <- 95
+    out$notional[is.na(out$notional)] <- 100
+    out$notional[!is.finite(out$notional)] <- 100
+    out$recovery_anchor <- pmin(0.95, pmax(0.05, out$price / 100))
+
+    out
+  }
+
+  portfolio <- NULL
+  source_file <- "synthetic_default"
+  data_mode <- "synthetic"
+
+  if (length(recognized) > 0) {
+    for (f in recognized) {
+      ext <- tolower(sub("^.*\\.", "", f))
+      candidate <- NULL
+
+      if (ext == "csv") {
+        candidate <- tryCatch(utils::read.csv(f, stringsAsFactors = FALSE), error = function(e) NULL)
+      } else if (ext == "rds") {
+        candidate <- tryCatch(readRDS(f), error = function(e) NULL)
+      } else if (ext %in% c("rdata", "rda")) {
+        env <- new.env(parent = emptyenv())
+        ok <- tryCatch({
+          load(f, envir = env)
+          TRUE
+        }, error = function(e) FALSE)
+
+        if (ok) {
+          objs <- mget(ls(env), envir = env)
+          idx <- which(vapply(objs, is.data.frame, logical(1L)))
+          if (length(idx) > 0) {
+            candidate <- objs[[idx[1]]]
+          }
+        }
+      }
+
+      normalized <- normalize_portfolio(candidate)
+      if (!is.null(normalized)) {
+        portfolio <- normalized
+        source_file <- f
+        data_mode <- "live"
+        break
+      }
     }
   }
 
+  if (is.null(portfolio)) {
+    cat(sprintf("%s%s[WARN] No data in /data — synthetic defaults active%s\n", NEON$bold, NEON$yellow, NEON$reset))
+
+    asset_n <- 24L
+    issuer_pool <- c("Andes Capital", "BlueHarbor", "Crux Lending", "Deltaline", "Eastbridge")
+    ccy_pool <- c("USD", "EUR", "GBP", "JPY", "BRL")
+    region_pool <- c("NA", "EU", "APAC", "LATAM")
+    sector_pool <- c("Corporate", "Sovereign", "Financial", "Utility")
+    rating_pool <- c("AAA", "AA", "A", "BBB", "BB")
+
+    portfolio <- data.frame(
+      asset_id = sprintf("BOND_%03d", seq_len(asset_n)),
+      issuer = sample(issuer_pool, asset_n, replace = TRUE),
+      currency = sample(ccy_pool, asset_n, replace = TRUE),
+      region = sample(region_pool, asset_n, replace = TRUE),
+      sector = sample(sector_pool, asset_n, replace = TRUE),
+      notional = round(runif(asset_n, min = 40, max = 250), 2),
+      price = round(runif(asset_n, min = 62, max = 104), 2),
+      coupon = round(runif(asset_n, min = 0.015, max = 0.09), 4),
+      maturity_years = sample(1:12, asset_n, replace = TRUE),
+      rating = sample(rating_pool, asset_n, replace = TRUE),
+      stringsAsFactors = FALSE
+    )
+
+    portfolio$recovery_anchor <- pmin(0.95, pmax(0.05, portfolio$price / 100))
+  }
+
+  cat(sprintf("%s%s[01/03] load_data -- complete -- rows=%d assets=%d%s\n",
+              NEON$bold, NEON$cyan, nrow(portfolio), length(unique(portfolio$asset_id)), NEON$reset))
+
   list(
-    bond_prices = price_vector,
-    source_file = if (length(csv_files) > 0) csv_files[1] else "synthetic_default"
+    portfolio = portfolio,
+    metadata = list(
+      source_file = source_file,
+      generated_at_utc = as.character(Sys.time()),
+      seed = as.integer(CFG$runtime$seed),
+      row_count = nrow(portfolio),
+      data_mode = data_mode
+    )
   )
 }
