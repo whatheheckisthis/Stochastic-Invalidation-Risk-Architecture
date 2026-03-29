@@ -92,8 +92,6 @@ load_portfolio_data <- function(data_dir = "data", seed = 20260329) {
   }
 
   if (is.null(portfolio)) {
-    cat("[WARN] No data in /data — synthetic defaults active\n")
-
     asset_n <- 24L
     issuer_pool <- c("Andes Capital", "BlueHarbor", "Crux Lending", "Deltaline", "Eastbridge")
     ccy_pool <- c("USD", "EUR", "GBP", "JPY", "BRL")
@@ -118,16 +116,13 @@ load_portfolio_data <- function(data_dir = "data", seed = 20260329) {
     portfolio$recovery_anchor <- pmin(0.95, pmax(0.05, portfolio$price / 100))
   }
 
-  cat(sprintf("[01/03] load_data -- complete -- rows=%d assets=%d\n", nrow(portfolio), length(unique(portfolio$asset_id))))
-
   list(
     portfolio = portfolio,
     metadata = list(
       source_file = source_file,
       generated_at_utc = as.character(Sys.time()),
       seed = seed,
-      row_count = nrow(portfolio),
-      data_mode = data_mode
+      row_count = nrow(portfolio)
     )
   )
 }

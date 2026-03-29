@@ -4,12 +4,11 @@
 # ============================================================================
 
 run_sira_analysis <- function(load_output, seed = 20260329) {
-  cat(sprintf("[02/03] analysis -- %s\n", format(Sys.time(), "%Y-%m-%d %H:%M:%S")))
   set.seed(seed)
 
   portfolio <- load_output$portfolio
   if (!is.data.frame(portfolio) || nrow(portfolio) == 0) {
-    stop("[FATAL] Portfolio input is empty or invalid.")
+    stop("Portfolio input is empty or invalid.")
   }
 
   scenarios <- c(
@@ -48,8 +47,7 @@ run_sira_analysis <- function(load_output, seed = 20260329) {
     pmin(0.995, pmax(0.001, rec))
   }
 
-  scenario_frames <- lapply(seq_along(scenarios), function(i) {
-    sc <- scenarios[[i]]
+  scenario_frames <- lapply(scenarios, function(sc) {
     n <- nrow(portfolio)
     base_rec <- generate_recovery(portfolio$recovery_anchor, sc, n)
 
