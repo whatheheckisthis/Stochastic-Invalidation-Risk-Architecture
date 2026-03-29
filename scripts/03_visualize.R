@@ -4,12 +4,14 @@
 # ============================================================================
 
 visualize_sira <- function(results_df, output_dir = "output", filename = "sell_hold_signals.png") {
+  cat(sprintf("[03/03] visualize -- %s\n", format(Sys.time(), "%Y-%m-%d %H:%M:%S")))
+
   if (!dir.exists(output_dir)) {
     dir.create(output_dir, recursive = TRUE)
   }
 
   if (!requireNamespace("ggplot2", quietly = TRUE)) {
-    stop("ggplot2 is required but not installed.")
+    stop("[FATAL] ggplot2 is required but not installed.")
   }
 
   scenario_order <- c(
@@ -56,6 +58,39 @@ visualize_sira <- function(results_df, output_dir = "output", filename = "sell_h
 
   out_path <- file.path(output_dir, filename)
   ggplot2::ggsave(out_path, plot = p, width = 14, height = 8.5, dpi = 300)
+
+  fi <- file.info(out_path)
+  file_size <- if (!is.na(fi$size)) sprintf("%d bytes", as.integer(fi$size)) else "unknown size"
+  cat(sprintf("[OUTPUT] %s -- written -- %s\n", out_path, file_size))
+
+  scenario_signal <- as.data.frame.matrix(xtabs(~ scenario + signal, data = plot_df))
+  mean_rec <- aggregate(stressed_recovery ~ scenario, data = plot_df, FUN = mean)
+  table_df <- merge(
+    data.frame(scenario = rownames(scenario_signal), scenario_signal, row.names = NULL, stringsAsFactors = FALSE),
+    mean_rec,
+    by = "scenario",
+    all.x = TRUE
+  )
+
+  if (!"SELL" %in% names(table_df)) table_df$SELL <- 0
+  if (!"HOLD" %in% names(table_df)) table_df$HOLD <- 0
+
+  table_df <- table_df[match(scenario_order, table_df$scenario), c("scenario", "SELL", "HOLD", "stressed_recovery")]
+  names(table_df)[4] <- "mean_recovery"
+
+  cat("\nTERMINAL SUMMARY (per scenario)\n")
+  cat(sprintf("%-24s %8s %8s %14s\n", "Scenario", "SELL", "HOLD", "MeanRecovery"))
+  cat(sprintf("%-24s %8s %8s %14s\n", strrep("-", 24), strrep("-", 8), strrep("-", 8), strrep("-", 14)))
+
+  for (i in seq_len(nrow(table_df))) {
+    cat(sprintf("%-24s %8d %8d %14.6f\n",
+                table_df$scenario[i],
+                as.integer(table_df$SELL[i]),
+                as.integer(table_df$HOLD[i]),
+                as.numeric(table_df$mean_recovery[i])))
+  }
+
+  cat("[03/03] visualize -- complete\n")
 
   invisible(out_path)
 }

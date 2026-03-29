@@ -72,6 +72,8 @@ run_sira_analysis <- function(load_output, seed = 20260329) {
 
     shocked_recovery <- pmin(0.995, pmax(0.001, shocked_recovery))
 
+    cat(sprintf("[SCENARIO %d/5] %s -- complete -- %d assets processed\n", i, sc, n))
+
     data.frame(
       asset_id = portfolio$asset_id,
       issuer = portfolio$issuer,
@@ -110,6 +112,11 @@ run_sira_analysis <- function(load_output, seed = 20260329) {
 
   results$audit_id <- sprintf("%s__%s", results$asset_id, gsub(" ", "_", results$scenario))
   results$run_seed <- seed
+
+  ruin_count <- sum(results$ruin_flag, na.rm = TRUE)
+  sell_count <- sum(results$signal == "SELL", na.rm = TRUE)
+  cat(sprintf("[02/03] analysis -- complete -- scenarios=%d ruin_flags=%d sell_signals=%d\n",
+              length(scenarios), ruin_count, sell_count))
 
   results[order(results$asset_id, results$scenario), ]
 }

@@ -4,6 +4,7 @@
 # ============================================================================
 
 load_portfolio_data <- function(data_dir = "data", seed = 20260329) {
+  cat(sprintf("[01/03] load_data -- %s\n", format(Sys.time(), "%Y-%m-%d %H:%M:%S")))
   set.seed(seed)
 
   if (!dir.exists(data_dir)) {
@@ -53,6 +54,7 @@ load_portfolio_data <- function(data_dir = "data", seed = 20260329) {
 
   portfolio <- NULL
   source_file <- "synthetic_default"
+  data_mode <- "synthetic"
 
   if (length(recognized) > 0) {
     for (f in recognized) {
@@ -83,6 +85,7 @@ load_portfolio_data <- function(data_dir = "data", seed = 20260329) {
       if (!is.null(normalized)) {
         portfolio <- normalized
         source_file <- f
+        data_mode <- "live"
         break
       }
     }
