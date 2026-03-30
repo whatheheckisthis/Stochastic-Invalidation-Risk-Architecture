@@ -1,51 +1,77 @@
-# Defense Appendix
+# Defense Appendix — Epsilon-Centric Controls Matrix
 
-This appendix expands on recurring defense questions that typically come up during review of the model assumptions, implementation choices, and risk interpretation logic.
+This appendix is reframed from general defense narrative into an **epsilon-centered control framework**.
 
-## Questions & Answers
+## Purpose
 
-### 1) Why use Standard Deviation?
-Standard deviation is used because it gives a clear, quantitative measure of how widely recovery outcomes are spread around their average. In this project, that spread is a direct proxy for volatility in recovery behavior.
+`epsilon` is treated as the central pillar of model defensibility because it governs path perturbation behavior, near-threshold instability, and decision volatility under stress. The appendix is therefore structured as a **Controls Matrix** that maps epsilon-relevant control intent to audit/compliance lenses.
 
-More specifically:
-- A **low** standard deviation indicates outcomes are tightly clustered, which suggests relatively stable recovery expectations.
-- A **high** standard deviation indicates wider dispersion, which suggests materially higher uncertainty and downside variability.
+This follows the same intent-to-auditable pattern used in the IATO series (Intent-to-Auditable-Trust-Object indexing style):
+- Define control IDs and objectives first.
+- Map each control to implementation/security management intent (ISM).
+- Cross-map to SOC 2 criteria and internal maturity target (`E8 ML4`).
+- Use the matrix as the anchor for evidence packs, committee defense, and assurance reporting.
 
-It is also useful defensively because it is:
-- **Interpretable** by technical and non-technical audiences.
-- **Comparable** across scenarios when evaluating whether one portfolio or stress case is structurally more volatile than another.
-- **Actionable** in risk framing (for example, highlighting when central estimates may be less representative due to broad tails).
+## Epsilon as the Primary Defense Object
 
-In short, standard deviation is not just a descriptive statistic here; it supports consistency in volatility communication, scenario comparison, and risk-aware decision-making.
+In this project, `epsilon_t` is the per-step stochastic shock in the invalidation simulation (`scripts/stochastic_invalidation_base_r.R`).
 
-### 2) How did you handle the "Fetching" issue?
-The fetching issue was addressed by hard-coding synthetic data structures as deterministic fallback inputs. This design ensures the model remains executable even when external data calls are unavailable, delayed, or unstable.
+Why epsilon is the primary defense object:
+- It directly affects threshold-cross timing and ruin incidence.
+- It is the highest-leverage source of local stochastic instability.
+- It can create false confidence if not governed with calibration, traceability, and evidence retention controls.
+- It is where committee challenge converges: “How robust is the decision if perturbations are slightly different?”
 
-Implementation intent:
-- Preserve **100% run reliability** in offline/demo/defense settings.
-- Eliminate dependency on transient connectivity conditions.
-- Keep the pipeline reproducible for review panels that may rerun the project in constrained environments.
+## Controls Matrix (IATO-Style Mapping)
 
-Practical trade-off:
-- Synthetic fallback data improves robustness and presentation reliability,
-  but it should be interpreted as a controlled proxy rather than live production truth.
-- For production contexts, the same structure can be paired with live feeds and validation checks while retaining fallback behavior as a resilience layer.
+> Status note: This matrix is the authoritative appendix reference set. Detailed control procedures, test scripts, and owner attestations are to be defined in the Controls Framework artifact set.
 
-This approach intentionally prioritizes continuity and reproducibility during evaluation.
+| Control ID | Objective | ISM | SOC 2 | E8 ML4 |
+|---|---|---|---|---|
+| CTRL-AUD-01 | Immutable audit logging | Event logging | CC6, CC7 | ML4 |
+| CTRL-AUD-02 | Change traceability | Change management | CC8 | ML4 |
+| CTRL-AUD-03 | Evidence retention | Records management | CC2, CC3 | ML4 |
+| CTRL-OBS-01 | Service telemetry | Monitoring | CC7 | ML4 |
+| CTRL-OBS-02 | Alert fidelity | Incident detection | CC7 | ML4 |
+| CTRL-OBS-03 | Time synchronisation | Time source security | CC7 | ML3 |
+| CTRL-CON-01 | Continuous control validation | Assessment cadence | CC4, CC5 | ML4 |
+| CTRL-CON-02 | Vulnerability management | Vuln management | CC7 | ML4 |
+| CTRL-CON-03 | Supply-chain monitoring | Software provenance | CC6, CC7 | ML4 |
+| CTRL-GOV-01 | Segregation of duties | Privileged access | CC6 | ML4 |
+| CTRL-GOV-02 | Exception governance | Risk acceptance | CC3 | ML4 |
+| CTRL-GOV-03 | Assurance reporting | Governance oversight | CC2 | ML4 |
 
-### 3) What is the "Invalidation" point?
-The invalidation point is the explicit numerical threshold where the cost of capital exceeds projected recovery. Beyond this threshold, the strategy no longer satisfies its economic viability condition under the given assumptions.
+## Epsilon Control Interpretation Layer
 
-Interpretation in the model:
-- **Below** the invalidation point: projected recovery remains sufficient relative to capital cost.
-- **At/above** the invalidation point: expected economics break down, and the case is treated as invalidated under the current parameterization.
+The matrix above is interpreted for epsilon-specific assurance as follows:
 
-Why it matters:
-- It acts as a transparent decision boundary instead of a subjective judgment call.
-- It helps communicate when a scenario moves from acceptable to non-acceptable.
-- It supports stress testing by showing how sensitive viability is to changes in rates, losses, or recovery assumptions.
+### A) Auditability Controls
+- **CTRL-AUD-01 / CTRL-AUD-02 / CTRL-AUD-03** ensure every epsilon-impacting run is attributable to a specific config, seed, parameter state, and runtime environment.
+- Defense claim: epsilon behavior is not only simulated; it is reproducibly auditable.
 
-Stating this boundary clearly makes the model easier to defend, audit, and operationalize.
+### B) Observability Controls
+- **CTRL-OBS-01 / CTRL-OBS-02 / CTRL-OBS-03** ensure epsilon drift, anomaly spikes, and timing inconsistencies are detectable with operational fidelity.
+- Defense claim: threshold instability is monitored, not discovered post hoc.
 
-## Simulation Extension Reference
-For the discrete-time Base R random-walk build-out (with explicit ruin-stop logic and ASCII walkthrough), see `docs/STOCHASTIC_SIMULATION_EXTENSION.md`.
+### C) Continuous Assurance Controls
+- **CTRL-CON-01 / CTRL-CON-02 / CTRL-CON-03** ensure epsilon-related behavior is continuously validated and that dependencies affecting stochastic integrity are governed.
+- Defense claim: epsilon integrity is maintained across change cycles, not only at release time.
+
+### D) Governance Controls
+- **CTRL-GOV-01 / CTRL-GOV-02 / CTRL-GOV-03** ensure authority boundaries, exception pathways, and board/committee assurance reporting are explicit.
+- Defense claim: epsilon calibration and override are governed decisions with accountable ownership.
+
+## Required Framework Follow-Through
+
+To operationalize this appendix as a true controls framework, the following artifacts must be defined next:
+1. Control owner and approver per Control ID.
+2. Control test procedure and evidence frequency per Control ID.
+3. Epsilon calibration standard (range policy, breach criteria, exception workflow).
+4. Evidence index linking each control to generated artifacts (logs, run metadata, config diffs, sign-offs).
+5. Quarterly assurance pack template for committee review.
+
+## Canonical References
+
+- Epsilon implementation locus: `scripts/stochastic_invalidation_base_r.R`
+- Technical model framing and IRB boundary: `docs/CREDIT_RISK_LAYER.md`
+- Committee challenge framing and governance gaps: `docs/RISK_COMMITTEE.md`
