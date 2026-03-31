@@ -1,12 +1,18 @@
 # MCP Orchestration Layer: Architecture and Control Reference
 
-> This document is a delivery artefact of the IĀTŌ assurance programme.
-> It extends `docs/ETHOS.md` into operational implementation detail for the
-> MCP orchestration layer. Read ETHOS.md first — this document assumes it.
+This document is a delivery artefact of the IĀTŌ assurance programme, extending docs/ETHOS.md into operational implementation detail for the MCP orchestration layer.
+
+**Primary documents:**
+
+- [`docs/ETHOS.md`](docs/ETHOS.md) — architectural philosophy and stack rationale
+- [`docs/DELIVERY.md`](docs/DELIVERY.md) — engagement model, delivery artefacts, and GRC control mappings
+
+Read those two documents first. Everything else in this repository is the operational substrate
+that supports them.
 
 ---
 
-## Relationship to ETHOS
+## Relationship 
 
 ETHOS.md defines the operating model. This document defines the implementation
 that satisfies it. Every section below maps to a named operating theme or
