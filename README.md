@@ -342,6 +342,226 @@ Rscript run_all.R
 | `docs/COMPLIANCE_CROSSWALK.csv` | Component-level coverage assessment across SR 11-7, FRTB, Basel III IRB, BCBS 239, SOC 2, E8 ML4, ISM |
 | `data/manifest/data_manifest.toml` | Controlled input registry with SHA-256, lineage references, and approval fields |
 
+## Quickstart — MCP Orchestration Server
+
+> The MCP server exposes enumerated actions only. Claude Code cannot infer
+> configuration from context, execute arbitrary shell commands, or register
+> actions at runtime. It applies the version-controlled script or stops.
+
+---
+
+## Requirements
+
+| Dependency | Minimum version | Purpose |
+|---|---|---|
+| Node.js | 20.0.0 | MCP server runtime |
+| npm | 9.0.0 | Package management |
+| Bash | 5.0 | Dispatch and orchestration scripts |
+| xmllint | any | XSD validation fallback (subprocess) |
+| Podman | 4.0.0 | Rootless container operations |
+
+WSL2/Ubuntu — install xmllint if not present:
+
+```bash
+apt-get install -y libxml2-utils
+```
+
+---
+
+## Install and build
+
+```bash
+npm install
+npm run build
+```
+
+`npm run build` compiles TypeScript to `dist/`. The compiled server is the
+artefact Claude Code invokes — do not point Claude Code at `src/`.
+
+Verify the build:
+
+```bash
+ls dist/server.js   # must exist before registering with Claude Code
+```
+
+---
+
+## Pre-flight checklist
+
+Complete before first use. The server will start without these steps
+but actions will halt at the first gate they fail.
+
+**1. Script permissions**
+
+```bash
+chmod +x orchestrator/dispatch.sh
+chmod +x orchestrator/audit_log.sh
+chmod +x orchestrator/state_check.sh
+chmod +x orchestrator/decommission.sh
+chmod +x scripts/provision/00_preflight.sh
+chmod +x scripts/provision/01_apply.sh
+chmod +x scripts/provision/02_verify.sh
+chmod +x scripts/container/podman_spawn.sh
+chmod +x scripts/container/podman_teardown.sh
+chmod +x scripts/vsphere/preflight_iac.sh
+chmod +x scripts/vsphere/validate_topology.sh
+```
+
+**2. Audit directory**
+
+```bash
+mkdir -p audit/session
+```
+
+Session log files are written here per dispatch invocation.
+Append-only, never committed, retained on disk for compliance evidence.
+
+**3. SHA-256 fields in XML configs**
+
+Every `<file>` entry in `config/environments/*.xml` requires a populated
+`sha256` attribute before `state_check` or `apply` will pass preflight.
+Empty hash fields cause an immediate halt — this is by design.
+
+Generate hashes for your governed files:
+
+```bash
+sha256sum /path/to/file | awk '{print $1}'
+```
+
+Populate the value in the relevant XML config under `<file sha256="..."/>`.
+
+**4. GPG keyring (optional but recommended)**
+
+If your scripts carry `.sig` files, import the signing key before first use:
+
+```bash
+gpg --import /path/to/trusted-key.asc
+```
+
+`00_preflight.sh` skips GPG verification if no `.sig` file is present and
+logs a notice. It does not treat a missing `.sig` as a failure — that
+threshold is operator-defined.
+
+---
+
+## Register with Claude Code
+
+Add the server to Claude Code's MCP configuration.
+The config file location depends on your Claude Code version —
+typically `.mcp/config.json` in the project root or
+`~/.config/claude-code/config.json` globally.
+
+```json
+{
+  "mcpServers": {
+    "iato": {
+      "command": "node",
+      "args": ["dist/server.js"],
+      "cwd": "/absolute/path/to/iato-mcp"
+    }
+  }
+}
+```
+
+Use an absolute path for `cwd`. Relative paths are not reliable
+across Claude Code invocation contexts.
+
+Restart Claude Code after editing the MCP config.
+
+---
+
+## Verify the server is running
+
+Start the server manually to confirm it initialises without error:
+
+```bash
+npm start
+```
+
+Expected stderr output on clean start:
+
+```
+2026-04-01T04:12:00.000Z | IATO-MCP | host=ws01 user=dhruv pid=1234 | SERVER_START | pid=1234 actions=apply,state_check,decommission,spawn_container,teardown_container,vsphere_preflight
+2026-04-01T04:12:00.012Z | IATO-MCP | host=ws01 user=dhruv pid=1234 | SERVER_READY | transport=stdio
+```
+
+Two lines. If neither appears, check Node.js version and that `dist/server.js`
+exists. If only the first appears, the MCP SDK transport initialisation failed —
+confirm `@modelcontextprotocol/sdk` installed correctly.
+
+Stop with `Ctrl+C`. Claude Code manages the process lifecycle in normal use —
+this manual start is for verification only.
+
+---
+
+## Enumerated actions
+
+Claude Code can invoke exactly these six actions via the MCP server.
+No others exist. Unknown action strings halt immediately and are logged.
+
+| Tool | Bash entry point | State change |
+|---|---|---|
+| `apply` | `dispatch.sh apply` | YES — provisions workspace |
+| `state_check` | `dispatch.sh state_check` | NO — read and compare only |
+| `decommission` | `dispatch.sh decommission` | YES — eliminates and rebuilds |
+| `spawn_container` | `dispatch.sh spawn_container` | YES — starts container |
+| `teardown_container` | `dispatch.sh teardown_container` | YES — removes container |
+| `vsphere_preflight` | `dispatch.sh vsphere_preflight` | NO — assertions only |
+
+Three read-only governance tools are also available:
+`read_risk_committee`, `read_defense_appendix`, `read_compliance_crosswalk`.
+These invoke no shell and produce no state change.
+
+---
+
+## Exit codes
+
+| Code | Meaning | Required response |
+|---|---|---|
+| 0 | Success | Proceed |
+| 1 | Operational failure | Inspect audit log, resolve before retry |
+| 2 | State deviation detected | Invoke `decommission` — do not retry the failed action |
+
+Exit 2 is a distinct signal. The audit log will contain `STATE_DEVIATION`
+entries identifying which files deviated and their declared vs actual checksums.
+
+---
+
+## Audit log location
+
+Each dispatch invocation writes a session log:
+
+```
+audit/session/YYYYMMDDTHHMMSS_PID.log
+```
+
+Log entries are append-only and machine-parseable:
+
+```
+2026-04-01T04:12:33.441Z | IATO-MCP | host=ws01 user=dhruv pid=4421 | ACTION | apply script=01_apply.sh config=workstation.xml
+```
+
+These files are `.gitignored` from commit and retained on disk.
+Retention schedule and off-host backup are operator responsibilities —
+see operator action items in `docs/IATO_MCP_ARCHITECTURE.md §6`.
+
+---
+
+## Development mode
+
+Run without building first:
+
+```bash
+npm run dev
+```
+
+Uses `ts-node` to execute TypeScript directly. Suitable for local iteration.
+Do not register `npm run dev` with Claude Code — use the compiled
+`dist/server.js` for all governed use.
+
+
+
+
 ----
 
 # Non-Goals Register
