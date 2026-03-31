@@ -30,7 +30,7 @@ safe_stage <- function(stage_name, expr) {
 }
 
 safe_stage("source scripts/00_env_check.R", source("scripts/00_env_check.R"))
-safe_stage("env_check", run_env_check())
+preflight <- safe_stage("env_check", run_env_check())
 safe_stage("source scripts/00_config.R", source("scripts/00_config.R"))
 safe_stage("config_load", load_sira_config())
 safe_stage("source scripts/01_load_data.R", source("scripts/01_load_data.R"))
@@ -48,8 +48,20 @@ cat(sprintf("%s%sRuntime: %s%s\n", NEON$bold, NEON$cyan, R.version.string, NEON$
 cat(sprintf("%s%sStarted: %s%s\n", NEON$bold, NEON$cyan, format(run_start, "%Y-%m-%d %H:%M:%S"), NEON$reset))
 cat(sprintf("%s%s==============================================%s\n", NEON$bold, NEON$cyan, NEON$reset))
 
-loaded <- safe_stage("load_data", load_portfolio_data())
+loaded <- safe_stage("load_data", load_portfolio_data(preflight = preflight))
 cat(sprintf("%s%sData mode: %s%s\n", NEON$bold, NEON$cyan, loaded$metadata$data_mode, NEON$reset))
+cat(sprintf("%s%sData file_id: %s | lineage_ref: %s | manifest_version: %s | hash_verified: %s%s\n",
+            NEON$bold,
+            NEON$cyan,
+            loaded$metadata$file_id,
+            loaded$metadata$lineage_ref,
+            loaded$metadata$manifest_version,
+            as.character(loaded$metadata$hash_verified),
+            NEON$reset))
+
+data_governance_artifact <- file.path(CFG$data$output_path, "data_governance_metadata.rds")
+saveRDS(loaded$metadata, data_governance_artifact)
+cat(sprintf("%sData governance metadata: %s%s\n", NEON$green, data_governance_artifact, NEON$reset))
 
 results <- safe_stage("analysis", run_sira_analysis(load_output = loaded))
 plot_file <- safe_stage("visualize", visualize_sira(results_df = results))

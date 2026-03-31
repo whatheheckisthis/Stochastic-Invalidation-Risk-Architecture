@@ -1,0 +1,30 @@
+[manifest]
+schema_version = "1.0"
+last_reviewed  = "2026-03-31"
+reviewer       = ""
+approval_ref   = ""
+
+[[files]]
+file_id        = "SIRA-DAT-001"
+filename       = "sira_synthetic_base.csv"
+relative_path  = "data/synthetic/sira_synthetic_base.csv"
+mode           = "synthetic"
+status         = "active"
+lineage_ref    = "data/lineage/sira_synthetic_base_lineage.toml"
+hash_sha256    = ""
+approved_by    = ""
+approved_date  = ""
+
+[[files]]
+file_id        = "SIRA-DAT-002"
+filename       = "sira_synthetic_stress.csv"
+relative_path  = "data/synthetic/sira_synthetic_stress.csv"
+mode           = "synthetic"
+status         = "active"
+lineage_ref    = "data/lineage/sira_synthetic_stress_lineage.toml"
+hash_sha256    = ""
+approved_by    = ""
+approved_date  = ""
+
+# Live file entries added by operator under change control only.
+# mode must be "live" and all fields mandatory before ingestion.
