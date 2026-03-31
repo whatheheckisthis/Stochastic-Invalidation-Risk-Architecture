@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iatoPolicy>
+  <environment>wsl2-ubuntu</environment>
+  <applicationControl>ism-application-control</applicationControl>
+  <ssdfProfile>nist-ssdf</ssdfProfile>
+  <workload>mcp-orchestration</workload>
+</iatoPolicy>

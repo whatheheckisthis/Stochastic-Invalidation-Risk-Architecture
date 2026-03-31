@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<containerPolicy>
+  <runtime>podman</runtime>
+  <rootless>true</rootless>
+  <image>docker.io/library/alpine:3.20</image>
+</containerPolicy>
