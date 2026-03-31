@@ -93,9 +93,15 @@ All scenario parameters — shape, exponent, ruin threshold, shock multiplier, F
 │   ├── 00_config.R              # TOML loader; exposes CFG and NEON globals
 │   ├── 01_load_data.R
 │   ├── 02_analysis.R
-│   └── 03_visualize.R
+│   ├── 03_visualize.R
+│   ├── 10_liability_engine.R
+│   ├── 11_credit_deployment.R
+│   ├── 12_spread_stress.R
+│   └── 13_capital_stack_viz.R
 └── output/
-    └── sell_hold_signals.png    # Generated on run
+    ├── sell_hold_signals.png    # Generated on run
+    ├── capital_stack_spread.png # Generated on run
+    └── capital_stack_metadata.rds
 ```
 
 ```bash
@@ -133,6 +139,15 @@ Rscript run_all.R
 - **NG-006:** Not a hardened terminal application — terminal colour output is a UX consideration;
   it adapts to the execution context and is absent in non-interactive or piped runs. No terminal
   UI framework or ncurses dependency is introduced.
+
+- **NG-007:** Not a regulatory capital model for insurers — the capital stack extension is a stress
+  coverage analytic and must not be interpreted as an insurer capital adequacy certification engine.
+
+- **NG-008:** Not a replacement for actuarial liability valuation — liability engine outputs are
+  parameterized stress approximations and require independent actuarial governance.
+
+- **NG-009:** Not a live portfolio management system — spread signals (`SOLVENT/WATCH/BREACH`) are
+  governance prompts, not automated allocation, hedging, or execution instructions.
 
 > This describes a runtime boundary, not a hardening claim or certified assurance posture.
 > Not affiliated with or endorsed by Common Criteria, Basel II/III, BCBS 239, FRTB,

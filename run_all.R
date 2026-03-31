@@ -36,6 +36,10 @@ safe_stage("config_load", load_sira_config())
 safe_stage("source scripts/01_load_data.R", source("scripts/01_load_data.R"))
 safe_stage("source scripts/02_analysis.R", source("scripts/02_analysis.R"))
 safe_stage("source scripts/03_visualize.R", source("scripts/03_visualize.R"))
+safe_stage("source scripts/10_liability_engine.R", source("scripts/10_liability_engine.R"))
+safe_stage("source scripts/11_credit_deployment.R", source("scripts/11_credit_deployment.R"))
+safe_stage("source scripts/12_spread_stress.R", source("scripts/12_spread_stress.R"))
+safe_stage("source scripts/13_capital_stack_viz.R", source("scripts/13_capital_stack_viz.R"))
 
 run_start <- Sys.time()
 cat(sprintf("%s%s==============================================%s\n", NEON$bold, NEON$cyan, NEON$reset))
@@ -49,6 +53,8 @@ cat(sprintf("%s%sData mode: %s%s\n", NEON$bold, NEON$cyan, loaded$metadata$data_
 
 results <- safe_stage("analysis", run_sira_analysis(load_output = loaded))
 plot_file <- safe_stage("visualize", visualize_sira(results_df = results))
+spread_results <- safe_stage("spread_stress", run_spread_stress(core_results_df = results))
+capital_outputs <- safe_stage("capital_stack_viz", visualize_capital_stack(spread_stress_output = spread_results))
 
 elapsed <- proc.time() - ptm
 cat(sprintf("%s==============================================%s\n", NEON$bold, NEON$reset))
@@ -56,5 +62,7 @@ cat(sprintf("%sSIRA run completed%s\n", NEON$bold, NEON$reset))
 cat(sprintf("%sFinished: %s%s\n", NEON$bold, format(Sys.time(), "%Y-%m-%d %H:%M:%S"), NEON$reset))
 cat(sprintf("%sElapsed: %.2fs%s\n", NEON$bold, as.numeric(elapsed["elapsed"]), NEON$reset))
 cat(sprintf("%sOutput: %s%s\n", NEON$green, plot_file, NEON$reset))
+cat(sprintf("%sCapital stack plot: %s%s\n", NEON$green, capital_outputs$plot_path, NEON$reset))
+cat(sprintf("%sCapital stack metadata: %s%s\n", NEON$green, capital_outputs$metadata_path, NEON$reset))
 cat(sprintf("%sExit status: SUCCESS%s\n", NEON$bold, NEON$reset))
 cat(sprintf("%s==============================================%s\n", NEON$bold, NEON$reset))

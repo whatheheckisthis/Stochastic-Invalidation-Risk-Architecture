@@ -51,6 +51,14 @@
 | 6.2 | What is the exception and deviation process? | Delivery docs mention deviation recording as a control concept, but no formal exception workflow, SLA, or approval chain is operationalized in the engine. | `docs/DELIVERY.md`, `docs/WORKER_COMPAT.md`. | **Partial with gap:** operator must publish exception process artifact. |
 | 6.3 | How does SIRA interact with instrument-level credit analysis and IRB outputs? | Non-goals and methodology position SIRA as complementary scenario stress triage, requiring independent instrument-level validation and not replacing IRB or credit underwriting outputs. | `README.md` non-goals and methodology. | Closed by architecture boundary. |
 
+## 7) Capital Stack Extension Governance (Liability + Spread Engine)
+
+| ID | Committee Question | Architecture-Backed Response | Evidence Basis | Gap Status |
+|---|---|---|---|---|
+| 7.1 | Who sets and approves `payout_rate` and other liability assumptions? | Liability assumptions are centralized under `[liability]` in `config/sira.toml` and consumed directly by `scripts/10_liability_engine.R`; the owner role and approval cadence are not encoded in runtime logic. | `config/sira.toml`, `scripts/10_liability_engine.R`. | **Documented gap — operator response required:** assign actuarial/treasury owner and approver chain. |
+| 7.2 | How is WATCH spread threshold calibrated? | WATCH calibration is parameterized via `CFG$signals$watch_spread_threshold` and applied in `scripts/11_credit_deployment.R`; methodology source (historical quantile, policy floor, or committee setpoint) must be externally documented. | `config/sira.toml`, `scripts/11_credit_deployment.R`. | **Documented gap — operator response required:** approve derivation memo and refresh cycle. |
+| 7.3 | What is the breach escalation path when headroom is negative? | Aggregator emits `BREACH` if spread is negative or solvency headroom falls below zero. Technical emission exists; escalation routing, regulatory notification ownership, and response SLA are not implemented in code. | `scripts/12_spread_stress.R`, `scripts/13_capital_stack_viz.R`. | **Documented gap — operator response required:** publish BREACH response runbook. |
+
 ---
 
 ## Operator Action Register (Required to Close Open Governance Items)
@@ -63,3 +71,6 @@
 6. Mandate synthetic-mode disclosure and escalation controls for live decisions.
 7. Define SELL escalation and override authority matrix.
 8. Publish air-gap runtime manifest custody and release procedure.
+9. Assign liability assumption governance owner (`payout_rate`, inflation sensitivity, duration, solvency buffer).
+10. Ratify WATCH threshold calibration method and review frequency.
+11. Approve solvency BREACH escalation workflow (hedging, reallocation, notification).

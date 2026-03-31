@@ -45,8 +45,24 @@ shock_multiplier = 0.60
 
 [signals]
 sell_zscore_threshold = -1.5
+watch_spread_threshold = 0.01
 
 [output]
 png_width  = 12
 png_height = 8
 png_dpi    = 150
+
+[liability]
+annuity_pool_size = 500000000
+payout_rate = 0.045
+duration_years = 10
+inflation_sensitivity = 1.30
+insurer_solvency_buffer = 0.12
+
+[credit]
+deployed_capital = 420000000
+gross_yield = 0.10
+fee_income = 9000000
+equity_kicker_value = 4000000
+illiquidity_premium = 0.018
+default_rate_assumption = 0.03
