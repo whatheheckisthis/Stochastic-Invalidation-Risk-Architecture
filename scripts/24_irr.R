@@ -3,7 +3,7 @@
 # Purpose     : IRR attribution engine with stressed recovery overlay.
 # ============================================================================
 
-run_irr_engine <- function(core_results_df) {
+run_irr_engine <- function(core_results_df, kicker_results_df = NULL) {
   cat(sprintf("%s%s[24/25] irr_engine -- %s%s\n",
               NEON$bold, NEON$cyan, format(Sys.time(), "%Y-%m-%d %H:%M:%S"), NEON$reset))
 
@@ -59,8 +59,19 @@ run_irr_engine <- function(core_results_df) {
   scenario_rows <- lapply(scenario_names, function(sc) {
     stressed_recovery_ratio <- mean(core_results_df$stressed_recovery[core_results_df$scenario == sc], na.rm = TRUE)
     stressed_terminal <- initial_investment * stressed_recovery_ratio
-    stressed_cashflows <- build_cashflows(stressed_terminal)
-    irr_stressed <- solve_irr(stressed_cashflows)
+
+    scenario_kicker <- equity_kicker_realised
+    if (!is.null(kicker_results_df) && is.data.frame(kicker_results_df)) {
+      sc_row <- kicker_results_df[kicker_results_df$scenario == sc, , drop = FALSE]
+      if (nrow(sc_row) > 0 && is.finite(as.numeric(sc_row$call_price_stressed[1]))) {
+        scenario_kicker <- as.numeric(sc_row$call_price_stressed[1])
+      }
+    }
+
+    stressed_cashflows <- coupon_cashflows
+    stressed_cashflows[1] <- stressed_cashflows[1] + fee_income + scenario_kicker
+    stressed_cashflows[length(stressed_cashflows)] <- stressed_cashflows[length(stressed_cashflows)] + stressed_terminal
+    irr_stressed <- solve_irr(c(-initial_investment, stressed_cashflows))
 
     irr_signal <- if (!is.na(irr_stressed) && irr_stressed >= target_irr) {
       "STRONG"
@@ -76,7 +87,7 @@ run_irr_engine <- function(core_results_df) {
       irr_stressed = irr_stressed,
       coupon_contribution = coupon_contribution,
       fee_contribution = fee_contribution,
-      kicker_contribution = kicker_contribution,
+      kicker_contribution = scenario_kicker / initial_investment,
       recovery_contribution = recovery_contribution,
       recovery_contribution_stressed = stressed_terminal / initial_investment,
       irr_signal = irr_signal,
