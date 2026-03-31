@@ -22,6 +22,16 @@ Why is epsilon the primary defense object:
 - It can create false confidence if not governed with calibration, traceability, and evidence retention controls.
 - It is where the committee challenge converges: “How robust is the decision if perturbations are slightly different?”
 
+## Secondary Defense Object: Spread Engine and Liability Stack
+
+The capital stack extension introduces a second governed defense object: **liability coverage spread integrity**. While epsilon governs asset-level stochastic perturbation risk, the spread engine governs whether private credit income remains sufficient to cover annuity obligations under stress.
+
+Defense focus for the spread object:
+- Liability assumptions are centralized in `[liability]` TOML controls (`payout_rate`, `duration_years`, `inflation_sensitivity`, `insurer_solvency_buffer`).
+- Credit income assumptions are centralized in `[credit]` TOML controls and stress-adjusted with scenario-level LGD proxies.
+- Cross-scenario outputs are normalized to `SOLVENT/WATCH/BREACH`, providing auditable escalation states.
+- Headroom breaches are first-class events in metadata artifacts and terminal summaries.
+
 ## Controls Matrix 
 This matrix is the authoritative reference set for the appendix. Detailed control procedures, test scripts, and owner attestations are to be defined in the Controls Framework artifact set.
 
@@ -39,6 +49,9 @@ This matrix is the authoritative reference set for the appendix. Detailed contro
 | CTRL-GOV-01 | Segregation of duties | Privileged access | CC6 | ML4 |
 | CTRL-GOV-02 | Exception governance | Risk acceptance | CC3 | ML4 |
 | CTRL-GOV-03 | Assurance reporting | Governance oversight | CC2 | ML4 |
+| CTRL-LIA-01 | Liability assumption ownership and approval traceability | Governance and risk ownership | CC3, CC8 | ML4 |
+| CTRL-LIA-02 | Liability assumption change review cadence | Change management | CC8 | ML4 |
+| CTRL-LIA-03 | Breach escalation governance (SOLVENT/WATCH/BREACH) | Incident and exception governance | CC7, CC3 | ML4 |
 
 ## Epsilon Control Interpretation Layer
 
@@ -59,6 +72,11 @@ The matrix above is interpreted for epsilon-specific assurance as follows:
 ### D) Governance Controls
 - **CTRL-GOV-01 / CTRL-GOV-02 / CTRL-GOV-03** ensure authority boundaries, exception pathways, and board/committee assurance reporting are explicit.
 - Defense claim: epsilon calibration and override are governed decisions with accountable ownership.
+
+### E) Liability Governance Controls
+- **CTRL-LIA-01 / CTRL-LIA-02** ensure payout-rate and solvency assumptions are operator-owned, reviewed, and approval-traceable.
+- **CTRL-LIA-03** ensures solvency headroom deterioration and breach states trigger governed response pathways.
+- Defense claim: spread coverage decisions remain controlled and challengeable under stress, not discretionary.
 
 ## Required Framework Follow-Through
 
