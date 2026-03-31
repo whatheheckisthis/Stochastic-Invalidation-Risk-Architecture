@@ -1,0 +1,4 @@
+# Live governed datasets must never be committed
+/data/live/*
+!/data/live/.gitkeep
+!/data/live/README.md

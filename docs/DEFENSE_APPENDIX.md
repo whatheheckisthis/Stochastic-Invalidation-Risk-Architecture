@@ -92,3 +92,18 @@ To operationalize this appendix as a true control framework, the following artif
 - Epsilon implementation locus: `scripts/stochastic_invalidation_base_r.R`
 - Technical model framing and IRB boundary: `docs/CREDIT_RISK_LAYER.md`
 - Committee challenge framing and governance gaps: `docs/RISK_COMMITTEE.md`
+
+## Data Governance Controls Addendum
+
+| Control ID | Objective | ISM | SOC 2 | BCBS 239 | E8 ML4 |
+|---|---|---|---|---|---|
+| CTRL-DAT-01 | Manifest-based input registry for governed file activation and mode control | Integrity and configuration verification | CC6, CC7 | Principle 2 | ML4 |
+| CTRL-DAT-02 | SHA-256 hash verification at preflight ingestion gate | Integrity verification controls | CC6, CC7 | Principle 3, Principle 6 | ML4 |
+| CTRL-DAT-03 | Lineage record per governed dataset | Records integrity and traceability | CC6, CC7 | Principle 3 | ML4 |
+| CTRL-DAT-04 | Live/synthetic segregation at folder level with git policy enforcement | Data handling segregation | CC6 | Principle 2 | ML4 |
+
+## Non-goals Register Addendum (Data Architecture)
+
+- `data/live/` is not a data lake or managed repository.
+- Manifest governance does not replace institutional enterprise data governance.
+- SHA-256 verification confirms file integrity at ingestion time and is not provenance certification.

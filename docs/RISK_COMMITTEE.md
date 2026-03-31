@@ -74,3 +74,12 @@
 9. Assign liability assumption governance owner (`payout_rate`, inflation sensitivity, duration, solvency buffer).
 10. Ratify WATCH threshold calibration method and review frequency.
 11. Approve solvency BREACH escalation workflow (hedging, reallocation, notification).
+
+## 8) Data Governance Architecture (Manifest + Lineage + Hash Controls)
+
+| ID | Committee Question | Architecture-Backed Response | Evidence Basis | Gap Status |
+|---|---|---|---|---|
+| 8.1 | Who owns data manifest approval authority? | Manifest approval authority is assigned to the operator-controlled Data Governance Approver role; live dataset activation requires populated `reviewer`, `approval_ref`, `approved_by`, and `approved_date` fields under change control. | `data/manifest/data_manifest.toml`, `data/manifest/manifest_schema.md`. | **Operator ownership declared; process execution external.** |
+| 8.2 | What is the escalation path for hash verification failures? | `scripts/00_env_check.R` halts execution when any active live file hash is missing/mismatched. Synthetic hash issues emit warnings. Escalation target is Data Governance Approver and Risk Operations Lead per operator runbook. | `scripts/00_env_check.R`, `data/live/README.md`. | **Technical gate closed; escalation workflow operator-runbook controlled.** |
+| 8.3 | What is the live file onboarding procedure? | Live onboarding requires: file placement in `data/live/`, manifest registration with status/mode/lineage/hash fields, lineage record creation, and approved change reference before ingestion. | `data/live/README.md`, `data/manifest/manifest_schema.md`, `data/lineage/README.md`. | Closed by architecture (repository boundary). |
+| 8.4 | How is synthetic mode disclosure enforced for live decisions? | Load stage emits explicit synthetic-mode terminal warning and persists governed metadata (`data_mode`, `file_id`, `lineage_ref`, `manifest_version`, `hash_verified`) to run artifacts. | `scripts/01_load_data.R`, `run_all.R`. | Closed by architecture (repository boundary). |

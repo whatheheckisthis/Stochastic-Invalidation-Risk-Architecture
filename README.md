@@ -35,7 +35,7 @@ Parses `config/sira.toml` via `RcppTOML` and exposes a single named list `CFG` t
 
 **3. Load inputs (`scripts/01_load_data.R`)**
 
-Reads CSV, RDS, or RData files from the path declared in `CFG$data$path` when provided. Falls back to deterministic synthetic defaults when the directory is empty — seed set from `CFG$runtime$seed`. The engine produces valid output in either case.
+Consumes `data/manifest/data_manifest.toml` and loads only active governed files for the preflight-selected `data_mode` (`live` or `synthetic`). Live/synthetic segregation is enforced at folder level with SHA-256 validation in preflight and lineage reference capture in run metadata.
 
 **4. Run analysis (`scripts/02_analysis.R`)**
 
@@ -87,7 +87,11 @@ All scenario parameters — shape, exponent, ruin threshold, shock multiplier, F
 ├── config/
 │   └── sira.toml                # Canonical operator configuration — declared-intent register
 ├── data/
-│   └── .gitkeep                 # Drop CSV/RDS/RData here; synthetic defaults used if empty
+│   ├── README.md                # Data governance notice
+│   ├── live/                    # Live drop-zone (never committed)
+│   ├── synthetic/               # Canonical governed synthetic datasets
+│   ├── manifest/                # Input registry + schema
+│   └── lineage/                 # Per-file lineage records
 ├── scripts/
 │   ├── 00_env_check.R           # Preflight: R version, packages, paths
 │   ├── 00_config.R              # TOML loader; exposes CFG and NEON globals
@@ -153,3 +157,9 @@ Rscript run_all.R
 > Not affiliated with or endorsed by Common Criteria, Basel II/III, BCBS 239, FRTB,
 > ISO 27001, ISO 27005, Essential Eight ML3/ML4, SOC 2, SR 11-7, or any equivalent
 > evaluation framework.
+
+- **NG-010:** `data/live/` is not a data lake or managed repository; it is a controlled staging folder only.
+
+- **NG-011:** Manifest controls in-repo ingestion governance only and do not replace enterprise data governance authorities.
+
+- **NG-012:** SHA-256 checks confirm integrity at ingestion but do not constitute provenance certification.
