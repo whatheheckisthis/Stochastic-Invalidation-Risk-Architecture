@@ -78,6 +78,20 @@ All scenario parameters — shape, exponent, ruin threshold, shock multiplier, F
 
 ---
 
+## Valuation & Deal Intelligence Layer
+
+SIRA extends the capital stack with stress-conditioned valuation lenses that consume in-session outputs from the core scenario engine and spread layer:
+
+- `scripts/20_dcf.R` — stress-conditioned DCF valuation and impairment signal.
+- `scripts/21_ma.R` — distressed book acquisition screening (ACQUIRE/REVIEW/PASS).
+- `scripts/22_accretion.R` — accretion/dilution spread delta under stressed yield overlays.
+- `scripts/23_lbo.R` — DSCR and stressed IRR leverage viability.
+- `scripts/24_irr.R` — base/stressed IRR attribution decomposition.
+- `scripts/25_deal_summary.R` — unified committee summary with worst-case and dominant risk.
+
+Execution sequence in `run_all.R` is strictly ordered:
+`00_env_check -> 00_config -> 01_load_data -> 02_analysis -> 03_visualize -> 10_liability_engine -> 11_credit_deployment -> 12_spread_stress -> 13_capital_stack_viz -> 20_dcf -> 21_ma -> 22_accretion -> 23_lbo -> 24_irr -> 25_deal_summary`.
+
 ## Repository structure
 
 ```text
@@ -101,7 +115,13 @@ All scenario parameters — shape, exponent, ruin threshold, shock multiplier, F
 │   ├── 10_liability_engine.R
 │   ├── 11_credit_deployment.R
 │   ├── 12_spread_stress.R
-│   └── 13_capital_stack_viz.R
+│   ├── 13_capital_stack_viz.R
+│   ├── 20_dcf.R
+│   ├── 21_ma.R
+│   ├── 22_accretion.R
+│   ├── 23_lbo.R
+│   ├── 24_irr.R
+│   └── 25_deal_summary.R
 └── output/
     ├── sell_hold_signals.png    # Generated on run
     ├── capital_stack_spread.png # Generated on run
@@ -163,3 +183,6 @@ Rscript run_all.R
 - **NG-011:** Manifest controls in-repo ingestion governance only and do not replace enterprise data governance authorities.
 
 - **NG-012:** SHA-256 checks confirm integrity at ingestion but do not constitute provenance certification.
+
+
+- **NG-013:** IRR outputs are analytical attribution outputs and are not audited investment return attestations.

@@ -66,3 +66,57 @@ fee_income = 9000000
 equity_kicker_value = 4000000
 illiquidity_premium = 0.018
 default_rate_assumption = 0.03
+
+[dcf]
+face_value = 100.0
+coupon_rate = 0.095
+term_years = 5
+discount_rate_base = 0.09
+discount_rate_stressed = 0.125
+recovery_override = 0.45
+impairment_threshold = 0.20
+
+[ma]
+ask_price = 350.0
+book_face_value = 420.0
+synergy_yield_uplift = 18.0
+integration_cost = 12.0
+minimum_discount_to_par = 0.12
+
+[accretion]
+existing_yield = 0.062
+existing_aum = 980000000
+target_yield = 0.102
+target_size = 220000000
+obligation_rate = 0.045
+neutral_band = 0.0005
+
+[lbo]
+equity_contribution = 120.0
+debt_amount = 240.0
+debt_cost = 0.085
+hold_period_years = 4
+exit_multiple = 6.5
+ebitda_proxy = 58.0
+min_dscr = 1.40
+min_irr_threshold = 0.12
+
+[irr]
+initial_investment = 100.0
+coupon_cashflows = [9.5, 9.5, 9.5, 9.5, 9.5]
+fee_income = 2.0
+equity_kicker_realised = 3.0
+terminal_recovery = 52.0
+target_irr = 0.14
+floor_irr = 0.09
+
+[annuity]
+type = "fixed"
+
+[annuity.indexed]
+floor_rate = 0.02
+participation_rate = 0.80
+index_cap_rate = 0.08
+
+[credit_type]
+type = "direct_lending"

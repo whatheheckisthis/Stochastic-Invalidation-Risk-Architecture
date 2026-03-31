@@ -107,3 +107,27 @@ To operationalize this appendix as a true control framework, the following artif
 - `data/live/` is not a data lake or managed repository.
 - Manifest governance does not replace institutional enterprise data governance.
 - SHA-256 verification confirms file integrity at ingestion time and is not provenance certification.
+
+## Valuation Layer Controls Addendum
+
+| Control ID | Objective | ISM | SOC 2 | SR 11-7 | E8 ML4 |
+|---|---|---|---|---|---|
+| CTRL-VAL-01 | DCF stress parameterisation governance | Integrity and configuration verification | CC8 | Outcomes Analysis | ML4 |
+| CTRL-VAL-02 | M&A threshold approval and override governance | Risk ownership and exception handling | CC3, CC8 | Model Boundary and Challenge | ML4 |
+| CTRL-VAL-03 | LBO leverage and DSCR floor controls | Stress and resilience controls | CC7 | Ongoing Monitoring | ML4 |
+| CTRL-VAL-04 | IRR target/floor change governance | Change control and monitoring | CC8 | Ongoing Monitoring | ML4 |
+
+### Valuation Control Interpretation
+
+- **CTRL-VAL-01** ensures DCF discount/recovery stress parameters are owner-approved and evidence-backed before run activation.
+- **CTRL-VAL-02** ensures acquisition decisions are bounded by committee-ratified thresholds with explicit override accountability.
+- **CTRL-VAL-03** ensures leverage amplification controls remain challengeable through DSCR and stressed IRR guardrails.
+- **CTRL-VAL-04** ensures IRR floor/target adjustments are governed changes with monitoring continuity.
+
+## Non-goals Register Addendum (Valuation Intelligence)
+
+- Not a live trading or execution system.
+- Not a regulatory capital model.
+- Not a substitute for instrument-level credit underwriting.
+- Not an actuarial valuation engine.
+- IRR output is analytical attribution and not an audited return statement.
