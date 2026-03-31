@@ -46,6 +46,11 @@ safe_stage("source scripts/22_accretion.R", source("scripts/22_accretion.R"))
 safe_stage("source scripts/23_lbo.R", source("scripts/23_lbo.R"))
 safe_stage("source scripts/24_irr.R", source("scripts/24_irr.R"))
 safe_stage("source scripts/25_deal_summary.R", source("scripts/25_deal_summary.R"))
+safe_stage("source scripts/30_bs_core.R", source("scripts/30_bs_core.R"))
+safe_stage("source scripts/31_recovery_put.R", source("scripts/31_recovery_put.R"))
+safe_stage("source scripts/32_kicker_call.R", source("scripts/32_kicker_call.R"))
+safe_stage("source scripts/33_annuity_floor.R", source("scripts/33_annuity_floor.R"))
+safe_stage("source scripts/34_vol_surface.R", source("scripts/34_vol_surface.R"))
 
 run_start <- Sys.time()
 cat(sprintf("%s%s==============================================%s\n", NEON$bold, NEON$cyan, NEON$reset))
@@ -71,13 +76,18 @@ cat(sprintf("%sData governance metadata: %s%s\n", NEON$green, data_governance_ar
 
 results <- safe_stage("analysis", run_sira_analysis(load_output = loaded))
 plot_file <- safe_stage("visualize", visualize_sira(results_df = results))
-spread_results <- safe_stage("spread_stress", run_spread_stress(core_results_df = results))
-capital_outputs <- safe_stage("capital_stack_viz", visualize_capital_stack(spread_stress_output = spread_results))
+spread_results_base <- safe_stage("spread_stress_base", run_spread_stress(core_results_df = results))
 dcf_results <- safe_stage("dcf_engine", run_dcf_engine(core_results_df = results, load_output = loaded))
+vol_surface <- safe_stage("vol_surface", build_vol_surface())
+recovery_put_results <- safe_stage("recovery_put", run_recovery_put_engine(core_results_df = results, vol_surface_df = vol_surface))
+kicker_call_results <- safe_stage("kicker_call", run_kicker_call_engine(dcf_results_df = dcf_results, vol_surface_df = vol_surface))
+annuity_floor_results <- safe_stage("annuity_floor", run_annuity_floor_engine(spread_stress_output = spread_results_base, vol_surface_df = vol_surface))
+spread_results <- safe_stage("spread_stress", run_spread_stress(core_results_df = results, annuity_floor_df = annuity_floor_results))
+capital_outputs <- safe_stage("capital_stack_viz", visualize_capital_stack(spread_stress_output = spread_results))
 ma_results <- safe_stage("ma_engine", run_ma_engine(dcf_results_df = dcf_results))
 accretion_results <- safe_stage("accretion_engine", run_accretion_engine(spread_stress_output = spread_results))
 lbo_results <- safe_stage("lbo_engine", run_lbo_engine(dcf_results_df = dcf_results))
-irr_results <- safe_stage("irr_engine", run_irr_engine(core_results_df = results))
+irr_results <- safe_stage("irr_engine", run_irr_engine(core_results_df = results, kicker_results_df = kicker_call_results))
 deal_summary <- safe_stage(
   "deal_summary",
   run_deal_summary(

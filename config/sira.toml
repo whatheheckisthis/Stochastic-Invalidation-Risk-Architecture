@@ -120,3 +120,38 @@ index_cap_rate = 0.08
 
 [credit_type]
 type = "direct_lending"
+
+[vol_surface]
+base_firm_vol = 0.35
+base_equity_vol = 0.40
+base_portfolio_vol = 0.18
+
+[options]
+convergence_tolerance = 0.12
+
+[options.recovery_put]
+firm_value = 360.0
+debt_face_value = 420.0
+risk_free_rate = 0.035
+firm_volatility = 0.35
+resolution_horizon = 2.0
+
+[options.kicker_call]
+equity_value_entry = 150.0
+strike_price = 140.0
+risk_free_rate = 0.035
+equity_volatility = 0.40
+hold_period_years = 4.0
+
+[options.kicker_call.credit_type_sigma_multiplier]
+direct_lending = 0.85
+mezzanine = 1.20
+distressed = 1.35
+special_situations = 1.10
+
+[options.annuity_floor]
+portfolio_return_current = 0.07
+floor_rate = 0.02
+risk_free_rate = 0.03
+return_volatility = 0.18
+duration_years = 5.0
