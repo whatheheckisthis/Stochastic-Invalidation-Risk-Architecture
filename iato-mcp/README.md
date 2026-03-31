@@ -20,3 +20,7 @@ configuration.
 ```bash
 bash iato-mcp/orchestrator/dispatch.sh state_check "" iato-mcp/config/environments/workstation.xml
 ```
+
+
+## Documentation
+- `docs/MCP_ORCHESTRATION_REFERENCE.md` — implementation architecture and control reference.
