@@ -1,74 +1,86 @@
 # ============================================================================
 # Script Name : 31_recovery_put.R
-# Purpose     : Implicit recovery put analytics for distressed bond recovery.
+# Purpose     : Recovery put engine with Merton/Haugh leverage-effect feedback.
 # ============================================================================
 
 run_recovery_put_engine <- function(core_results_df, vol_surface_df) {
-  cat(sprintf("%s%s[31/34] recovery_put -- %s%s\n",
+  cat(sprintf("%s%s[31/36] recovery_put -- %s%s\n",
               NEON$bold, NEON$cyan, format(Sys.time(), "%Y-%m-%d %H:%M:%S"), NEON$reset))
 
   cfg <- CFG$options$recovery_put
   tol <- as.numeric(CFG$options$convergence_tolerance)
+  q <- as.numeric(CFG$options$dividend_yield)
 
-  S <- as.numeric(cfg$firm_value)
-  K <- as.numeric(cfg$debt_face_value)
+  V_base <- as.numeric(cfg$firm_value)
+  D <- as.numeric(cfg$debt_face_value)
   r <- as.numeric(cfg$risk_free_rate)
   sigma_base <- as.numeric(cfg$firm_volatility)
   T <- as.numeric(cfg$resolution_horizon)
 
-  base_greeks <- bsm_price_greeks(S = S, K = K, r = r, sigma = sigma_base, T = T, context = "recovery_put_base")
+  E_base <- as.numeric(CFG$options$kicker_call$equity_value_entry)
 
   merged <- merge(
-    core_results_df[, c("asset_id", "scenario", "stressed_recovery")],
-    vol_surface_df[, c("scenario", "firm_sigma")],
-    by = "scenario",
-    all.x = TRUE,
-    sort = FALSE
+    aggregate(stressed_recovery ~ scenario, core_results_df, mean),
+    vol_surface_df[, c("scenario", "firm_sigma", "equity_sigma")],
+    by = "scenario", all.x = TRUE, sort = FALSE
   )
 
-  merged$firm_sigma[is.na(merged$firm_sigma)] <- sigma_base
+  rows <- lapply(seq_len(nrow(merged)), function(i) {
+    sc <- merged$scenario[i]
+    rec <- as.numeric(merged$stressed_recovery[i])
+    V_stressed <- max(1e-6, D * rec)
+    E_stressed <- max(1e-6, E_base * rec)
 
-  merged$scenario_sigma <- mapply(function(sc, sigma_in, stressed_recovery) {
-    if (sc == "Counterparty Default") {
-      severity <- pmax(0, 1 - as.numeric(stressed_recovery))
-      return(pmax(1e-6, sigma_in * (1 + severity)))
+    sigma_stressed <- as.numeric(merged$firm_sigma[i])
+    sigma_equity_stressed <- as.numeric(merged$equity_sigma[i])
+    sigma_leverage_adjusted <- max(1e-6, sigma_equity_stressed * (E_stressed / V_stressed))
+
+    p_base <- bsm_price_greeks(S = V_base, K = D, r = r, sigma = sigma_base, T = T, q = q,
+                               context = paste0("recovery_put_", gsub(" ", "_", sc), "_base"))$put_price
+    p_stressed <- bsm_price_greeks(S = V_stressed, K = D, r = r, sigma = sigma_stressed, T = T, q = q,
+                                   context = paste0("recovery_put_", gsub(" ", "_", sc), "_stressed"))$put_price
+    p_lev <- bsm_price_greeks(S = V_stressed, K = D, r = r, sigma = sigma_leverage_adjusted, T = T, q = q,
+                              context = paste0("recovery_put_", gsub(" ", "_", sc), "_leverage"))$put_price
+
+    implied_base <- pmax(0, pmin(1, 1 - (p_base / D)))
+    implied_stress <- pmax(0, pmin(1, 1 - (p_stressed / D)))
+    implied_lev <- pmax(0, pmin(1, 1 - (p_lev / D)))
+
+    conv_base <- abs(implied_base - rec) <= tol
+    conv_stress <- abs(implied_stress - rec) <= tol
+    conv_lev <- abs(implied_lev - rec) <= tol
+
+    convergence_surface <- if (conv_base && conv_stress && conv_lev) {
+      "HIGH_CONFIDENCE"
+    } else if (conv_base && !(conv_stress && conv_lev)) {
+      "VOL_SENSITIVE"
+    } else {
+      "MODEL_REVIEW_REQUIRED"
     }
-    sigma_in
-  }, merged$scenario, merged$firm_sigma, merged$stressed_recovery)
-
-  stress_res <- lapply(seq_len(nrow(merged)), function(i) {
-    greeks <- bsm_price_greeks(
-      S = S,
-      K = K,
-      r = r,
-      sigma = as.numeric(merged$scenario_sigma[i]),
-      T = T,
-      context = sprintf("recovery_put_%s", gsub(" ", "_", merged$scenario[i]))
-    )
-
-    implied_recovery <- pmax(S - K, 0) / K
-    convergence_signal <- ifelse(abs(implied_recovery - as.numeric(merged$stressed_recovery[i])) <= tol,
-                                 "CONVERGENT", "DIVERGENT")
 
     data.frame(
-      asset_id = merged$asset_id[i],
-      scenario = merged$scenario[i],
-      put_price_base = base_greeks$put_price,
-      put_price_stressed = greeks$put_price,
-      implied_recovery_bsm = implied_recovery,
-      sira_stressed_recovery = as.numeric(merged$stressed_recovery[i]),
-      convergence_signal = convergence_signal,
-      delta_put = greeks$delta_put,
-      vega = greeks$vega,
+      scenario = sc,
+      put_price_base = p_base,
+      put_price_stressed = p_stressed,
+      put_price_leverage_adjusted = p_lev,
+      sigma_base = sigma_base,
+      sigma_stressed = sigma_stressed,
+      sigma_leverage_adjusted = sigma_leverage_adjusted,
+      implied_recovery_base = implied_base,
+      implied_recovery_stressed = implied_stress,
+      implied_recovery_leverage_adjusted = implied_lev,
+      sira_stressed_recovery = rec,
+      convergence_surface = convergence_surface,
       stringsAsFactors = FALSE
     )
   })
 
-  out_df <- do.call(rbind, stress_res)
-  cat(sprintf("%s%s[31/34] recovery_put -- complete -- divergent=%d%s\n",
+  out_df <- do.call(rbind, rows)
+  cat(sprintf("%s%s[31/36] recovery_put -- complete -- high_confidence=%d review_required=%d%s\n",
               NEON$bold,
               NEON$cyan,
-              sum(out_df$convergence_signal == "DIVERGENT", na.rm = TRUE),
+              sum(out_df$convergence_surface == "HIGH_CONFIDENCE", na.rm = TRUE),
+              sum(out_df$convergence_surface == "MODEL_REVIEW_REQUIRED", na.rm = TRUE),
               NEON$reset))
   out_df
 }

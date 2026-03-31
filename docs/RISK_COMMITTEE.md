@@ -103,3 +103,12 @@
 15. Ratify IRR floor/target approval authority and breach escalation workflow.
 16. Define annuity type selection governance (fixed/variable/indexed).
 17. Establish private credit type classification authority and challenge standard.
+
+## 10) Options Layer Governance Addendum (Haugh 2016 Alignment)
+
+| ID | Committee Question | Architecture-Backed Response | Evidence Basis | Gap Status |
+|---|---|---|---|---|
+| 10.1 | Why does `mu` not appear in BSM pricing? | Risk-neutral pricing removes physical drift `mu` through change of measure; option value depends on `r, sigma, S, K, T`. For governance this is a feature because `mu` is unobservable and scenario-dependent. | `scripts/30_bs_core.R`. | Closed by architecture. |
+| 10.2 | Why is the vol surface not market-calibrated? | SIRA is air-gap compatible and consumes no live options feed. Surface is scenario-governed from TOML multipliers and stress logic, so operator validation memo is required for multiplier reasonableness. | `scripts/34_vol_surface.R`, `config/sira.toml`. | **Documented gap — operator response required:** evidence pack for scenario multipliers. |
+| 10.3 | What is the leverage effect amplification mechanism? | Per Haugh/Merton, as equity falls relative to firm value, implied volatility rises. Recovery put engine applies leverage-adjusted sigma and can amplify impairment signals under stress by design. | `scripts/31_recovery_put.R`. | Closed by architecture (disclosure required). |
+| 10.4 | What does positive theta mean in context? | Deep ITM puts in high-rate regimes can show positive theta. SIRA flags this (`POSITIVE_THETA_FLAG`) for governance review, especially under Hyper-Inflationary scenarios. | `scripts/30b_greeks.R`. | Closed by architecture. |

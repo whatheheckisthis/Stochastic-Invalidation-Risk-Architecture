@@ -138,6 +138,12 @@ Rscript run_all.R
 
 ## Non-goals
 
+- BSM replication assumes continuous trading; SIRA delta-hedge output is analytical stress evidence only.
+- Volatility surface is scenario-governed and not calibrated to observed market option prices.
+- Merton structural linkage is explanatory framing only; full traded-equity calibration is not implemented.
+- Greeks are BSM/GBM Greeks and do not include stochastic-volatility dynamics.
+- Risk-neutral pricing removes physical drift `mu`; SIRA does not estimate equity risk premia.
+
 - **NG-001:** Not a live risk system — outputs are stochastic simulations against synthetic
   or operator-supplied data; no MtM or real-time feed integration.
   - *Exception:* External data may be substituted via the path declared in `CFG$data$path`;

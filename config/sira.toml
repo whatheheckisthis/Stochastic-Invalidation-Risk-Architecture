@@ -125,9 +125,13 @@ type = "direct_lending"
 base_firm_vol = 0.35
 base_equity_vol = 0.40
 base_portfolio_vol = 0.18
+skew_factor = 0.20
 
 [options]
+dividend_yield = 0.0
 convergence_tolerance = 0.12
+hedge_tolerance = 0.001
+hedge_steps = 24
 
 [options.recovery_put]
 firm_value = 360.0
