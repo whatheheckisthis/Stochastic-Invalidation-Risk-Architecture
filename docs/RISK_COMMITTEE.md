@@ -83,3 +83,23 @@
 | 8.2 | What is the escalation path for hash verification failures? | `scripts/00_env_check.R` halts execution when any active live file hash is missing/mismatched. Synthetic hash issues emit warnings. Escalation target is Data Governance Approver and Risk Operations Lead per operator runbook. | `scripts/00_env_check.R`, `data/live/README.md`. | **Technical gate closed; escalation workflow operator-runbook controlled.** |
 | 8.3 | What is the live file onboarding procedure? | Live onboarding requires: file placement in `data/live/`, manifest registration with status/mode/lineage/hash fields, lineage record creation, and approved change reference before ingestion. | `data/live/README.md`, `data/manifest/manifest_schema.md`, `data/lineage/README.md`. | Closed by architecture (repository boundary). |
 | 8.4 | How is synthetic mode disclosure enforced for live decisions? | Load stage emits explicit synthetic-mode terminal warning and persists governed metadata (`data_mode`, `file_id`, `lineage_ref`, `manifest_version`, `hash_verified`) to run artifacts. | `scripts/01_load_data.R`, `run_all.R`. | Closed by architecture (repository boundary). |
+
+## 9) Valuation and Deal Intelligence Governance
+
+| ID | Committee Question | Architecture-Backed Response | Evidence Basis | Gap Status |
+|---|---|---|---|---|
+| 9.1 | Who sets the DCF impairment threshold and how often is it reviewed? | DCF impairment trigger is TOML-governed via `CFG$dcf$impairment_threshold` and applied deterministically in `scripts/20_dcf.R`; owner identity and cadence are not encoded. | `config/sira.toml`, `scripts/20_dcf.R`. | **Documented gap — operator response required:** assign threshold owner, review cadence, and override protocol. |
+| 9.2 | Who approves the M&A minimum discount-to-par discipline threshold? | Threshold is codified under `CFG$ma$minimum_discount_to_par` and consumed by `scripts/21_ma.R` in ACQUIRE/REVIEW/PASS logic. Governance authority remains external to runtime. | `config/sira.toml`, `scripts/21_ma.R`. | **Documented gap — operator response required:** define approval forum and exception escalation. |
+| 9.3 | Who owns LBO minimum DSCR and minimum IRR thresholds? | DSCR and stressed IRR viability thresholds are parameterized (`CFG$lbo$min_dscr`, `CFG$lbo$min_irr_threshold`) and used by `scripts/23_lbo.R`; ownership and approval chain are not represented in code. | `config/sira.toml`, `scripts/23_lbo.R`. | **Documented gap — operator response required:** nominate treasury/sponsor owner and committee approver. |
+| 9.4 | Who approves IRR target and floor thresholds? | IRR floor/target gates are TOML controls (`CFG$irr$floor_irr`, `CFG$irr$target_irr`) and drive stressed signal states in `scripts/24_irr.R`. Governance assignment is external. | `config/sira.toml`, `scripts/24_irr.R`. | **Documented gap — operator response required:** ratify owner, change cadence, and evidence retention standard. |
+| 9.5 | How is annuity type selected for fixed/variable/indexed payout behavior? | Annuity type is selected by `CFG$annuity$type` and modifier parameters under `[annuity.indexed]`; payout behavior is applied in deal summary aggregation layer for stress reporting. | `config/sira.toml`, `scripts/25_deal_summary.R`. | **Documented gap — operator response required:** assign actuarial authority for type selection and change control. |
+| 9.6 | Who classifies private credit type and validates appropriateness? | Credit classification is declared at `CFG$credit_type$type` to tag modeling posture for direct lending/mezzanine/distressed variants. Classification governance is not encoded in runtime permissions. | `config/sira.toml`, `scripts/25_deal_summary.R`. | **Documented gap — operator response required:** define accountable classifier and committee challenge process. |
+
+### Additional Operator Actions (Valuation Layer)
+
+12. Assign DCF impairment threshold owner and periodic validation cadence.
+13. Approve and monitor M&A discount discipline threshold with override process.
+14. Establish ownership for LBO DSCR and minimum stressed IRR policy limits.
+15. Ratify IRR floor/target approval authority and breach escalation workflow.
+16. Define annuity type selection governance (fixed/variable/indexed).
+17. Establish private credit type classification authority and challenge standard.

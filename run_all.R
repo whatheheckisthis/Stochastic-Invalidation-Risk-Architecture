@@ -40,6 +40,12 @@ safe_stage("source scripts/10_liability_engine.R", source("scripts/10_liability_
 safe_stage("source scripts/11_credit_deployment.R", source("scripts/11_credit_deployment.R"))
 safe_stage("source scripts/12_spread_stress.R", source("scripts/12_spread_stress.R"))
 safe_stage("source scripts/13_capital_stack_viz.R", source("scripts/13_capital_stack_viz.R"))
+safe_stage("source scripts/20_dcf.R", source("scripts/20_dcf.R"))
+safe_stage("source scripts/21_ma.R", source("scripts/21_ma.R"))
+safe_stage("source scripts/22_accretion.R", source("scripts/22_accretion.R"))
+safe_stage("source scripts/23_lbo.R", source("scripts/23_lbo.R"))
+safe_stage("source scripts/24_irr.R", source("scripts/24_irr.R"))
+safe_stage("source scripts/25_deal_summary.R", source("scripts/25_deal_summary.R"))
 
 run_start <- Sys.time()
 cat(sprintf("%s%s==============================================%s\n", NEON$bold, NEON$cyan, NEON$reset))
@@ -67,6 +73,23 @@ results <- safe_stage("analysis", run_sira_analysis(load_output = loaded))
 plot_file <- safe_stage("visualize", visualize_sira(results_df = results))
 spread_results <- safe_stage("spread_stress", run_spread_stress(core_results_df = results))
 capital_outputs <- safe_stage("capital_stack_viz", visualize_capital_stack(spread_stress_output = spread_results))
+dcf_results <- safe_stage("dcf_engine", run_dcf_engine(core_results_df = results, load_output = loaded))
+ma_results <- safe_stage("ma_engine", run_ma_engine(dcf_results_df = dcf_results))
+accretion_results <- safe_stage("accretion_engine", run_accretion_engine(spread_stress_output = spread_results))
+lbo_results <- safe_stage("lbo_engine", run_lbo_engine(dcf_results_df = dcf_results))
+irr_results <- safe_stage("irr_engine", run_irr_engine(core_results_df = results))
+deal_summary <- safe_stage(
+  "deal_summary",
+  run_deal_summary(
+    core_results_df = results,
+    spread_stress_output = spread_results,
+    dcf_results = dcf_results,
+    ma_results = ma_results,
+    accretion_results = accretion_results,
+    lbo_results = lbo_results,
+    irr_results = irr_results
+  )
+)
 
 elapsed <- proc.time() - ptm
 cat(sprintf("%s==============================================%s\n", NEON$bold, NEON$reset))
@@ -76,5 +99,7 @@ cat(sprintf("%sElapsed: %.2fs%s\n", NEON$bold, as.numeric(elapsed["elapsed"]), N
 cat(sprintf("%sOutput: %s%s\n", NEON$green, plot_file, NEON$reset))
 cat(sprintf("%sCapital stack plot: %s%s\n", NEON$green, capital_outputs$plot_path, NEON$reset))
 cat(sprintf("%sCapital stack metadata: %s%s\n", NEON$green, capital_outputs$metadata_path, NEON$reset))
+cat(sprintf("%sDeal intelligence metadata: %s%s\n", NEON$green, deal_summary$metadata_path, NEON$reset))
+cat(sprintf("%sDeal worst-case: %s | dominant risk: %s%s\n", NEON$yellow, deal_summary$worst_case, deal_summary$dominant_risk, NEON$reset))
 cat(sprintf("%sExit status: SUCCESS%s\n", NEON$bold, NEON$reset))
 cat(sprintf("%s==============================================%s\n", NEON$bold, NEON$reset))
