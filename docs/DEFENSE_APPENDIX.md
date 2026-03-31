@@ -131,3 +131,24 @@ To operationalize this appendix as a true control framework, the following artif
 - Not a substitute for instrument-level credit underwriting.
 - Not an actuarial valuation engine.
 - IRR output is analytical attribution and not an audited return statement.
+
+## Sigma as Co-Primary Defense Object
+
+Per Black-Scholes sensitivity structure, sigma is co-primary with epsilon because vega transmits volatility governance directly into option valuation and stress P&L attribution. In SIRA, CTRL-OPT-02 (vol surface consistency) is therefore a first-order control objective rather than a secondary modeling detail.
+
+## Options Controls Matrix Addendum
+
+| Control ID | Objective | ISM | SOC 2 | SR 11-7 / FRTB | E8 ML4 |
+|---|---|---|---|---|---|
+| CTRL-OPT-06 | Leverage effect feedback documentation | Governance and risk ownership | CC3 | Conceptual Soundness | ML4 |
+| CTRL-OPT-07 | Arbitrage constraint monitoring on vol surface | Integrity verification controls | CC7 | Ongoing Monitoring | ML4 |
+| CTRL-OPT-08 | Delta-hedge replication error monitoring | Continuous assurance controls | CC7 | Model Validation | ML4 |
+| CTRL-OPT-09 | Positive theta flag governance | Exception governance | CC3 | Ongoing Monitoring | ML4 |
+
+## Non-goals Register Addendum (Options and BSM Layer)
+
+- BSM replication argument assumes continuous trading; private credit is illiquid, so delta-hedging output is analytical stress evidence only.
+- Vol surface is not calibrated to market option prices; `sigma(K,T)` is scenario-governed.
+- Merton connection is analytical framing only; SIRA does not solve full structural calibration from traded equity.
+- Greeks are closed-form BSM Greeks under GBM assumptions and do not model stochastic volatility surface dynamics.
+- Risk-neutral pricing eliminates `mu`; SIRA does not model physical-measure equity risk premium expectations.
