@@ -2,3 +2,4 @@
 /data/live/*
 !/data/live/.gitkeep
 !/data/live/README.md
+notebooks/*.ipynb filter=nbstripout

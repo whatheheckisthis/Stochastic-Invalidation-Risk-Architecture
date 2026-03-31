@@ -112,3 +112,9 @@
 | 10.2 | Why is the vol surface not market-calibrated? | SIRA is air-gap compatible and consumes no live options feed. Surface is scenario-governed from TOML multipliers and stress logic, so operator validation memo is required for multiplier reasonableness. | `scripts/34_vol_surface.R`, `config/sira.toml`. | **Documented gap — operator response required:** evidence pack for scenario multipliers. |
 | 10.3 | What is the leverage effect amplification mechanism? | Per Haugh/Merton, as equity falls relative to firm value, implied volatility rises. Recovery put engine applies leverage-adjusted sigma and can amplify impairment signals under stress by design. | `scripts/31_recovery_put.R`. | Closed by architecture (disclosure required). |
 | 10.4 | What does positive theta mean in context? | Deep ITM puts in high-rate regimes can show positive theta. SIRA flags this (`POSITIVE_THETA_FLAG`) for governance review, especially under Hyper-Inflationary scenarios. | `scripts/30b_greeks.R`. | Closed by architecture. |
+
+## Notebook Reproducibility Addendum
+
+| Committee Question | Architecture-Backed Response |
+|---|---|
+| Can the notebook produce different results on re-run? | No. All draws are seeded from `CFG$runtime$seed`. Re-running from Cell 02 resets to identical state. The session metadata cell (Cell 12) records the seed, timestamp, and package versions for evidence packs. |
