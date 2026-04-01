@@ -626,3 +626,21 @@ Do not register `npm run dev` with Claude Code — use the compiled
 | NG-020 | Risk-neutral pricing removes physical drift µ | SIRA does not estimate equity risk premia or physical-measure return expectations. |
 | NG-021 | Positive theta flags are diagnostic only | Do not constitute hedging recommendations. |
 
+
+
+## License and disclaimer
+
+This project is licensed under the Apache License, Version 2.0.
+See `LICENSE` and `NOTICE` at repository root for full terms.
+
+Derived material use is permitted under license terms. Attribution
+is required. See `NOTICE` for attribution format.
+
+**Academic use notice:** The SIRA codebase, documentation, and
+notebook literature suite must not be used to underpin coursework
+content or submitted as original work in any assessed academic
+context. This material is a practitioner artefact. All analytical
+claims should be traced to their cited primary sources. See
+`notebooks/DISCLAIMER.md` for full terms and permitted academic
+uses.
+

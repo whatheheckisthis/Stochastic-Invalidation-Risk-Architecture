@@ -1,5 +1,17 @@
 # SIRA Notebook — Model Risk Reviewer Checklist
 
+> **License:** Apache License 2.0 — derived material use
+> permitted under license terms. See `LICENSE` and `NOTICE`
+> at repository root.
+>
+> **Academic use:** This material must not be used to underpin
+> coursework content or submitted as original work in any
+> assessed academic context. It is a practitioner artefact,
+> not peer-reviewed literature. Trace all analytical claims
+> to their cited primary sources. See `notebooks/DISCLAIMER.md`
+> for full terms.
+
+
 > Structured checklist for formal model risk review of the
 > SIRA notebook package. Each item maps to a document,
 > a notebook cell, and an evidence artefact.
