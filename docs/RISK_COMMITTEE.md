@@ -118,3 +118,9 @@
 | Committee Question | Architecture-Backed Response |
 |---|---|
 | Can the notebook produce different results on re-run? | No. All draws are seeded from `CFG$runtime$seed`. Re-running from Cell 02 resets to identical state. The session metadata cell (Cell 12) records the seed, timestamp, and package versions for evidence packs. |
+
+## Notebook Documentation Access
+
+| ID | Committee Question | Architecture-Backed Response | Evidence Basis | Gap Status |
+|---|---|---|---|---|
+| ND.1 | Where is the model documentation for the notebook? | The notebook folder contains a self-contained model review package (`SIRA_READER_GUIDE.md`, `SIRA_METHODOLOGY.md`, `SIRA_PATH_RESOLVER.md`, `SIRA_RNORM_RATIONALE.md`, `SIRA_REVIEWER_CHECKLIST.md`). A reviewer can conduct a complete model risk review from the `notebooks/` directory without navigating the wider repository. | `notebooks/` literature suite and `notebooks/sira_scenarios.ipynb`. | Closed by architecture. |
