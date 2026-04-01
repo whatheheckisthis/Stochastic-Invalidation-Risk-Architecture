@@ -1,5 +1,17 @@
 # SIRA — Model Assumptions Registry
 
+> **License:** Apache License 2.0 — derived material use
+> permitted under license terms. See `LICENSE` and `NOTICE`
+> at repository root.
+>
+> **Academic use:** This material must not be used to underpin
+> coursework content or submitted as original work in any
+> assessed academic context. It is a practitioner artefact,
+> not peer-reviewed literature. Trace all analytical claims
+> to their cited primary sources. See `notebooks/DISCLAIMER.md`
+> for full terms.
+
+
 > Governance artefact. Companion to `notebooks/sira_scenarios.ipynb`.
 > Produced as a delivery artefact of the SIRA assurance programme.
 > All formulae and criteria derive from the wider SIRA architecture.

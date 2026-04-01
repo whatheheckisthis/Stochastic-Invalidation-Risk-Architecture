@@ -1,5 +1,17 @@
 # SIRA — Methodology Narrative
 
+> **License:** Apache License 2.0 — derived material use
+> permitted under license terms. See `LICENSE` and `NOTICE`
+> at repository root.
+>
+> **Academic use:** This material must not be used to underpin
+> coursework content or submitted as original work in any
+> assessed academic context. It is a practitioner artefact,
+> not peer-reviewed literature. Trace all analytical claims
+> to their cited primary sources. See `notebooks/DISCLAIMER.md`
+> for full terms.
+
+
 > This document explains why SIRA is built the way it is.
 > It is a narrative companion to the formal assumptions registry
 > (`SIRA_ASSUMPTIONS.md`). Read this for context; read the

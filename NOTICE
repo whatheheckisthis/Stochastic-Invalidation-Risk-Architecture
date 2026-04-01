@@ -1,0 +1,31 @@
+SIRA — Stochastic Invalidation and Risk Architecture
+Copyright 2026 Dhruv Setty
+
+This product includes the IĀTŌ assurance programme artefacts
+and the SIRA quantitative risk engine, developed independently
+as proof-of-concept governance and model risk tooling.
+
+This product is not affiliated with, endorsed by, or derived
+from any proprietary risk management system, regulatory
+framework, or commercial financial model.
+
+Third-party references:
+  Black-Scholes derivation basis:
+    Haugh, M. (2016). The Black-Scholes Model.
+    Columbia University IEOR E4706: Foundations of Financial
+    Engineering. Retrieved from:
+    https://www.columbia.edu/~mh2078/FoundationsFE/BlackScholes.pdf
+
+  Regulatory framework references (cited, not reproduced):
+    Australian Signals Directorate. Essential Eight Maturity
+    Model. https://www.cyber.gov.au/resources-business-and-government/
+    essential-cyber-security/essential-eight
+
+    Australian Signals Directorate. Information Security Manual.
+    https://www.cyber.gov.au/resources-business-and-government/
+    essential-cyber-security/ism
+
+    Board of Governors of the Federal Reserve System. SR 11-7:
+    Guidance on Model Risk Management (2011).
+
+    NIST SP 800-218. Secure Software Development Framework.

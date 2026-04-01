@@ -1,5 +1,17 @@
 # SIRA Notebook — Reader Guide
 
+> **License:** Apache License 2.0 — derived material use
+> permitted under license terms. See `LICENSE` and `NOTICE`
+> at repository root.
+>
+> **Academic use:** This material must not be used to underpin
+> coursework content or submitted as original work in any
+> assessed academic context. It is a practitioner artefact,
+> not peer-reviewed literature. Trace all analytical claims
+> to their cited primary sources. See `notebooks/DISCLAIMER.md`
+> for full terms.
+
+
 > Read this first. It tells you what each file is for,
 > who should read it, and in what order.
 
