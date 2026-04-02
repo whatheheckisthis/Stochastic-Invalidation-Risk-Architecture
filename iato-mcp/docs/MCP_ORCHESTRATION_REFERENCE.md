@@ -4,8 +4,8 @@ This document is a delivery artefact of the IĀTŌ assurance programme, extendin
 
 **Primary documents:**
 
-- [`docs/ETHOS.md`](docs/ETHOS.md) — architectural philosophy and stack rationale
-- [`docs/DELIVERY.md`](docs/DELIVERY.md) — engagement model, delivery artefacts, and GRC control mappings
+- [`docs/ETHOS.md`]([docs/ETHOS.md](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture/blob/a194cb47add291ac553f1808a3e5c297d1edea50/docs/ETHOS.md)) — architectural philosophy and stack rationale
+- [`docs/DELIVERY.md`]([docs/DELIVERY.md](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture/blob/a194cb47add291ac553f1808a3e5c297d1edea50/docs/DELIVERY.md)) — engagement model, delivery artefacts, and GRC control mappings
 
 Read those two documents first. Everything else in this repository is the operational substrate
 that supports them.
