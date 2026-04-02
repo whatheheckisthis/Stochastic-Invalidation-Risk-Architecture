@@ -8,6 +8,14 @@
 > Read [`docs/ETHOS.md`](ETHOS.md) before this document.
 > ETHOS defines the operating model this document operationalises.
 
+| Dimension | Detail |
+|---|---|
+| Platform | JBoss EAP 7 / WildFly lineage |
+| Deployment model | WAR and EAR packaging, enterprise deployment patterns |
+| Management surface | CLI-only — domain mode, no GUI console |
+| Lineage | Legacy Java EE application server architecture |
+| Scope | Enterprise deployment patterns within a governed, auditable execution context |
+
 ---
 
 ## Engagement model
