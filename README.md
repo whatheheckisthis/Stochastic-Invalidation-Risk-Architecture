@@ -1,14 +1,14 @@
-# IĀTŌ — Professional Practice
+# Professional-Practice
 
-**Primary documents:**
+>This repository is bound by the governing documents below. All operative content — determinative schemas, versioned scripts, and auditable artefacts — exists exclusively to satisfy the obligations defined within them and carries no independent scope beyond that purpose. Any work product, configuration, script, or governance document outside those boundaries is outside the declared scope of this practice and must not be interpreted as extending, modifying, or superseding the operating model or engagement framework they define.
 
-- [`docs/ETHOS.md`](docs/ETHOS.md) — architectural philosophy
-  and stack rationale
-- [`docs/DELIVERY.md`](docs/DELIVERY.md) — engagement model,
-  delivery artefacts, and GRC control mappings
+| Document | Location | Governs |
+|---|---|---|
+| ETHOS.md | [`docs/ETHOS.md`](docs/ETHOS.md) | Architectural philosophy and stack rationale |
+| DELIVERY.md | [`docs/DELIVERY.md`](docs/DELIVERY.md) | Engagement model, delivery artefacts, and GRC control mappings |
 
-Read those two documents first. Everything else in this
-repository is the operational substrate that supports them.
+
+# Stochastic-Invalidation-Risk-Architecture (SIRA)
 
 ---
 
@@ -22,7 +22,7 @@ valuation intelligence, and options pricing layer.
 [![Config](https://img.shields.io/badge/Config-TOML%20Declared--Intent-8B5CF6?style=flat-square)](#)
 [![Env](https://img.shields.io/badge/Env-Air--Gapped%20Compatible-333333?style=flat-square)](#)
 
----
+
 
 ## Executive Summary
 
