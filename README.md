@@ -1,3 +1,5 @@
+Start with `docs/ETHOS.md` and `docs/DELIVERY.md`. Everything else is the operational substrate.
+
 # Stochastic Invalidation & Risk Architecture (SIRA)
 
 Distressed bond recovery, stress testing, and signal generation
