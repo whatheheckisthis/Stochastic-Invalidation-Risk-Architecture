@@ -48,3 +48,5 @@ docs/DELIVERY.md,ISM,Evidence artefact production,Delivery framework specifies r
 docs/DELIVERY.md,Essential Eight ML4,Audit logging evidence mapping,Delivery artefact mapping binds MCP session logs to ML4 audit logging objectives,Governance document,FULL,NO,Audit artefact mapping for ML4
 Hyperlink audit (this prompt),ISM,Documentation integrity,FULL,NO
 Navigation graph,ISM,Traceability — primary document chain,FULL,NO
+docs/SIRA_EVIDENCE_GAP_REGISTER.md,SR 11-7,Model Boundary Documentation,Evidence gap register declares bounded pre-data stage limitations and closure paths,Governance document,FULL,NO,Explicit governance boundary for declared evidence gaps
+docs/SIRA_EVIDENCE_GAP_REGISTER.md,SR 11-7,Pre-validation Stage Declaration,Register classifies stochastic output, calibration, and backtesting as governed pre-validation gaps with operator closure actions,Governance document,FULL,NO,Stage declaration prevents misclassification as design failure
