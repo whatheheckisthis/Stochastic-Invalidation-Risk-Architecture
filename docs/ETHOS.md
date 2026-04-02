@@ -1,6 +1,16 @@
 # Professional Practice — Architectural Framework for
 # High-Assurance Systems Engineering
 
+**Primary documents:**
+
+- [`docs/ETHOS.md`](ETHOS.md) — architectural philosophy
+  and stack rationale
+- [`docs/DELIVERY.md`](DELIVERY.md) — engagement model,
+  delivery artefacts, and GRC control mappings
+
+Read those two documents first. Everything else in this
+repository is the operational substrate that supports them.
+
 > This document is a delivery artefact of the IĀTŌ assurance
 > programme. It is the operating model. Every other document in
 > this repository is the operational substrate that satisfies it.
@@ -257,7 +267,7 @@ leaves the local environment.
 | WSL2 / Linux Kernel | Core Development | OS and Library Patching — automated local vulnerability remediation |
 | XML Schema (XSD) | Configuration Management | Data Integrity — schema-enforced verification of infrastructure state |
 
-Full crosswalk: `docs/governance/control-crosswalk.csv`
+Full crosswalk: [`docs/governance/control-crosswalk.csv`](governance/control-crosswalk.csv)
 Implementation detail: `docs/IATO_MCP_ARCHITECTURE.md §5`
 
 ---
@@ -299,9 +309,18 @@ Evidence produced per milestone:
 
 ## References
 
-- `docs/IATO_MCP_ARCHITECTURE.md` — implementation detail
-- `docs/DELIVERY.md` — engagement model and delivery artefacts
+- [`docs/IATO_MCP_ARCHITECTURE.md`](IATO_MCP_ARCHITECTURE.md)
+  — implementation detail for every operating theme in
+  this document
+- [`docs/DELIVERY.md`](DELIVERY.md)
+  — engagement model and delivery artefacts
+- [`docs/governance/control-crosswalk.csv`](governance/control-crosswalk.csv)
+  — full GRC control crosswalk
 - ASD. *Essential Eight Maturity Model.*
+  https://www.cyber.gov.au/resources-business-and-government/
+  essential-cyber-security/essential-eight
 - ASD. *Information Security Manual (ISM).*
+  https://www.cyber.gov.au/resources-business-and-government/
+  essential-cyber-security/ism
 - NIST SP 800-218. *Secure Software Development Framework.*
-- `docs/governance/control-crosswalk.csv`
+  https://csrc.nist.gov/publications/detail/sp/800-218/final

@@ -8,7 +8,7 @@
 > coursework content or submitted as original work in any
 > assessed academic context. It is a practitioner artefact,
 > not peer-reviewed literature. Trace all analytical claims
-> to their cited primary sources. See `notebooks/DISCLAIMER.md`
+> to their cited primary sources. See [`DISCLAIMER.md`](DISCLAIMER.md)
 > for full terms.
 
 
@@ -162,7 +162,7 @@ would require:
 
 1. Updating `CREDIT_RISK_LAYER.md §3.1` to reflect the revised
    distribution rationale
-2. Updating this document (`SIRA_RNORM_RATIONALE.md`) to record
+2. Updating this document ([`SIRA_RNORM_RATIONALE.md`](SIRA_RNORM_RATIONALE.md)) to record
    the governance decision and its evidence basis
 3. Updating `COMPLIANCE_CROSSWALK.csv` if the distribution
    choice maps to a covered control

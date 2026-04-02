@@ -1,5 +1,15 @@
 # SIRA Notebook — Reader Guide
 
+**Primary documents:**
+
+- [`docs/ETHOS.md`](../docs/ETHOS.md) — architectural philosophy
+  and stack rationale
+- [`docs/DELIVERY.md`](../docs/DELIVERY.md) — engagement model,
+  delivery artefacts, and GRC control mappings
+
+Read those two documents first. Everything else in this
+repository is the operational substrate that supports them.
+
 > **License:** Apache License 2.0 — derived material use
 > permitted under license terms. See `LICENSE` and `NOTICE`
 > at repository root.
@@ -8,7 +18,7 @@
 > coursework content or submitted as original work in any
 > assessed academic context. It is a practitioner artefact,
 > not peer-reviewed literature. Trace all analytical claims
-> to their cited primary sources. See `notebooks/DISCLAIMER.md`
+> to their cited primary sources. See [`DISCLAIMER.md`](DISCLAIMER.md)
 > for full terms.
 
 
@@ -67,18 +77,18 @@ This notebook folder is a governed inspection surface over the
 SIRA engine. It does not replace the pipeline (`run_all.R`).
 It does not write to `output/` or modify any governed artefact.
 
-The authoritative governance documents live in `docs/`:
+The authoritative governance documents live in [`docs/`](../docs/):
 
 | Repository document | Relationship to this folder |
 |---|---|
-| `docs/CREDIT_RISK_LAYER.md` | Source of derivation citations in `SIRA_ASSUMPTIONS.md` |
-| `docs/RISK_COMMITTEE.md` | Source of committee questions in `SIRA_REVIEWER_CHECKLIST.md` |
-| `docs/DEFENSE_APPENDIX.md` | Source of epsilon/sigma governance in `SIRA_ASSUMPTIONS.md §4` |
-| `docs/COMPLIANCE_CROSSWALK.csv` | Schema reference for `SIRA_ASSUMPTIONS.md` structure |
-| `README.md` | Non-goals register (NG-001 to NG-021) cited throughout |
+| [`docs/CREDIT_RISK_LAYER.md`](../docs/CREDIT_RISK_LAYER.md) | Source of derivation citations in `SIRA_ASSUMPTIONS.md` |
+| [`docs/RISK_COMMITTEE.md`](../docs/RISK_COMMITTEE.md) | Source of committee questions in `SIRA_REVIEWER_CHECKLIST.md` |
+| [`docs/DEFENSE_APPENDIX.md`](../docs/DEFENSE_APPENDIX.md) | Source of epsilon/sigma governance in `SIRA_ASSUMPTIONS.md §4` |
+| [`docs/COMPLIANCE_CROSSWALK.csv`](../docs/COMPLIANCE_CROSSWALK.csv) | Schema reference for `SIRA_ASSUMPTIONS.md` structure |
+| [`README.md`](../README.md) | Non-goals register (NG-001 to NG-021) cited throughout |
 
 If a citation in this folder says `CREDIT_RISK_LAYER.md §3.1`,
-the full text is in `docs/CREDIT_RISK_LAYER.md`. The notebook
+the full text is in [`docs/CREDIT_RISK_LAYER.md`](../docs/CREDIT_RISK_LAYER.md). The notebook
 folder documents are deliberately self-contained summaries —
 they do not reproduce the source documents in full.
 

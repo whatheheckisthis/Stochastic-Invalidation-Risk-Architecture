@@ -1,6 +1,16 @@
-Start with `docs/ETHOS.md` and `docs/DELIVERY.md`. Everything else is the operational substrate.
+# IĀTŌ — Professional Practice
 
-# Stochastic Invalidation & Risk Architecture (SIRA)
+**Primary documents:**
+
+- [`docs/ETHOS.md`](docs/ETHOS.md) — architectural philosophy
+  and stack rationale
+- [`docs/DELIVERY.md`](docs/DELIVERY.md) — engagement model,
+  delivery artefacts, and GRC control mappings
+
+Read those two documents first. Everything else in this
+repository is the operational substrate that supports them.
+
+---
 
 Distressed bond recovery, stress testing, and signal generation
 across five adverse market scenarios — with a full capital stack,
