@@ -142,7 +142,7 @@ WATCH is valid in the capital stack spread stress layer
 (SOLVENT / WATCH / BREACH) because the graduated response path
 exists there — hedging, reallocation, regulatory notification are
 defined operator responses to spread compression. The asymmetry
-is deliberate and documented (`README.md NG-002`).
+is deliberate and documented ([`sira_non_goals_table.md`](sira_non_goals_table.md#analytical-boundaries--ng-001-to-ng-006)).
 
 ---
 
@@ -199,7 +199,7 @@ analytical stress evidence — not market prices.
 
 ## Why the model has a non-goals register
 
-The non-goals register (`README.md NG-001 to NG-021`) is not
+The non-goals register ([`sira_non_goals_table.md`](sira_non_goals_table.md)) is not
 a liability disclaimer. It is a boundary control instrument.
 
 A model without explicit non-goals is vulnerable to scope creep —
@@ -213,10 +213,15 @@ design time.
 The most important non-goals for the notebook layer are:
 
 - NG-003: Not a full credit model
+  ([`sira_non_goals_table.md`](sira_non_goals_table.md#analytical-boundaries--ng-001-to-ng-006))
 - NG-004: Not a compliance attestation
+  ([`sira_non_goals_table.md`](sira_non_goals_table.md#analytical-boundaries--ng-001-to-ng-006))
 - NG-016: BSM replication assumes continuous liquid trading
+  ([`sira_non_goals_table.md`](sira_non_goals_table.md#options-and-bsm-boundaries--ng-016-to-ng-021))
 - NG-017: Vol surface is scenario-governed, not market-calibrated
+  ([`sira_non_goals_table.md`](sira_non_goals_table.md#options-and-bsm-boundaries--ng-016-to-ng-021))
 - NG-018: Merton linkage is explanatory framing only
+  ([`sira_non_goals_table.md`](sira_non_goals_table.md#options-and-bsm-boundaries--ng-016-to-ng-021))
 
 These are not admissions of weakness. They are the boundaries
 within which the model's outputs are valid and reliable.

@@ -85,7 +85,7 @@ The authoritative governance documents live in [`docs/`](../docs/):
 | [`docs/RISK_COMMITTEE.md`](../docs/RISK_COMMITTEE.md) | Source of committee questions in `SIRA_REVIEWER_CHECKLIST.md` |
 | [`docs/DEFENSE_APPENDIX.md`](../docs/DEFENSE_APPENDIX.md) | Source of epsilon/sigma governance in `SIRA_ASSUMPTIONS.md §4` |
 | [`docs/COMPLIANCE_CROSSWALK.csv`](../docs/COMPLIANCE_CROSSWALK.csv) | Schema reference for `SIRA_ASSUMPTIONS.md` structure |
-| [`README.md`](../README.md) | Non-goals register (NG-001 to NG-021) cited throughout |
+| [`notebooks/sira_non_goals_table.md`](sira_non_goals_table.md) | Canonical non-goals register (NG-001 to NG-024) cited throughout |
 
 If a citation in this folder says `CREDIT_RISK_LAYER.md §3.1`,
 the full text is in [`docs/CREDIT_RISK_LAYER.md`](../docs/CREDIT_RISK_LAYER.md). The notebook
@@ -101,4 +101,4 @@ they do not reproduce the source documents in full.
 - Not a market pricing engine
 - Not a live risk system
 
-Full non-goals register: `README.md NG-001 to NG-021`
+Full non-goals register: [`notebooks/sira_non_goals_table.md`](sira_non_goals_table.md)

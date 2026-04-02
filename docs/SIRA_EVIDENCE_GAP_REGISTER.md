@@ -175,6 +175,20 @@ three gaps, in dependency order:
 7. Update `RISK_COMMITTEE.md` gap status entries
    as each gap closes.
 
+8. Append to `notebooks/sira_non_goals_table.md` —
+   add new domain partition after the existing
+   Options and BSM boundaries section:
+
+   **Evidence and validation boundaries —
+   NG-022 to NG-024**
+
+   | ID | Boundary | Detail |
+   |---|---|---|
+   | NG-022 | Executed model outputs not present | The engine is governed at the architecture and documentation layer prior to live data ingestion. No committed run artefact constitutes a production output. See `docs/SIRA_EVIDENCE_GAP_REGISTER.md EG-001`. |
+   | NG-023 | Distribution parameters not empirically calibrated | Beta and Power Law parameters are structurally justified but not fitted to empirical workout data in this repository. Calibration is an operator action item. See `docs/SIRA_EVIDENCE_GAP_REGISTER.md EG-002`. |
+   | NG-024 | No backtesting evidence present | Signal logic has not been evaluated against historical recovery outcomes. Backtesting is an operator action item contingent on a labelled historical dataset. See `docs/SIRA_EVIDENCE_GAP_REGISTER.md EG-003`. |
+
+
 ---
 
 ## Non-goals
