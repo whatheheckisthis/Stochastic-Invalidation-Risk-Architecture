@@ -8,13 +8,13 @@
 > coursework content or submitted as original work in any
 > assessed academic context. It is a practitioner artefact,
 > not peer-reviewed literature. Trace all analytical claims
-> to their cited primary sources. See `notebooks/DISCLAIMER.md`
+> to their cited primary sources. See [`DISCLAIMER.md`](DISCLAIMER.md)
 > for full terms.
 
 
 > This document explains why SIRA is built the way it is.
 > It is a narrative companion to the formal assumptions registry
-> (`SIRA_ASSUMPTIONS.md`). Read this for context; read the
+> ([`SIRA_ASSUMPTIONS.md`](SIRA_ASSUMPTIONS.md)). Read this for context; read the
 > assumptions registry for precision.
 
 ---
@@ -119,7 +119,7 @@ a model output. It is a structural comparison — a visual proof
 that the Gaussian assumption would systematically understate
 downside risk in every scenario SIRA models. It is retained in the
 notebook because removing it would silently remove the evidence base
-for the distribution choice. See `SIRA_RNORM_RATIONALE.md`.
+for the distribution choice. See [`SIRA_RNORM_RATIONALE.md`](SIRA_RNORM_RATIONALE.md).
 
 ---
 

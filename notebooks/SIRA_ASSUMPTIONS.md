@@ -8,7 +8,7 @@
 > coursework content or submitted as original work in any
 > assessed academic context. It is a practitioner artefact,
 > not peer-reviewed literature. Trace all analytical claims
-> to their cited primary sources. See `notebooks/DISCLAIMER.md`
+> to their cited primary sources. See [`DISCLAIMER.md`](DISCLAIMER.md)
 > for full terms.
 
 
@@ -403,10 +403,10 @@ Consistent with `README.md` non-goals register:
 
 ## References
 
-- `docs/CREDIT_RISK_LAYER.md` — LGD/PD framing and distribution rationale
-- `docs/RISK_COMMITTEE.md` — pre-structured committee challenge register
-- `docs/DEFENSE_APPENDIX.md` — epsilon and sigma as co-primary defense objects
-- `docs/COMPLIANCE_CROSSWALK.csv` — component-level coverage assessment
+- [`docs/CREDIT_RISK_LAYER.md`](../docs/CREDIT_RISK_LAYER.md) — LGD/PD framing and distribution rationale
+- [`docs/RISK_COMMITTEE.md`](../docs/RISK_COMMITTEE.md) — pre-structured committee challenge register
+- [`docs/DEFENSE_APPENDIX.md`](../docs/DEFENSE_APPENDIX.md) — epsilon and sigma as co-primary defense objects
+- [`docs/COMPLIANCE_CROSSWALK.csv`](../docs/COMPLIANCE_CROSSWALK.csv) — component-level coverage assessment
 - Haugh (2016). *The Black-Scholes Model.* Columbia IEOR E4706.
 - `README.md` — non-goals register (NG-001 to NG-021)
 

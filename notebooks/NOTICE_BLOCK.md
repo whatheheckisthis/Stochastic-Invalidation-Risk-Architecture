@@ -22,7 +22,7 @@ document below the document title, before any content:
 > coursework content or submitted as original work in any
 > assessed academic context. It is a practitioner artefact,
 > not peer-reviewed literature. Trace all analytical claims
-> to their cited primary sources. See `notebooks/DISCLAIMER.md`
+> to their cited primary sources. See [`DISCLAIMER.md`](DISCLAIMER.md)
 > for full terms.
 ```
 

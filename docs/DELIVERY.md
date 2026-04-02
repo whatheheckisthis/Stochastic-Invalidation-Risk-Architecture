@@ -1,11 +1,21 @@
 # IĀTŌ — Engagement Model and Delivery Framework
 
+**Primary documents:**
+
+- [`docs/ETHOS.md`](ETHOS.md) — architectural philosophy
+  and stack rationale
+- [`docs/DELIVERY.md`](DELIVERY.md) — engagement model,
+  delivery artefacts, and GRC control mappings
+
+Read those two documents first. Everything else in this
+repository is the operational substrate that supports them.
+
 > This document is a delivery artefact of the IĀTŌ assurance
 > programme. It governs the engagement model: what a fixed-term
 > uplift engagement produces, how it is structured, and what
 > control obligations attach to it.
 >
-> Read `docs/ETHOS.md` before this document.
+> Read [`docs/ETHOS.md`](ETHOS.md) before this document.
 > ETHOS defines the operating model this document operationalises.
 
 ---
@@ -313,10 +323,20 @@ engagement to produce audit-ready evidence:
 
 ## References
 
-- `docs/ETHOS.md` — operating model (read before this document)
-- `docs/IATO_MCP_ARCHITECTURE.md` — implementation detail
-- `docs/governance/control-crosswalk.csv` — full crosswalk
+- [`docs/ETHOS.md`](ETHOS.md)
+  — operating model (read before this document)
+- [`docs/IATO_MCP_ARCHITECTURE.md`](IATO_MCP_ARCHITECTURE.md)
+  — implementation detail
+- [`docs/governance/control-crosswalk.csv`](governance/control-crosswalk.csv)
+  — full crosswalk
 - ASD. *Essential Eight Maturity Model.*
+  https://www.cyber.gov.au/resources-business-and-government/
+  essential-cyber-security/essential-eight
 - ASD. *Information Security Manual (ISM).*
+  https://www.cyber.gov.au/resources-business-and-government/
+  essential-cyber-security/ism
 - NIST SP 800-218. *Secure Software Development Framework.*
+  https://csrc.nist.gov/publications/detail/sp/800-218/final
 - SOC 2 Trust Services Criteria (AICPA).
+  https://www.aicpa-cima.com/resources/landing/system-and-
+  organization-controls-soc-suite-of-services
