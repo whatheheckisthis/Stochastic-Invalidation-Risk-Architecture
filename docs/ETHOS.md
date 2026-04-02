@@ -1,5 +1,4 @@
-# Professional Practice — Architectural Framework for
-# High-Assurance Systems Engineering
+# Professional-Practice 
 
 **Primary documents:**
 
