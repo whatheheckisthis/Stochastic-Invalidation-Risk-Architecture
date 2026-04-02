@@ -57,3 +57,10 @@ If the notice block text requires updating:
   4. Do not update recipient documents independently —
      divergence between the canonical text and deployed
      text creates a maintenance liability
+
+
+> **Non-Goals Register:**
+> [`notebooks/sira_non_goals_table.md`](sira_non_goals_table.md)
+> is the authoritative boundary declaration.
+> See [`notebooks/DISCLAIMER.md`](DISCLAIMER.md)
+> for full terms.

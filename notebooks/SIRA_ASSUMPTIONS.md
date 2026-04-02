@@ -386,18 +386,25 @@ memo required to justify against empirical data. (`COMPLIANCE_CROSSWALK.csv`)
 
 ## 7. Non-goals for this notebook
 
-Consistent with `README.md` non-goals register:
+> **Non-Goals Register:** The full runtime boundary
+> declaration for this programme is maintained as a
+> governed artefact at
+> [`notebooks/sira_non_goals_table.md`](sira_non_goals_table.md).
+> That document is the authoritative source. This file
+> is the canonical location.
 
-- Not a replacement for `run_all.R` — the pipeline is the governed
-  execution path. This notebook is an inspection surface only.
-- Not a governed output producer — does not write to `output/`
-  or commit any artefact.
-- Not a live data surface — consumes the same data as the pipeline,
-  governed by the manifest.
-- Not an IRB capital model — BSM and LGD outputs are analytical
-  stress instrumentation. (`NG-003`, `NG-004`)
-- Not a market pricing engine — BSM put prices are not market
-  prices for illiquid instruments. (`NG-016`)
+The following entries are directly applicable to the
+notebook execution context:
+
+| ID | Boundary | Reference |
+|---|---|---|
+| NG-001 | Not a live risk system | [`sira_non_goals_table.md`](sira_non_goals_table.md#analytical-boundaries--ng-001-to-ng-006) |
+| NG-003 | Not a full credit model | [`sira_non_goals_table.md`](sira_non_goals_table.md#analytical-boundaries--ng-001-to-ng-006) |
+| NG-016 | BSM replication assumes continuous liquid trading | [`sira_non_goals_table.md`](sira_non_goals_table.md#options-and-bsm-boundaries--ng-016-to-ng-021) |
+| NG-017 | Vol surface is scenario-governed | [`sira_non_goals_table.md`](sira_non_goals_table.md#options-and-bsm-boundaries--ng-016-to-ng-021) |
+| NG-022 | Executed model outputs not present | [`sira_non_goals_table.md`](sira_non_goals_table.md#evidence-and-validation-boundaries--ng-022-to-ng-024) |
+| NG-023 | Distribution parameters not empirically calibrated | [`sira_non_goals_table.md`](sira_non_goals_table.md#evidence-and-validation-boundaries--ng-022-to-ng-024) |
+| NG-024 | No backtesting evidence present | [`sira_non_goals_table.md`](sira_non_goals_table.md#evidence-and-validation-boundaries--ng-022-to-ng-024) |
 
 ---
 
@@ -408,7 +415,7 @@ Consistent with `README.md` non-goals register:
 - [`docs/DEFENSE_APPENDIX.md`](../docs/DEFENSE_APPENDIX.md) — epsilon and sigma as co-primary defense objects
 - [`docs/COMPLIANCE_CROSSWALK.csv`](../docs/COMPLIANCE_CROSSWALK.csv) — component-level coverage assessment
 - Haugh (2016). *The Black-Scholes Model.* Columbia IEOR E4706.
-- `README.md` — non-goals register (NG-001 to NG-021)
+- [`notebooks/sira_non_goals_table.md`](sira_non_goals_table.md) — canonical non-goals register (NG-001 to NG-024)
 
 ## Operator action items
 
