@@ -627,7 +627,7 @@ Do not register `npm run dev` with Claude Code — use the compiled
 
 ---
 
-## Options and BSM boundaries — NG-016 to NG-021
+## Options and BSM boundaries — NG-016 to NG-024
 
 | ID | Boundary | Detail |
 |---|---|---|
@@ -637,6 +637,9 @@ Do not register `npm run dev` with Claude Code — use the compiled
 | NG-019 | Greeks are BSM/GBM Greeks only | Computed under constant volatility and log-normal assumptions. Stochastic-volatility Greeks (Heston, SABR) not implemented. Sticky-delta dynamics not modelled. |
 | NG-020 | Risk-neutral pricing removes physical drift µ | SIRA does not estimate equity risk premia or physical-measure return expectations. |
 | NG-021 | Positive theta flags are diagnostic only | Do not constitute hedging recommendations. |
+| NG-022 | Executed model outputs are not present in this repository | The engine is governed at the architecture and documentation layer prior to live data ingestion. See `docs/SIRA_EVIDENCE_GAP_REGISTER.md` EG-001. |
+| NG-023 | Distribution parameters are not empirically calibrated in this repository | Calibration is an operator action item contingent on historical workout data. See `docs/SIRA_EVIDENCE_GAP_REGISTER.md` EG-002. |
+| NG-024 | No backtesting evidence is present in this repository | Backtesting is an operator action item contingent on a labelled historical dataset. See `docs/SIRA_EVIDENCE_GAP_REGISTER.md` EG-003. |
 
 
 

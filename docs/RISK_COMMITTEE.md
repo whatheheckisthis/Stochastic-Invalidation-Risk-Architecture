@@ -2,6 +2,12 @@ Read docs/ETHOS.md and docs/DELIVERY.md before this document.
 
 # RISK COMMITTEE QUESTION REGISTER — SIRA
 
+## Evidence Gap Register Reference
+
+**Question:** Where are the model’s known evidence gaps documented?
+
+**Answer:** `docs/SIRA_EVIDENCE_GAP_REGISTER.md` declares three governed gaps — stochastic implementation, empirical calibration, and backtesting — each with a defined closure path and operator action items. These are pre-data stage boundaries, not model defects.
+
 ## 1) Model Scope and Boundary
 
 | ID | Committee Question | Architecture-Backed Response | Evidence Basis | Gap Status |
