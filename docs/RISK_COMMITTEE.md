@@ -1,3 +1,5 @@
+Read docs/ETHOS.md and docs/DELIVERY.md before this document.
+
 # RISK COMMITTEE QUESTION REGISTER — SIRA
 
 ## 1) Model Scope and Boundary
