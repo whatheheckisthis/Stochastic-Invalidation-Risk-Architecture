@@ -1,15 +1,5 @@
 # Professional-Practice 
 
-**Primary documents:**
-
-- [`docs/ETHOS.md`](ETHOS.md) — architectural philosophy
-  and stack rationale
-- [`docs/DELIVERY.md`](DELIVERY.md) — engagement model,
-  delivery artefacts, and GRC control mappings
-
-Read those two documents first. Everything else in this
-repository is the operational substrate that supports them.
-
 > This document is a delivery artefact of the IĀTŌ assurance
 > programme. It is the operating model. Every other document in
 > this repository is the operational substrate that satisfies it.
