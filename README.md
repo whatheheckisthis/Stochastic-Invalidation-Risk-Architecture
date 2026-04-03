@@ -26,43 +26,58 @@ valuation intelligence, and options pricing layer.
 
 ## Executive Summary
 
-SIRA evaluates a distressed bond and direct lending portfolio across
-five adverse scenarios and produces scenario-level and asset-level
-outputs across four integrated layers:
+SIRA is a governance-aligned analytical system for distressed bond recovery modelling, scenario stress testing, and signal generation across defined adverse conditions. It provides attributable, scenario-specific outputs for risk triage, solvency surveillance, and deal review while maintaining traceability suitable for risk, compliance, and technical oversight.
 
-**Core stress engine**
-- Stochastic recovery simulation using Beta and Power Law
-  distributions to capture non-normal, tail-heavy recovery behaviour.
-- Z-score diagnostics to identify assets with materially weak
-  recovery outcomes relative to the scenario cross-section.
-- Ruin threshold logic to classify invalidation events where recovery
-  falls below scenario-specific survival levels.
-- SELL/HOLD signals to support risk triage.
+The operating model is organised into four integrated analytical layers:
 
-**Capital stack layer**
-- Annuity liability engine modelling obligation structure under stress.
-- Credit deployment engine computing net spread against obligations.
-- Spread stress aggregator emitting SOLVENT/WATCH/BREACH per scenario.
+**1) Core stress engine**
+- Simulates stressed recovery outcomes under governed distribution assumptions.
+- Applies ruin-threshold and relative-weakness diagnostics to classify invalidation risk.
+- Produces structured SELL/HOLD-style triage signals at asset and scenario level.
 
-**Valuation and deal intelligence layer**
-- Stress-conditioned DCF, M&A screening, accretion/dilution,
-  LBO viability, and IRR attribution — each consuming in-session
-  scenario outputs from the core engine.
+**2) Capital stack layer**
+- Models liability obligations and credit deployment performance under stress.
+- Quantifies spread capture versus obligations and classifies solvency state.
+- Emits scenario-level SOLVENT/WATCH/BREACH outcomes for capital monitoring.
 
-**Options intelligence layer**
-- Black-Scholes pricing derived from Itô's Lemma and replicating
-  portfolio argument (Haugh, Columbia IEOR E4706).
-- Recovery put, equity kicker call, and annuity floor put — each
-  stress-conditioned against the scenario vol surface.
-- Full Greeks engine with delta-gamma-vega P&L attribution.
-- Delta-hedge replication error simulation per scenario.
+**3) Valuation and deal intelligence layer**
+- Executes stress-conditioned valuation and transaction analytics.
+- Supports impairment assessment, acquisition screening, accretion/dilution review, leveraged-case viability, and return attribution.
+- Consolidates scenario-informed outputs for committee-grade interpretation.
 
-All operator-configurable parameters are declared in
-`config/sira.toml` — the single source of truth for scenario
-definitions, distribution parameters, signal thresholds, capital
-stack parameters, and options inputs. No analytical script contains
-hardcoded values. The runtime surface is fully terminal-native with
-structured stdout emission.
+**4) Options intelligence layer**
+- Prices stress-conditioned protective and participation structures.
+- Provides Greeks-based sensitivity and P&L attribution under volatility stress.
+- Quantifies hedge effectiveness and replication error across scenarios.
+
+**Scope constraint**
+All operative content — including determinative schemas, version-controlled scripts, and auditable artefacts — exists solely to satisfy explicitly defined obligations within the governing framework. These components carry no independent mandate, interpretive authority, or scope beyond that purpose.
+
+**Configuration and Control Framework**
+All configurable parameters are centrally declared in `config/sira.toml`.
+
+This file serves as the single source of truth, defining:
+- Scenario structures
+- Distribution parameters
+- Signal thresholds
+- Capital stack assumptions
+- Options inputs
+
+No analytical logic contains hardcoded parameters. All execution is configuration-driven and traceable.
+
+**Runtime and Auditability**
+- Fully terminal-native execution environment.
+- Structured stdout output for traceability and logging.
+- Designed for air-gapped deployment contexts.
+- All outputs are reproducible, attributable, and audit-aligned.
+
+**GRC Positioning Statement**
+This system is a supporting analytical construct operating strictly within predefined governance boundaries. It:
+- Does not constitute a decision-making authority.
+- Does not redefine risk frameworks or investment mandates.
+- Exists solely to fulfill modelling and analytical obligations as defined externally.
+
+All outputs must be interpreted within the context of the governing framework and are not independently authoritative.
 
 ---
 
