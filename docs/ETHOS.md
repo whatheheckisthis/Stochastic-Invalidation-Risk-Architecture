@@ -50,7 +50,7 @@ High-Assurance Systems Engineering Ethos
 
 These themes govern every tooling decision in the stack.
 A decision that cannot be traced to one of these themes
-is not a governed decision.
+is not governed.
 
 **Security as a structural property of the workflow.**
 Not a post-deployment layer. Not a monitoring overlay.
@@ -73,10 +73,10 @@ versioned Bash scripts. It does not infer configuration
 from context. It applies the version-controlled script
 or stops.
 
-**Formal configuration validation enforced at the
-configuration phase, not runtime.** XML with strict XSD
+**Formal configuration validation is enforced at the
+configuration phase, not at runtime.** XML with strict XSD
 validation is the configuration format. Parameters must
-conform to the defined GRC policy or the configuration
+conform to the defined GRC policy, or the configuration
 does not run. This is a control boundary, not a style
 choice.
 
@@ -122,15 +122,14 @@ no surface to operate on.
 
 ---
 
-## 02 — Deterministic Orchestration: Claude Code and the
-## MCP Control Plane
+## 02 — Deterministic Orchestration: Claude Code and the MCP Control Plane
 
 Zero configuration drift requires a deterministic orchestration
 layer. In this stack, that responsibility belongs to Claude Code
 operating via the Model Context Protocol (MCP), backed by an
 OpenClaw server providing a standardised bridge to the WSL2 host.
 
-This is not a generative coding tool. It is a systems
+This is not a generative coding tool. It is a system
 administrator with an auditable action log.
 
 **State enforcement** — the AI executes versioned Bash scripts
@@ -173,8 +172,7 @@ no passthrough. There is no free rein.
 
 ---
 
-## 03 — Least Privilege Execution: Rootless Podman and
-## Schema Validation
+## 03 — Least Privilege Execution: Rootless Podman and Schema Validation
 
 Docker requires a persistent root-level daemon. That daemon
 is a privilege escalation vector on the local host. It is
@@ -219,8 +217,7 @@ This is not a style choice. It is a control boundary.
 
 ---
 
-## 04 — Infrastructure Portability: VMware vSphere as
-## Local Private Cloud
+## 04 — Infrastructure Portability: VMware vSphere as Local Private Cloud
 
 Testing IaC templates directly in a public cloud tenant
 introduces unnecessary cost, blast radius risk, and audit
@@ -299,7 +296,7 @@ Evidence produced per milestone:
 ## References
 
 - [`docs/IATO_MCP_ARCHITECTURE.md`](IATO_MCP_ARCHITECTURE.md)
-  — implementation detail for every operating theme in
+  — Implementation detail for every operating theme in
   this document
 - [`docs/DELIVERY.md`](DELIVERY.md)
   — engagement model and delivery artefacts
