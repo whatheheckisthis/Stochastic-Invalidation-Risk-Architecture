@@ -19,6 +19,10 @@ run_env_check <- function() {
   checks[["RcppTOML installed"]] <- toml_ok
   cat(sprintf("[CHECK] RcppTOML loadable -- %s\n", if (toml_ok) "PASS" else "FAIL"))
 
+  base64enc_ok <- requireNamespace("base64enc", quietly = TRUE)
+  checks[["base64enc installed"]] <- base64enc_ok
+  cat(sprintf("[CHECK] base64enc loadable -- %s\n", if (base64enc_ok) "PASS" else "FAIL"))
+
   sha256_ok <- exists("sha256sum", where = asNamespace("tools"), mode = "function", inherits = FALSE)
   checks[["SHA-256 capability"]] <- sha256_ok
   cat(sprintf("[CHECK] base R SHA-256 (tools::sha256sum) -- %s\n", if (sha256_ok) "PASS" else "FAIL"))

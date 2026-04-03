@@ -5,6 +5,7 @@ export const ENUMERATED_ACTIONS = [
   "spawn_container",
   "teardown_container",
   "vsphere_preflight",
+  "wsdl_preflight",
 ] as const;
 
 export type EnumeratedAction = (typeof ENUMERATED_ACTIONS)[number];
