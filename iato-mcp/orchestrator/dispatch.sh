@@ -54,6 +54,11 @@ case "${ACTION}" in
     bash "${SCRIPT_DIR}/../scripts/vsphere/preflight_iac.sh" "${CONFIG_PATH}" \
       || { audit_emit "HALT" "reason=vsphere_preflight_failed"; exit 1; }
     ;;
+  wsdl_preflight)
+    audit_emit "ACTION" "wsdl_preflight payload=${SCRIPT_PATH} config=${CONFIG_PATH}"
+    bash "${SCRIPT_DIR}/../scripts/provision/03_wsdl_preflight.sh" "${SCRIPT_PATH}" "${CONFIG_PATH}" \
+      || { audit_emit "HALT" "reason=wsdl_preflight_failed"; exit 1; }
+    ;;
   *)
     audit_emit "DISPATCH_HALT" "reason=unknown_action action=${ACTION}"
     exit 1

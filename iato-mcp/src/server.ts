@@ -90,6 +90,22 @@ const TOOL_DEFINITIONS = [
     },
   },
   {
+    name: "wsdl_preflight",
+    description:
+      "Validate an XML payload against the governed dress service XSD schema before any service operation executes. Enforces image storage policy (POLICY-IMG-001, POLICY-IMG-002). Schema violation or policy breach halts immediately — no service is invoked.",
+    inputSchema: {
+      type: "object" as const,
+      properties: {
+        scriptPath: { type: "string", description: "Absolute path to the XML payload to validate." },
+        configPath: {
+          type: "string",
+          description: "Absolute path to the XSD-validated service config declaring image_storage policy.",
+        },
+      },
+      required: ["scriptPath", "configPath"],
+    },
+  },
+  {
     name: "read_risk_committee",
     description: "Return RISK_COMMITTEE.md. Read-only. No dispatch invoked. No state change.",
     inputSchema: { type: "object" as const, properties: {}, required: [] },

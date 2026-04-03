@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  IĀTŌ Governed Schema — DressPerPrice Service
+  Derived from: stackoverflow.com/q/28928660
+  Original author: Manisha Singh Sanoo
+  License: CC BY-SA 3.0
+  Retrieved: 2026-04-03
+  Modifications:
+    - xs:hexBinary replaced with xs:base64Binary (POLICY-IMG-001)
+    - URL reference variant added (POLICY-IMG-002)
+    - Bounded array constraint added (pre-flight gate)
+    - Price range constraint added (pre-flight gate)
+-->
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.shehzad.edu/webservice"
+  xmlns:this="http://www.shehzad.edu/webservice"
+  elementFormDefault="qualified">
+
+  <xs:element name="Input">
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:minInclusive value="1"/>
+        <xs:maxInclusive value="999999"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:complexType name="DressTypeInline">
+    <xs:sequence>
+      <xs:element name="Name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="200"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Price">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="999999"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Image" type="xs:base64Binary"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DressTypeReference">
+    <xs:sequence>
+      <xs:element name="Name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="200"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Price">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="999999"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ImageURL" type="xs:anyURI"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ArrayOfDresses">
+    <xs:sequence>
+      <xs:element
+        name="DressPerPrice"
+        minOccurs="1"
+        maxOccurs="500"
+        type="this:DressTypeReference"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="Result" type="this:ArrayOfDresses"/>
+</xs:schema>
