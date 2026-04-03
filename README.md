@@ -1,6 +1,9 @@
 # Professional-Practice
 
->This repository is bound by the governing documents below. All operative content — determinative schemas, versioned scripts, and auditable artefacts — exists exclusively to satisfy the obligations defined within them and carries no independent scope beyond that purpose. Any work product, configuration, script, or governance document outside those boundaries is outside the declared scope of this practice and must not be interpreted as extending, modifying, or superseding the operating model or engagement framework they define.
+>This repository is governed exclusively by the documents referenced below and shall be construed and applied in accordance with their terms. All operative components — including determinative schemas, version-controlled scripts, and auditable artefacts — are implemented solely for the purpose of discharging the obligations prescribed therein and shall have no independent mandate, interpretive authority, or operative scope beyond that purpose.
+
+Any work product, configuration, script, or governance artefact that is not expressly contemplated within these defined parameters is deemed out of scope and shall not be relied upon, construed, or interpreted as extending, modifying, or superseding the applicable operating model or engagement framework established by the governing documents.
+
 
 | Document | Location | Governs |
 |---|---|---|
@@ -12,15 +15,15 @@
 
 ---
 
-Distressed bond recovery, stress testing, and signal generation
-across five adverse market scenarios — with a full capital stack,
-valuation intelligence, and options pricing layer.
+>Distressed credit recovery modelling, scenario-driven stress testing, and rule-governed signal generation executed across five explicitly defined adverse market scenarios. The framework operates within a controlled, audit-aligned analytical environment, incorporating a fully articulated capital stack, scenario-conditioned valuation methodologies, and derivatives pricing capabilities.
 
-[![Focus](https://img.shields.io/badge/Focus-Quant%20Risk%20Modelling-0A66C2?style=flat-square)](#)
-[![Approach](https://img.shields.io/badge/Approach-Auditability%20by%20Design-2E7D32?style=flat-square)](#)
-[![Runtime](https://img.shields.io/badge/Runtime-R%20%2B%20ggplot2-276DC3?style=flat-square)](#)
-[![Config](https://img.shields.io/badge/Config-TOML%20Declared--Intent-8B5CF6?style=flat-square)](#)
-[![Env](https://img.shields.io/badge/Env-Air--Gapped%20Compatible-333333?style=flat-square)](#)
+All analytical outputs and system components are produced strictly in support of defined risk, compliance, and governance obligations and do not constitute independent decision-making authority or extend beyond the prescribed scope of the governing framework.
+
+[![Focus](https://img.shields.io/badge/Focus-Risk%20%26%20Control%20Analytics-0A66C2?style=flat-square)](#)
+[![Approach](https://img.shields.io/badge/Approach-Governance%20%26%20Auditability%20by%20Design-2E7D32?style=flat-square)](#)
+[![Runtime](https://img.shields.io/badge/Runtime-Controlled%20R%20Execution%20Environment-276DC3?style=flat-square)](#)
+[![Config](https://img.shields.io/badge/Config-Policy--Driven%20TOML%20Configuration-8B5CF6?style=flat-square)](#)
+[![Env](https://img.shields.io/badge/Env-Controlled%20%2F%20Air--Gapped%20Deployment-333333?style=flat-square)](#)
 
 
 
@@ -28,154 +31,150 @@ valuation intelligence, and options pricing layer.
 
 SIRA is a governance-aligned analytical system for distressed bond recovery modelling, scenario stress testing, and signal generation across defined adverse conditions. It provides attributable, scenario-specific outputs for risk triage, solvency surveillance, and deal review while maintaining traceability suitable for risk, compliance, and technical oversight.
 
-The operating model is organised into four integrated analytical layers:
-
-**1) Core stress engine**
-- Simulates stressed recovery outcomes under governed distribution assumptions.
-- Applies ruin-threshold and relative-weakness diagnostics to classify invalidation risk.
-- Produces structured SELL/HOLD-style triage signals at asset and scenario level.
-
-**2) Capital stack layer**
-- Models liability obligations and credit deployment performance under stress.
-- Quantifies spread capture versus obligations and classifies solvency state.
-- Emits scenario-level SOLVENT/WATCH/BREACH outcomes for capital monitoring.
-
-**3) Valuation and deal intelligence layer**
-- Executes stress-conditioned valuation and transaction analytics.
-- Supports impairment assessment, acquisition screening, accretion/dilution review, leveraged-case viability, and return attribution.
-- Consolidates scenario-informed outputs for committee-grade interpretation.
-
-**4) Options intelligence layer**
-- Prices stress-conditioned protective and participation structures.
-- Provides Greeks-based sensitivity and P&L attribution under volatility stress.
-- Quantifies hedge effectiveness and replication error across scenarios.
-
-**Scope constraint**
-All operative content — including determinative schemas, version-controlled scripts, and auditable artefacts — exists solely to satisfy explicitly defined obligations within the governing framework. These components carry no independent mandate, interpretive authority, or scope beyond that purpose.
-
-**Configuration and Control Framework**
-All configurable parameters are centrally declared in `config/sira.toml`.
-
-This file serves as the single source of truth, defining:
-- Scenario structures
-- Distribution parameters
-- Signal thresholds
-- Capital stack assumptions
-- Options inputs
-
-No analytical logic contains hardcoded parameters. All execution is configuration-driven and traceable.
-
-**Runtime and Auditability**
-- Fully terminal-native execution environment.
-- Structured stdout output for traceability and logging.
-- Designed for air-gapped deployment contexts.
-- All outputs are reproducible, attributable, and audit-aligned.
-
-**GRC Positioning Statement**
-This system is a supporting analytical construct operating strictly within predefined governance boundaries. It:
-- Does not constitute a decision-making authority.
-- Does not redefine risk frameworks or investment mandates.
-- Exists solely to fulfill modelling and analytical obligations as defined externally.
-
-All outputs must be interpreted within the context of the governing framework and are not independently authoritative.
 
 ---
 
-## Methodology
+### **Operating Model Overview**
 
-### 1. Preflight (`scripts/00_env_check.R`)
+| Layer                                   | Description                                                   | Key Functions                                                                                                                                                                                 |
+| --------------------------------------- | ------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Core Stress Engine**                  | Scenario-driven recovery modelling under governed assumptions | Simulates stressed recovery outcomes; applies ruin-threshold and relative weakness diagnostics; generates structured SELL/HOLD triage signals at asset and scenario level                     |
+| **Capital Stack Layer**                 | Liability and capital performance assessment under stress     | Models obligations and credit deployment; quantifies spread vs obligations; classifies and emits SOLVENT / WATCH / BREACH states                                                              |
+| **Valuation & Deal Intelligence Layer** | Scenario-conditioned valuation and transaction analytics      | Supports impairment assessment, acquisition screening, accretion/dilution analysis, leveraged-case viability, and return attribution; consolidates outputs for committee-grade interpretation |
+| **Options Intelligence Layer**          | Derivatives pricing and hedge performance under stress        | Prices protective and participation structures; provides Greeks-based sensitivity and P&L attribution; quantifies hedge effectiveness and replication error                                   |
 
-Confirms minimum R version, ggplot2 and RcppTOML availability, TOML
-parseability, output directory writability, and data manifest
-integrity before any analytical work begins. SHA-256 hash validation
-is applied to all active manifest entries; live-mode files halt on
-hash mismatch. Halts with a labelled non-zero exit on any failed
-check.
+---
 
-### 2. Load Configuration (`scripts/00_config.R`)
+### **Scope Constraint**
 
-Parses `config/sira.toml` via RcppTOML and exposes a single named
-list `CFG` to the runtime environment. Initialises the `NEON` colour
-palette, gated on `isatty(stdout())`.
+| Component                      | Constraint Statement                                                                                                                                                                                  |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Operative Content Boundary** | All operative content — including determinative schemas, version-controlled scripts, and auditable artefacts — exists solely to satisfy explicitly defined obligations within the governing framework |
+| **Authority Limitation**       | No component carries an independent mandate, interpretive authority, or scope beyond its defined purpose                                                                                                 |
 
-### 3. Load Inputs (`scripts/01_load_data.R`)
+---
 
-Consumes `data/manifest/data_manifest.toml` and loads only active
-governed files for the preflight-selected `data_mode` (`live` or
-`synthetic`). Live/synthetic segregation is enforced at folder level
-with lineage reference captured in run metadata. Synthetic mode emits
-an explicit disclosure notice to stdout.
+### **Configuration and Control Framework**
 
-### 4. Run Analysis (`scripts/02_analysis.R`)
+| Element                 | Description                                                                                                    |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Source of Truth**     | `config/sira.toml` serves as the authoritative configuration file                                              |
+| **Declared Parameters** | Scenario structures, distribution parameters, signal thresholds, capital stack assumptions, and options inputs |
+| **Control Principle**   | No analytical logic contains hardcoded parameters                                                              |
+| **Execution Model**     | Fully configuration-driven and traceable                                                                       |
 
-Generates stressed recoveries per scenario from parameters declared
-in `CFG$scenarios`:
+---
 
-- Beta distribution for baseline and liquidity-driven conditions —
-  appropriate where LGD follows a bounded, mean-reverting pattern
-  with shape parameters tuned to scenario severity.
-- Power Law tails for jump-risk regimes — applied where extreme
-  outcomes are structurally more probable than Beta or normal
-  distributions predict.
+### **Runtime and Auditability**
 
-Iterates scenarios dynamically from `CFG$scenarios$names` — no
-hardcoded scenario list. Applies scenario shocks then computes:
-```
-z_score    = scale(stressed_recovery)
-ruin_flag  = stressed_recovery <= ruin_threshold
-signal    ∈ {SELL, HOLD}
-LGD_proxy  = 1 - stressed_recovery
-```
+| Capability                | Description                                               |
+| ------------------------- | --------------------------------------------------------- |
+| **Execution Environment** | Fully terminal-native runtime                             |
+| **Traceability**          | Structured stdout output for logging and audit trails     |
+| **Deployment Context**    | Designed for controlled, air-gapped environments          |
+| **Reproducibility**       | Outputs are reproducible, attributable, and audit-aligned |
 
-### 5. Visualise and Emit (`scripts/03_visualize.R`)
+---
 
-Writes `output/sell_hold_signals.png` via ggplot2. Emits a
-terminal-native fixed-width summary table showing per-scenario
-SELL/HOLD counts and mean recovery.
+### **GRC Positioning**
 
-### 6. Capital Stack (`scripts/10–13`)
-```
-10_liability_engine.R   → annuity obligation PV and solvency headroom
-11_credit_deployment.R  → gross yield, net income, spread captured
-12_spread_stress.R      → SOLVENT/WATCH/BREACH per scenario
-13_capital_stack_viz.R  → terminal summary + capital_stack_spread.png
-```
+| Principle                     | Statement                                                                                                   |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| **Role**                      | Supporting analytical construct within predefined governance boundaries                                     |
+| **Decision Authority**        | Does not constitute decision-making authority                                                               |
+| **Framework Integrity**       | Does not redefine risk frameworks or investment mandates                                                    |
+| **Purpose Limitation**        | Exists solely to fulfill externally defined modelling and analytical obligations                            |
+| **Interpretation Constraint** | Outputs must be interpreted strictly within the governing framework and are not independently authoritative |
 
-Spread engine model:
-```
-gross_income              = deployed_capital × gross_yield + fees
-net_income_after_defaults = gross_income − scenario LGD stress
-spread_captured           = net_income − annual_obligation
-```
+---
 
-Solvency headroom is further adjusted by the annuity floor put
-price from the options layer before final spread signal emission.
+## Methodology (GRC Assurance Framework)
 
-### 7. Valuation and Deal Intelligence (`scripts/20–25`)
-```
-20_dcf.R          → stress-conditioned PV and impairment signal
-21_ma.R           → ACQUIRE/REVIEW/PASS acquisition screen
-22_accretion.R    → spread delta under stressed pro-forma yield
-23_lbo.R          → DSCR, stressed IRR, leverage viability signal
-24_irr.R          → IRR attribution: coupon, fee, kicker, recovery
-25_deal_summary.R → unified committee table, worst-case, dominant risk
-```
+## **1. System Initialization & Control Environment**
 
-DCF stressed case:
-```
-PV_stressed = Σ(coupon / (1+r_stressed)^t)
-            + (stressed_recovery × face_value) / (1+r_stressed)^T
-```
+This system operates as a **financial engineering control environment**, where all execution is gated by pre-run validation, governed configuration, and enforced data lineage constraints.
 
-IRR attribution decomposition:
-```
-coupon_contribution   = PV(coupons)  / initial_investment
-fee_contribution      = fee_income   / initial_investment
-kicker_contribution   = call_price_stressed / initial_investment
-recovery_contribution = terminal_recovery   / initial_investment
-```
+| Stage                                       | Control Objective                                      | Control Design                                                                                                                                                         | Assurance Condition                                                       |
+| ------------------------------------------- | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| **Preflight Validation** (`00_env_check.R`) | Ensure runtime integrity before analytical execution | Environment version checks (R, dependencies); configuration parse validation; output writability checks; data manifest integrity verification; SHA-256 hash validation | Execution is terminated on any control failure (hard stop, non-zero exit) |
+| **Configuration Control** (`00_config.R`)   | Establish single governed parameter source             | Loads `config/sira.toml` into structured runtime object (`CFG`)                                                                                                        | No analytical execution permitted without validated configuration state   |
+| **Data Lineage Control** (`01_load_data.R`) | Enforce data provenance and mode separation            | Enforces `live` vs `synthetic` segregation via manifest governance                                                                                                     | Any lineage mismatch results in execution halt                            |
 
-### 8. Options Intelligence Layer (`scripts/30–36`)
+**GRC Principle:**
+No computation is permitted outside a validated control environment.
+
+---
+
+## **2. Core Financial Engineering Engine (Stress & Risk Modelling)**
+
+This layer implements **scenario-driven financial risk transformation**, converting governed inputs into stress-conditioned recovery and risk signals.
+
+| Function                            | Control Objective                                     | Methodological Basis                                                            | Output Classification       |
+| ----------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------- | --------------------------- |
+| Stress Simulation (`02_analysis.R`) | Generate scenario-conditioned recovery distributions  | Bounded (Beta) and tail-risk (Power Law) modelling under defined stress regimes | Stressed recovery paths     |
+| Risk Diagnostics                    | Identify relative and absolute downside vulnerability | Z-score normalisation and ruin-threshold evaluation                             | Risk classification outputs |
+| Signal Generation                   | Produce deterministic decision signals                | Rule-based mapping of recovery outcomes                                         | SELL / HOLD signals         |
+| Loss Estimation                     | Quantify downside exposure                            | LGD transformation: (1 - recovery)                                              | LGD distribution            |
+
+**GRC Constraint:**
+Outputs are descriptive risk signals only and do not constitute discretionary decision authority.
+
+---
+
+## **3. Capital Stack & Solvency Control Framework**
+
+This layer models **financial resilience under stress**, assessing solvency capacity relative to contractual obligations.
+
+| Component                                    | Control Objective                        | Financial Engineering Function               | Output                   |
+| -------------------------------------------- | ---------------------------------------- | -------------------------------------------- | ------------------------ |
+| Liability Engine (`10_liability_engine.R`)   | Quantify present value obligations       | Discounted annuity liability modelling       | Solvency baseline        |
+| Credit Deployment (`11_credit_deployment.R`) | Measure income generation capacity       | Yield and net income estimation under stress | Spread capture           |
+| Stress Aggregation (`12_spread_stress.R`)    | Assess solvency under adverse conditions | Spread vs obligation stress comparison       | SOLVENT / WATCH / BREACH |
+| Capital Reporting (`13_capital_stack_viz.R`) | Provide structured capital visibility    | Aggregated capital state representation      | Capital stack outputs    |
+
+### **Capital Flow Control Model**
+
+| Metric          | Control Expression                   |
+| --------------- | ------------------------------------ |
+| Gross Income    | deployed capital × yield + fees      |
+| Net Income      | gross income − LGD stress impact     |
+| Spread Position | net income − contractual obligations |
+
+**Governance Constraint:**
+Solvency classification is adjusted post-derivatives hedging effect before final state emission.
+
+---
+
+## **4. Valuation & Transaction Analytics (Financial Engineering Layer)**
+
+This layer provides **stress-conditioned valuation and transaction screening**, supporting structured financial interpretation under scenario constraints.
+
+| Function                                  | Control Objective                      | Output                            |
+| ----------------------------------------- | -------------------------------------- | --------------------------------- |
+| DCF Valuation (`20_dcf.R`)                | Stress-adjusted intrinsic valuation    | Present value + impairment signal |
+| M&A Screening (`21_ma.R`)                 | Transaction feasibility classification | ACQUIRE / REVIEW / PASS           |
+| Accretion Analysis (`22_accretion.R`)     | Post-transaction spread impact         | Yield delta                       |
+| LBO Assessment (`23_lbo.R`)               | Leverage sustainability under stress   | DSCR, IRR viability               |
+| IRR Attribution (`24_irr.R`)              | Decompose return drivers               | Coupon / fee / kicker / recovery  |
+| Committee Synthesis (`25_deal_summary.R`) | Consolidated decision reporting        | Risk-weighted summary output      |
+
+---
+
+## **5. Derivatives & Options Risk Engine**
+
+This layer implements **risk-neutral financial engineering models** for derivative valuation and hedge behaviour under stress scenarios.
+
+| Component                                | Control Objective                         | Output                     |
+| ---------------------------------------- | ----------------------------------------- | -------------------------- |
+| Black-Scholes Engine (`30–36`)           | Risk-neutral pricing framework            | Option valuations          |
+| Greeks Engine (`30b_greeks.R`)           | Sensitivity decomposition                 | Δ, Γ, ν, θ, ρ              |
+| Volatility Surface (`34_vol_surface.R`)  | Scenario-conditioned volatility structure | σ(K) surface               |
+| Delta Hedging (`36_delta_hedge.R`)       | Replication error measurement             | Hedge P&L                  |
+| Options Summary (`35_options_summary.R`) | Aggregate exposure view                   | Hedge state classification |
+
+---
+
+## Options Intelligence Layer (`scripts/30–36`)
 
 Grounded in Haugh (2016), Columbia IEOR E4706.
 
@@ -254,7 +253,7 @@ via parameterised adjustment:
 ```
 
 Arbitrage constraints enforced per Haugh Section 2:
-butterfly and calendar spread checks emitted to preflight log.
+butterfly and calendar spread checks emitted to the preflight log.
 
 **Delta-hedge replication error (Haugh eq. 24)**
 ```
@@ -264,6 +263,20 @@ P&L = Σ (St²/2 × Γt × (σ²_implied − σ²_scenario) × Δt)
 Positive P&L → scenario vol below implied → hedge gain.
 Negative P&L → scenario vol above implied → solvency erosion.
 Signal: HEDGE_GAIN / HEDGE_NEUTRAL / HEDGE_LOSS per scenario.
+
+---
+
+## **6. System Orchestration & Execution Governance**
+
+This layer enforces **deterministic execution sequencing and failure containment**.
+
+| Stage                             | Control Function                   | Assurance Property                      |
+| --------------------------------- | ---------------------------------- | --------------------------------------- |
+| Pipeline Controller (`run_all.R`) | Sequential execution orchestration | Deterministic execution order           |
+| Monitoring Layer                  | Runtime observability              | Execution traceability                  |
+| Failure Handling                  | Hard-stop enforcement              | No partial or degraded states permitted |
+
+### **Execution Constraint**
 
 ### 9. Orchestration (`run_all.R`)
 
@@ -282,9 +295,14 @@ Terminal harness emits header, per-stage progress, wall-clock
 elapsed time, and exit status. Mid-pipeline failures halt with
 labelled error output — no silent partial runs.
 
+**Control Rule:**
+All execution is atomic; partial completion states are invalid.
+
 ---
 
-## Five Stress Scenarios
+## **7. Scenario Governance Framework**
+
+Scenarios define **controlled stress environments for financial engineering simulation**.
 
 | Scenario | Stress mechanism | Distribution | Vol multiplier |
 |---|---|---|---|
@@ -297,6 +315,31 @@ labelled error output — no silent partial runs.
 All scenario parameters — shape, exponent, ruin threshold, shock
 multiplier, FX devaluation, vol multiplier — declared in
 `config/sira.toml`. No scenario definition exists outside the TOML.
+
+---
+
+### **Scenario Control Constraint**
+
+| Rule                   | Governance Requirement                                 |
+| ---------------------- | ------------------------------------------------------ |
+| Single Source of Truth | All scenario definitions reside in `config/sira.toml`  |
+| No Hardcoding          | Scenario logic is externalised from analytical scripts |
+| Version Control        | Scenario parameters are immutable per execution run    |
+
+---
+
+## **8. Global GRC Assurance**
+
+This system operates as a **bounded financial engineering simulation and risk analytics environment** under strict governance constraints.
+
+| Dimension              | Control Statement                                                      |
+| ---------------------- | ---------------------------------------------------------------------- |
+| Authority              | No module constitutes decision authority                               |
+| Scope                  | Execution is strictly bounded by configuration and manifest controls   |
+| Interpretive Power     | No analytical output is independently authoritative                    |
+| Output Nature          | Advisory, diagnostic, and computational only                           |
+| Governance Requirement | All outputs must be interpreted within the governing framework context |
+
 
 ---
 
