@@ -2,7 +2,6 @@
 
 >This repository is governed exclusively by the documents referenced below and shall be construed and applied in accordance with their terms. All operative components — including determinative schemas, version-controlled scripts, and auditable artefacts — are implemented solely for the purpose of discharging the obligations prescribed therein and shall have no independent mandate, interpretive authority, or operative scope beyond that purpose.
 
-*Any work product, configuration, script, or governance artefact that is not expressly contemplated within these defined parameters is deemed out of scope and shall not be relied upon, construed, or interpreted as extending, modifying, or superseding the applicable operating model or engagement framework established by the governing documents.*
 
 
 | Document | Location | Governs |
