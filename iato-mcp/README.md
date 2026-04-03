@@ -24,3 +24,8 @@ bash iato-mcp/orchestrator/dispatch.sh state_check "" iato-mcp/config/environmen
 
 ## Documentation
 - `docs/MCP_ORCHESTRATION_REFERENCE.md` — implementation architecture and control reference.
+
+## Binary validation layer
+- `scripts/validation/compliance_state.sh` is the single entrypoint for binary control assertions.
+- `scripts/validation/read_binary_log.sh` renders machine-readable summaries from assertion logs.
+- `scripts/validation/README.md` documents controls `CTRL-BIN-001` through `CTRL-BIN-010`.
