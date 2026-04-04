@@ -1,0 +1,9 @@
+| Node_ID | Node_Type | Instruction_Text | Control_Tag | Linked_To | Relationship_Type | Enforcement_Action |
+| ------- | --------- | ---------------- | ----------- | --------- | ----------------- | ------------------ |
+| N1 | Governance | Live Data Folder — Governance Notice | GOVERNANCE_ROOT |  | enforces |  |
+| N2 | Instruction | `data/live/` is a controlled drop-zone for operator-onboarded live data. | CONTROLLED_DROP_ZONE | N1 | requires |  |
+| N3 | Control | Do not commit live datasets to git. | NO_GIT_COMMIT | N1 | enforces |  |
+| N4 | Control | Add/update corresponding [[files]] entry in `data/manifest/data_manifest.toml` under approved change control. | MANIFEST_CONTROL | N1 | requires |  |
+| N5 | Control | Populate hash_sha256, approved_by, and approved_date prior to ingestion. | INGESTION_METADATA | N1 | requires |  |
+| N6 | Control | Create/maintain dataset lineage record in `data/lineage/`. | LINEAGE_TRACKING | N1 | requires |  |
+| N7 | Validation | If SHA-256 verification fails at preflight, halt run and escalate per operations procedure. | HASH_VALIDATION | N5 | validates | halt run and escalate per operations procedure |
