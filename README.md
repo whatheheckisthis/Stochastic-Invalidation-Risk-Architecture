@@ -16,7 +16,7 @@
 [![Env](https://img.shields.io/badge/Env-Controlled%20%2F%20Air--Gapped%20Deployment-333333?style=flat-square)](#)
 
 
-### Executive Summary — Assurance Architecture 
+### 1.0 Executive Summary — Assurance Architecture
 
 **SIRA (Stochastic-Invalidation-Risk-Architecture) and IĀTŌ-MCP (Intent-Auditable-Trust-Object) form a dual-layer Governance, Risk, and Compliance (GRC) assurance architecture**. 
 
@@ -26,13 +26,13 @@
 
 ---
 
-### 1. Control Layer Definition
+### 2.0 Control Layer Definition
 
-### 1.1 SIRA — Quantitative Risk Controls 
+### 2.1 SIRA — Quantitative Risk Controls
 
 >SIRA functions as the **analytical risk engine** under model risk governance frameworks. It is responsible for scenario-conditioned stochastic modelling and risk signal generation.
 
-### Control Function & GRC Mapping Matrix
+### 2.1.1 Control Function & GRC Mapping Matrix
 
 | Control Domain | Control Function | Description | GRC Mapping |
 |----------------|------------------|-------------|-------------|
@@ -44,11 +44,11 @@
 
 ---
 
-### 1.2 IĀTŌ-MCP — Execution Governance & Control Plane
+### 2.2 IĀTŌ-MCP — Execution Governance & Control Plane
 
 >IĀTŌ operates as the **deterministic execution control layer**, enforcing strict operational governance over all computational actions.
 
-### Control Function & GRC Mapping Matrix
+### 2.2.1 Control Function & GRC Mapping Matrix
 
 | Control Domain | Control Function | Description | GRC Mapping |
 |----------------|------------------|-------------|-------------|
@@ -60,20 +60,20 @@
 
 ---
 
-### Key Control Functions:
+### 2.3 Key Control Functions:
 - Deterministic execution of model and system actions
 - Pre-execution validation (control gating)
 - Immutable action trace logging (audit trail enforcement)
 - State verification and integrity checks
 - Controlled lifecycle management of compute environments
 
-### Control Constraints:
+### 2.4 Control Constraints:
 - No contextual inference permitted
 - No autonomous configuration generation
 - No execution without explicit enumeration
 - No unlogged or non-atomic operations
 
-### GRC Control Mapping:
+### 2.5 GRC Control Mapping:
 - Operational Risk Management (ORM)
 - IT General Controls (ITGC)
 - Change Management Controls
@@ -85,7 +85,7 @@
 ---
 
 
-### **Scope Constraint**
+### 3.0 **Scope Constraint**
 
 | Component                      | Constraint Statement                                                                                                                                                                                  |
 | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -94,7 +94,7 @@
 
 ---
 
-### **Configuration and Control Framework**
+### 4.0 **Configuration and Control Framework**
 
 | Element                 | Description                                                                                                    |
 | ----------------------- | -------------------------------------------------------------------------------------------------------------- |
@@ -105,7 +105,7 @@
 
 ---
 
-### **Runtime and Auditability**
+### 5.0 **Runtime and Auditability**
 
 | Capability                | Description                                               |
 | ------------------------- | --------------------------------------------------------- |
@@ -116,7 +116,7 @@
 
 ---
 
-### **GRC Positioning**
+### 6.0 **GRC Positioning**
 
 | Principle                     | Statement                                                                                                   |
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------- |
@@ -128,9 +128,9 @@
 
 ---
 
-### Methodology (GRC Assurance Framework)
+### 7.0 Methodology (GRC Assurance Framework)
 
-### **1. System Initialization & Control Environment**
+### 7.1 **System Initialization & Control Environment**
 
 This system operates as a **financial engineering control environment**, where all execution is gated by pre-run validation, governed configuration, and enforced data lineage constraints.
 
@@ -145,7 +145,7 @@ No computation is permitted outside a validated control environment.
 
 ---
 
-### **2. Stress & Risk Modelling**
+### 7.2 **Stress & Risk Modelling**
 
 This layer implements **scenario-driven financial risk transformation**, converting governed inputs into stress-conditioned recovery and risk signals.
 
@@ -161,7 +161,7 @@ Outputs are descriptive risk signals only and do not constitute discretionary de
 
 ---
 
-### **3. Capital Stack & Solvency Control Framework**
+### 7.3 **Capital Stack & Solvency Control Framework**
 
 This layer models **financial resilience under stress**, assessing solvency capacity relative to contractual obligations.
 
@@ -172,7 +172,7 @@ This layer models **financial resilience under stress**, assessing solvency capa
 | Stress Aggregation (`12_spread_stress.R`)    | Assess solvency under adverse conditions | Spread vs obligation stress comparison       | `SOLVENT` / `WATCH` / `BREACH` |
 | Capital Reporting (`13_capital_stack_viz.R`) | Provide structured capital visibility    | Aggregated capital state representation      | Capital stack outputs    |
 
-### **Capital Flow Control Model**
+### 7.3.1 **Capital Flow Control Model**
 
 | Metric          | Control Expression                   |
 | --------------- | ------------------------------------ |
@@ -185,7 +185,7 @@ Solvency classification is adjusted post-derivatives hedging effect before the f
 
 ---
 
-### **4. Valuation & Transaction Analytics**
+### 7.4 **Valuation & Transaction Analytics**
 
 This layer provides **stress-conditioned valuation and transaction screening**, supporting structured financial interpretation under scenario constraints.
 
@@ -200,7 +200,7 @@ This layer provides **stress-conditioned valuation and transaction screening**, 
 
 ---
 
-### **5. Derivatives & Options Risk Engine**
+### 7.5 **Derivatives & Options Risk Engine**
 
 This layer implements **risk-neutral financial engineering models** for derivative valuation and hedge behaviour under stress scenarios.
 
@@ -214,7 +214,7 @@ This layer implements **risk-neutral financial engineering models** for derivati
 
 ---
 
-### Options Intelligence Layer (`scripts/30–36`)
+### 7.5.1 Options Intelligence Layer (`scripts/30–36`)
 
 *Grounded in Haugh (2016), Columbia IEOR E4706.*
 
@@ -306,7 +306,7 @@ Signal: `HEDGE_GAIN` / `HEDGE_NEUTRAL` / `HEDGE_LOSS` per scenario.
 
 ---
 
-### **6. System Orchestration & Execution Governance**
+### 7.6 **System Orchestration & Execution Governance**
 
 This layer enforces **deterministic execution sequencing and failure containment**.
 
@@ -316,9 +316,9 @@ This layer enforces **deterministic execution sequencing and failure containment
 | Monitoring Layer                  | Runtime observability              | Execution traceability                  |
 | Failure Handling                  | Hard-stop enforcement              | No partial or degraded states permitted |
 
-### **Execution Constraint**
+### 7.6.1 **Execution Constraint**
 
-### 9. Orchestration (`run_all.R`)
+### 7.6.2 Orchestration (`run_all.R`)
 
 Full pipeline execution order:
 ```
@@ -340,7 +340,7 @@ All execution is atomic; partial completion states are invalid.
 
 ---
 
-## **7. Scenario Governance Framework**
+## 8.0 **Scenario Governance Framework**
 
 Scenarios define **controlled stress environments for financial engineering simulation**.
 
@@ -358,7 +358,7 @@ multiplier, FX devaluation, vol multiplier — are declared in
 
 ---
 
-### **Scenario Control**
+### 8.1 **Scenario Control**
 
 | Rule                   | Governance Requirement                                 |
 | ---------------------- | ------------------------------------------------------ |
@@ -368,7 +368,7 @@ multiplier, FX devaluation, vol multiplier — are declared in
 
 ---
 
-### **8. Global GRC Assurance**
+### 9.0 **Global GRC Assurance**
 
 This system operates as a **bounded financial engineering simulation and risk analytics environment** under strict governance constraints.
 
@@ -383,7 +383,7 @@ This system operates as a **bounded financial engineering simulation and risk an
 
 ---
 
-### Repository Structure
+### 10.0 Repository Structure
 ```text
 .
 ├── README.md
@@ -436,7 +436,7 @@ Rscript run_all.R
 
 ---
 
-### Governance Artefacts
+### 11.0 Governance Artefacts
 
 | Artefact | Purpose |
 |---|---|
@@ -446,7 +446,7 @@ Rscript run_all.R
 | `docs/COMPLIANCE_CROSSWALK.csv` | Component-level coverage assessment across SR 11-7, FRTB, Basel III IRB, BCBS 239, SOC 2, E8 ML4, ISM |
 | `data/manifest/data_manifest.toml` | Controlled input registry with SHA-256, lineage references, and approval fields |
 
-## Quickstart — MCP Orchestration Server
+## 12.0 Quickstart — MCP Orchestration Server
 
 > The MCP server exposes enumerated actions only. Claude Code cannot infer
 > configuration from context, execute arbitrary shell commands, or register
@@ -454,9 +454,9 @@ Rscript run_all.R
 
 ---
 
-### Requirements
+### 12.1 Requirements
 
-### MCP server runtime
+### 12.1.1 MCP server runtime
 
 These dependencies must be present before `npm install.`
 is run. The server will not start without them.
@@ -467,7 +467,7 @@ is run. The server will not start without them.
 | npm | `9.0.0` | Package management |
 | Bash | `5.0` | Dispatch and orchestration scripts |
 
-### Host-layer dependencies
+### 12.1.2 Host-layer dependencies
 
 These dependencies are invoked by the Bash orchestration
 layer at action execution time, not by the Node.js server
@@ -504,7 +504,7 @@ apt-get install -y podman
 
 ---
 
-### Install and build
+### 12.2 Install and build
 
 ```bash
 npm install
@@ -522,7 +522,7 @@ ls dist/server.js   # must exist before registering with Claude Code
 
 ---
 
-### Pre-flight checklist
+### 12.3 Pre-flight checklist
 
 Complete before first use. The server will start without these steps
 but actions will halt at the first gate they fail.
@@ -580,7 +580,7 @@ threshold is operator-defined.
 
 ---
 
-### Register with Claude Code
+### 12.4 Register with Claude Code
 
 Add the server to Claude Code's MCP configuration.
 The config file location depends on your Claude Code version —
@@ -606,7 +606,7 @@ Restart Claude Code after editing the MCP config.
 
 ---
 
-## Verify the server is running
+## 12.5 Verify the server is running
 
 Start the server manually to confirm it initialises without error:
 
@@ -630,7 +630,7 @@ this manual start is for verification only.
 
 ---
 
-### Enumerated actions
+### 12.6 Enumerated actions
 
 Claude Code can invoke exactly these six actions via the MCP server.
 No others exist. Unknown action strings halt immediately and are logged.
@@ -650,7 +650,7 @@ These invoke no shell and produce no state change.
 
 ---
 
-### Exit codes
+### 12.7 Exit codes
 
 | Code | Meaning | Required response |
 |---|---|---|
@@ -663,7 +663,7 @@ entries identifying which files deviated and their declared vs actual checksums.
 
 ---
 
-### Audit log location
+### 12.8 Audit log location
 
 Each dispatch invocation writes a session log:
 
@@ -683,7 +683,7 @@ see operator action items in `docs/IATO_MCP_ARCHITECTURE.md §6`.
 
 ---
 
-### Development mode
+### 12.9 Development mode
 
 Run without building first:
 
@@ -700,7 +700,7 @@ Do not register `npm run dev` with Claude Code — use the compiled
 
 ----
 
-### Non-goals
+### 13.0 Non-goals
 
 > **Non-Goals Register:** The full runtime boundary
 > declaration for this programme is maintained as a
@@ -711,7 +711,7 @@ Do not register `npm run dev` with Claude Code — use the compiled
 > non-authoritative and must not be treated as complete.
 
 
-## License and disclaimer
+## 14.0 License and disclaimer
 
 This project is licensed under the Apache License, Version 2.0.
 See `LICENSE` and `NOTICE` at repository root for full terms.
