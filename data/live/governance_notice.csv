@@ -1,0 +1,7 @@
+Section,Instruction_Type,Directive,Control_Requirement,Enforcement
+"Governance Notice","Requirement","data/live/ is a controlled drop-zone for operator-onboarded live data.","Controlled live-data intake zone",""
+"Operator Instructions","Restriction","Do not commit live datasets to git.","Prevent live dataset commits to version control",""
+"Operator Instructions","Requirement","Add/update corresponding [[files]] entry in data/manifest/data_manifest.toml under approved change control.","Manifest entry maintenance under approved change control",""
+"Operator Instructions","Requirement","Populate hash_sha256, approved_by, and approved_date prior to ingestion.","Pre-ingestion metadata completion (hash and approvals)","Prior to ingestion"
+"Operator Instructions","Requirement","Create/maintain dataset lineage record in data/lineage/.","Dataset lineage record maintenance",""
+"Operator Instructions","Validation","If SHA-256 verification fails at preflight, halt run and escalate per operations procedure.","Preflight SHA-256 verification","Halt run and escalate per operations procedure if verification fails at preflight"
