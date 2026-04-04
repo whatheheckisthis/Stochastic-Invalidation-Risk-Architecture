@@ -3,3 +3,6 @@
 !/data/live/.gitkeep
 !/data/live/README.md
 notebooks/*.ipynb filter=nbstripout
+
+# Local dependency cache (pre-existing, not version-controlled)
+iato-mcp/node_modules/
