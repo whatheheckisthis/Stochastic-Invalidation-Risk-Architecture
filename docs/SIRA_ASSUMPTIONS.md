@@ -8,7 +8,7 @@
 > coursework content or submitted as original work in any
 > assessed academic context. It is a practitioner artefact,
 > not peer-reviewed literature. Trace all analytical claims
-> to their cited primary sources. See [`DISCLAIMER.md`](DISCLAIMER.md)
+> to their cited primary sources. See [`notebooks/DISCLAIMER.md`](../notebooks/DISCLAIMER.md)
 > for full terms.
 
 
@@ -389,7 +389,7 @@ memo required to justify against empirical data. (`COMPLIANCE_CROSSWALK.csv`)
 > **Non-Goals Register:** The full runtime boundary
 > declaration for this programme is maintained as a
 > governed artefact at
-> [`notebooks/sira_non_goals_table.md`](sira_non_goals_table.md).
+> [`SIRA_NON_GOALS.md`](SIRA_NON_GOALS.md).
 > That document is the authoritative source. This file
 > is the canonical location.
 
@@ -398,13 +398,13 @@ notebook execution context:
 
 | ID | Boundary | Reference |
 |---|---|---|
-| NG-001 | Not a live risk system | [`sira_non_goals_table.md`](sira_non_goals_table.md#analytical-boundaries--ng-001-to-ng-006) |
-| NG-003 | Not a full credit model | [`sira_non_goals_table.md`](sira_non_goals_table.md#analytical-boundaries--ng-001-to-ng-006) |
-| NG-016 | BSM replication assumes continuous liquid trading | [`sira_non_goals_table.md`](sira_non_goals_table.md#options-and-bsm-boundaries--ng-016-to-ng-021) |
-| NG-017 | Vol surface is scenario-governed | [`sira_non_goals_table.md`](sira_non_goals_table.md#options-and-bsm-boundaries--ng-016-to-ng-021) |
-| NG-022 | Executed model outputs not present | [`sira_non_goals_table.md`](sira_non_goals_table.md#evidence-and-validation-boundaries--ng-022-to-ng-024) |
-| NG-023 | Distribution parameters not empirically calibrated | [`sira_non_goals_table.md`](sira_non_goals_table.md#evidence-and-validation-boundaries--ng-022-to-ng-024) |
-| NG-024 | No backtesting evidence present | [`sira_non_goals_table.md`](sira_non_goals_table.md#evidence-and-validation-boundaries--ng-022-to-ng-024) |
+| NG-001 | Not a live risk system | [`SIRA_NON_GOALS.md`](SIRA_NON_GOALS.md#analytical-boundaries--ng-001-to-ng-006) |
+| NG-003 | Not a full credit model | [`SIRA_NON_GOALS.md`](SIRA_NON_GOALS.md#analytical-boundaries--ng-001-to-ng-006) |
+| NG-016 | BSM replication assumes continuous liquid trading | [`SIRA_NON_GOALS.md`](SIRA_NON_GOALS.md#options-and-bsm-boundaries--ng-016-to-ng-021) |
+| NG-017 | Vol surface is scenario-governed | [`SIRA_NON_GOALS.md`](SIRA_NON_GOALS.md#options-and-bsm-boundaries--ng-016-to-ng-021) |
+| NG-022 | Executed model outputs not present | [`SIRA_NON_GOALS.md`](SIRA_NON_GOALS.md#evidence-and-validation-boundaries--ng-022-to-ng-024) |
+| NG-023 | Distribution parameters not empirically calibrated | [`SIRA_NON_GOALS.md`](SIRA_NON_GOALS.md#evidence-and-validation-boundaries--ng-022-to-ng-024) |
+| NG-024 | No backtesting evidence present | [`SIRA_NON_GOALS.md`](SIRA_NON_GOALS.md#evidence-and-validation-boundaries--ng-022-to-ng-024) |
 
 ---
 
@@ -415,7 +415,7 @@ notebook execution context:
 - [`docs/DEFENSE_APPENDIX.md`](../docs/DEFENSE_APPENDIX.md) — epsilon and sigma as co-primary defense objects
 - [`docs/COMPLIANCE_CROSSWALK.csv`](../docs/COMPLIANCE_CROSSWALK.csv) — component-level coverage assessment
 - Haugh (2016). *The Black-Scholes Model.* Columbia IEOR E4706.
-- [`notebooks/sira_non_goals_table.md`](sira_non_goals_table.md) — canonical non-goals register (NG-001 to NG-024)
+- [`SIRA_NON_GOALS.md`](SIRA_NON_GOALS.md) — canonical non-goals register (NG-001 to NG-024)
 
 ## Operator action items
 
@@ -462,3 +462,9 @@ crosswalk can navigate the assumptions document without a new
 orientation. The duplication register in §6 is included specifically
 to answer reviewer questions about repeated patterns before they are
 raised.
+
+---
+
+## Related Documents
+
+- Methodology Narrative: [`SIRA_METHODOLOGY.md`](SIRA_METHODOLOGY.md)

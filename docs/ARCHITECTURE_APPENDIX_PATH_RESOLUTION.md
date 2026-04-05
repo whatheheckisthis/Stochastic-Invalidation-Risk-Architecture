@@ -8,12 +8,12 @@
 > coursework content or submitted as original work in any
 > assessed academic context. It is a practitioner artefact,
 > not peer-reviewed literature. Trace all analytical claims
-> to their cited primary sources. See [`DISCLAIMER.md`](DISCLAIMER.md)
+> to their cited primary sources. See [`notebooks/DISCLAIMER.md`](../notebooks/DISCLAIMER.md)
 > for full terms.
 
 
 > Governance record for the portable TOML path resolution strategy
-> implemented in Cell 01 of `sira_scenarios.ipynb`.
+> implemented in Cell 01 of `analysis/sira_scenarios_analysis.ipynb`.
 > This is an operational control document, not a developer note.
 
 ---
