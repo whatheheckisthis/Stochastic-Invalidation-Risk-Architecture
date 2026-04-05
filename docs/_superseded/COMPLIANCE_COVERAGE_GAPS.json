@@ -1,3 +1,15 @@
+# ⚠️ SUPERSEDED
+
+This document has been replaced by:
+`docs/CONTROL_ASSURANCE_REGISTER.csv`
+
+It is retained for audit traceability and historical reference only.
+
+Do NOT use this file for:
+- control implementation
+- governance decisions
+- system interpretation
+
 {
   "source": "docs/CONTROL_ASSURANCE_REGISTER.csv",
   "gaps": [

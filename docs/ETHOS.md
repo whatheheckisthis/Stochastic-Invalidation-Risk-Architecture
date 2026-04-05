@@ -36,6 +36,9 @@ Coverage, evidence sufficiency, and gaps must be declared in the assurance regis
 ### 4.3 Layer integrity
 Governance intent, rationale interpretation, assurance status, and architecture implementation remain separate documentation layers.
 
+## 4.4 Documentation boundary
+Active documentation lives in `/docs/`. Superseded documentation lives in `/docs/_superseded/`.
+
 ## 5.0 Layer References
 - Control rationale layer: `docs/GRC_CONTROL_RATIONALE_CROSSWALK.md`
 - Control assurance layer: `docs/CONTROL_ASSURANCE_REGISTER.csv`

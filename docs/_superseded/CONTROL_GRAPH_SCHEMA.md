@@ -1,3 +1,15 @@
+# ⚠️ SUPERSEDED
+
+This document has been replaced by:
+`docs/IATO_MCP_ARCHITECTURE.md`
+
+It is retained for audit traceability and historical reference only.
+
+Do NOT use this file for:
+- control implementation
+- governance decisions
+- system interpretation
+
 # CONTROL GRAPH SCHEMA
 
 ## 1.0 Purpose

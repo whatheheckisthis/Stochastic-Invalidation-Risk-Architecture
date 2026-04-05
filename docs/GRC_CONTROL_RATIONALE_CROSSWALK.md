@@ -4,7 +4,7 @@
 This document defines why controls exist and how control intent maps to OCEG, NZISM, FAIR, and NIST RMF.
 
 This document defines control intent.
-Implementation status and coverage are maintained in `CONTROL_ASSURANCE_REGISTER.csv`.
+Implementation status, evidence, and control gaps are maintained in `CONTROL_ASSURANCE_REGISTER.csv`.
 
 ## 2.0 Scope
 This is a read-only interpretation layer. It does not define runtime behavior, enforcement logic, evidence sufficiency, or control effectiveness.
