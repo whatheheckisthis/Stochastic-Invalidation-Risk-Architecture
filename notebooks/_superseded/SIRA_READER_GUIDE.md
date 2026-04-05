@@ -1,3 +1,17 @@
+# ⚠️ SUPERSEDED
+
+This document has been merged into:
+`docs/README.md`
+
+It is retained for audit traceability only.
+
+Do NOT use this file for:
+- system interpretation
+- governance decisions
+- modelling reference
+
+---
+
 # SIRA Notebook — Reader Guide
 
 **Primary documents:**

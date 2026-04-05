@@ -74,9 +74,9 @@
 
 | ID | Boundary | Detail |
 |---|---|---|
-| NG-022 | Executed model outputs not present | The engine is governed at the architecture and documentation layer prior to live data ingestion. No committed run artefact constitutes a production output. See [`docs/SIRA_EVIDENCE_GAP_REGISTER.md`](../docs/SIRA_EVIDENCE_GAP_REGISTER.md) EG-001. |
-| NG-023 | Distribution parameters not empirically calibrated | Beta and Power Law parameters are structurally justified but not fitted to empirical workout data in this repository. Calibration is an operator action item contingent on historical workout data. See [`docs/SIRA_EVIDENCE_GAP_REGISTER.md`](../docs/SIRA_EVIDENCE_GAP_REGISTER.md) EG-002. |
-| NG-024 | No backtesting evidence present | Signal logic has not been evaluated against historical recovery outcomes. Backtesting is an operator action item contingent on a labelled historical dataset. See [`docs/SIRA_EVIDENCE_GAP_REGISTER.md`](../docs/SIRA_EVIDENCE_GAP_REGISTER.md) EG-003. |
+| NG-022 | Executed model outputs not present | The engine is governed at the architecture and documentation layer prior to live data ingestion. No committed run artefact constitutes a production output. See [`docs/SIRA_EVIDENCE_GAP_REGISTER.md`](_superseded/SIRA_EVIDENCE_GAP_REGISTER.md) EG-001. |
+| NG-023 | Distribution parameters not empirically calibrated | Beta and Power Law parameters are structurally justified but not fitted to empirical workout data in this repository. Calibration is an operator action item contingent on historical workout data. See [`docs/SIRA_EVIDENCE_GAP_REGISTER.md`](_superseded/SIRA_EVIDENCE_GAP_REGISTER.md) EG-002. |
+| NG-024 | No backtesting evidence present | Signal logic has not been evaluated against historical recovery outcomes. Backtesting is an operator action item contingent on a labelled historical dataset. See [`docs/SIRA_EVIDENCE_GAP_REGISTER.md`](_superseded/SIRA_EVIDENCE_GAP_REGISTER.md) EG-003. |
 
 ---
 
@@ -87,4 +87,8 @@
 > ML3/ML4, SOC 2, SR 11-7, or any equivalent evaluation
 > framework. Evidence and validation boundaries
 > (NG-022 to NG-024) are governed in
-> [`docs/SIRA_EVIDENCE_GAP_REGISTER.md`](../docs/SIRA_EVIDENCE_GAP_REGISTER.md).
+> [`docs/SIRA_EVIDENCE_GAP_REGISTER.md`](_superseded/SIRA_EVIDENCE_GAP_REGISTER.md).
+
+---
+
+**Boundary Clarification:** This defines system boundaries, not behaviour.
