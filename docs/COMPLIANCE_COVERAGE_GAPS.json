@@ -1,183 +1,149 @@
 {
-  "query": "Gap_Flag != 'NO' OR Coverage_Assessment NOT IN ['FULL', 'DECLARED_LIMITATION']",
-  "count": 18,
-  "rows": [
+  "source": "docs/CONTROL_ASSURANCE_REGISTER.csv",
+  "gaps": [
     {
-      "SIRA_Component": "config/sira.toml",
-      "Control_Framework": "SR 11-7",
+      "Control_ID": "CTRL-001",
       "Control_Reference": "Model Development-Change Control",
-      "Control_Description": "Centralized declaration of scenario/distribution/signal parameters with controlled updates and reproducible intent register",
-      "Evidence_Type": "Configuration baseline + git history",
       "Coverage_Assessment": "PARTIAL",
       "Gap_Flag": "OPERATOR_DEPENDENT",
       "Notes": "Architecture centralizes parameter control but approval workflow and signatory controls are operator-managed"
     },
     {
-      "SIRA_Component": "config/sira.toml",
-      "Control_Framework": "SOC 2",
+      "Control_ID": "CTRL-002",
       "Control_Reference": "CC8.1 Change Management",
-      "Control_Description": "Parameter changes are isolated to TOML and can be reviewed as discrete configuration diffs",
-      "Evidence_Type": "Versioned config diff evidence",
       "Coverage_Assessment": "PARTIAL",
       "Gap_Flag": "OPERATOR_DEPENDENT",
       "Notes": "Supports traceability; formal change authorization requires external process"
     },
     {
-      "SIRA_Component": "scripts/00_env_check.R",
-      "Control_Framework": "Essential Eight ML4",
+      "Control_ID": "CTRL-003",
       "Control_Reference": "Application Control + Patch/Version Discipline",
-      "Control_Description": "Preflight enforces runtime prerequisites and config parseability before execution to reduce uncontrolled runtime variance",
-      "Evidence_Type": "Pre-execution check logs",
       "Coverage_Assessment": "PARTIAL",
       "Gap_Flag": "OPERATOR_DEPENDENT",
       "Notes": "No centralized endpoint attestation in-repo"
     },
     {
-      "SIRA_Component": "scripts/02_analysis.R (Beta distribution logic)",
-      "Control_Framework": "SR 11-7",
+      "Control_ID": "CTRL-005",
+      "Control_Reference": "LGD Estimation Governance",
+      "Coverage_Assessment": "DECLARED_LIMITATION",
+      "Gap_Flag": "NO",
+      "Notes": "Explicit non-goal prevents misclassification as IRB capital model"
+    },
+    {
+      "Control_ID": "CTRL-006",
       "Control_Reference": "Outcomes Analysis and Ongoing Monitoring",
-      "Control_Description": "Beta parameterized stress engine is deterministic under CFG runtime seed and auditable at run level",
-      "Evidence_Type": "Reproducible run logs + seeded outputs",
       "Coverage_Assessment": "PARTIAL",
       "Gap_Flag": "OPERATOR_DEPENDENT",
       "Notes": "Formal validation testing and challenger benchmarking not yet codified"
     },
     {
-      "SIRA_Component": "scripts/02_analysis.R (Power Law logic)",
-      "Control_Framework": "FRTB Article 325",
+      "Control_ID": "CTRL-007",
       "Control_Reference": "Stress Calibration and Tail Risk Capture",
-      "Control_Description": "Power-law tail construction addresses non-linear jump risk under counterparty and hyperinflation scenarios",
-      "Evidence_Type": "Scenario tail-behaviour evidence",
       "Coverage_Assessment": "PARTIAL",
       "Gap_Flag": "OPERATOR_DEPENDENT",
       "Notes": "Requires operator-owned empirical calibration justification"
     },
     {
-      "SIRA_Component": "Air-gap compatibility",
-      "Control_Framework": "Essential Eight ML4",
+      "Control_ID": "CTRL-011",
+      "Control_Reference": "Use Test and Governance Boundary",
+      "Coverage_Assessment": "DECLARED_LIMITATION",
+      "Gap_Flag": "NO",
+      "Notes": "Must remain subordinate to instrument-level credit analysis and policy controls"
+    },
+    {
+      "Control_ID": "CTRL-013",
       "Control_Reference": "Operational Resilience/Recovery Preparedness",
-      "Control_Description": "No external network dependency at runtime supports continuity in disconnected environments",
-      "Evidence_Type": "Runtime dependency manifest + offline execution evidence",
       "Coverage_Assessment": "PARTIAL",
       "Gap_Flag": "OPERATOR_DEPENDENT",
       "Notes": "Validated runtime manifest custody and release governance are external"
     },
     {
-      "SIRA_Component": "Air-gap compatibility",
-      "Control_Framework": "ISM",
+      "Control_ID": "CTRL-014",
       "Control_Reference": "ISM-0604/ISM-1148 (Network Isolation and Continuity)",
-      "Control_Description": "Terminal-native offline operation aligns with isolated environment execution requirements",
-      "Evidence_Type": "Offline run evidence",
       "Coverage_Assessment": "PARTIAL",
       "Gap_Flag": "OPERATOR_DEPENDENT",
       "Notes": "Control satisfaction depends on operator enclave configuration"
     },
     {
-      "SIRA_Component": "run_all.R orchestration",
-      "Control_Framework": "SOC 2",
+      "Control_ID": "CTRL-015",
       "Control_Reference": "CC6.6 Logical and Procedural Access to Change Execution",
-      "Control_Description": "Single entry-point run orchestration limits ad hoc stage bypass and supports controlled execution path",
-      "Evidence_Type": "Entrypoint script + invocation records",
       "Coverage_Assessment": "PARTIAL",
       "Gap_Flag": "OPERATOR_DEPENDENT",
       "Notes": "Access controls around execution host are outside repository scope"
     },
     {
-      "SIRA_Component": "scripts/02_analysis.R (Power Law logic)",
-      "Control_Framework": "FRTB Article 325",
+      "Control_ID": "CTRL-016",
       "Control_Reference": "Non-Modellable Risk Factor Stress Capture",
-      "Control_Description": "Jump-risk oriented stress regime supports severe tail scenario evaluation where linear assumptions understate risk",
-      "Evidence_Type": "Scenario-level signal and ruin-flag outputs",
       "Coverage_Assessment": "PARTIAL",
       "Gap_Flag": "OPERATOR_DEPENDENT",
       "Notes": "Formal linkage to desk-level FRTB governance requires operator framework mapping"
     },
     {
-      "SIRA_Component": "scripts/10_liability_engine.R",
-      "Control_Framework": "SR 11-7",
+      "Control_ID": "CTRL-017",
       "Control_Reference": "Assumption Governance and Liability Boundary Control",
-      "Control_Description": "Liability stack assumptions are TOML-governed and explicitly stress-adjusted under hyperinflation to surface headroom breach risk",
-      "Evidence_Type": "Config diffs + deterministic run output",
       "Coverage_Assessment": "PARTIAL",
       "Gap_Flag": "OPERATOR_DEPENDENT",
       "Notes": "Requires documented owner and approval process for payout-rate and inflation assumptions"
     },
     {
-      "SIRA_Component": "scripts/13_capital_stack_viz.R",
-      "Control_Framework": "SOC 2",
+      "Control_ID": "CTRL-018",
+      "Control_Reference": "Income-vs-Loss Stress Transparency",
+      "Coverage_Assessment": "DECLARED_LIMITATION",
+      "Gap_Flag": "NO",
+      "Notes": "Analytical stress layer only and not insurer/regulatory capital output"
+    },
+    {
+      "Control_ID": "CTRL-020",
       "Control_Reference": "CC7.2 Monitoring and Exception Visibility",
-      "Control_Description": "Terminal-native capital stack summary and color-coded chart provide consistent scenario-level operational visibility for escalation decisions",
-      "Evidence_Type": "Terminal summary + output artifacts",
       "Coverage_Assessment": "PARTIAL",
       "Gap_Flag": "OPERATOR_DEPENDENT",
       "Notes": "Escalation ownership and notification workflow remain external governance controls"
     },
     {
-      "SIRA_Component": "scripts/20_dcf.R",
-      "Control_Framework": "SR 11-7",
+      "Control_ID": "CTRL-024",
       "Control_Reference": "Outcomes Analysis",
-      "Control_Description": "Stress-conditioned DCF engine links scenario recoveries to valuation erosion and impairment signaling for model outcomes analysis",
-      "Evidence_Type": "Scenario valuation output + impairment signal evidence",
       "Coverage_Assessment": "PARTIAL",
       "Gap_Flag": "OPERATOR_DEPENDENT",
       "Notes": "Threshold ownership and validation cadence require committee governance"
     },
     {
-      "SIRA_Component": "scripts/21_ma.R",
-      "Control_Framework": "SOC 2",
+      "Control_ID": "CTRL-025",
       "Control_Reference": "CC3 Risk Assessment",
-      "Control_Description": "M&A screen formalizes acquisition decision thresholds under stress and captures review/pass triggers for near-threshold outcomes",
-      "Evidence_Type": "Scenario screening output + threshold config evidence",
       "Coverage_Assessment": "PARTIAL",
       "Gap_Flag": "OPERATOR_DEPENDENT",
       "Notes": "Acquisition override workflow and approvals remain operator-managed"
     },
     {
-      "SIRA_Component": "scripts/23_lbo.R",
-      "Control_Framework": "FRTB Article 325",
+      "Control_ID": "CTRL-026",
       "Control_Reference": "Leverage Stress and Tail Resilience",
-      "Control_Description": "LBO stress module evaluates DSCR and stressed IRR viability under scenario-conditioned exit values to expose leverage fragility",
-      "Evidence_Type": "Scenario DSCR/IRR output + viability states",
       "Coverage_Assessment": "PARTIAL",
       "Gap_Flag": "OPERATOR_DEPENDENT",
       "Notes": "Calibration linkage to desk governance and leverage policy remains external"
     },
     {
-      "SIRA_Component": "scripts/24_irr.R",
-      "Control_Framework": "SR 11-7",
+      "Control_ID": "CTRL-027",
       "Control_Reference": "Ongoing Monitoring",
-      "Control_Description": "IRR attribution module decomposes return drivers and recomputes stressed IRR per scenario for monitoring against floor and target thresholds",
-      "Evidence_Type": "IRR attribution artifacts + stressed signal evidence",
       "Coverage_Assessment": "PARTIAL",
       "Gap_Flag": "OPERATOR_DEPENDENT",
       "Notes": "Target/floor governance and monitoring escalation remain external"
     },
     {
-      "SIRA_Component": "scripts/30_bs_core.R",
-      "Control_Framework": "SR 11-7",
+      "Control_ID": "CTRL-029",
       "Control_Reference": "Conceptual Soundness",
-      "Control_Description": "Derivation and runtime implementation are documented from replicating-portfolio PDE basis with explicit risk-neutral drift elimination",
-      "Evidence_Type": "Script header + preflight halt artifact",
       "Coverage_Assessment": "FULL",
       "Gap_Flag": "OPERATOR_DEPENDENT",
       "Notes": "Empirical volatility calibration remains operator owned"
     },
     {
-      "SIRA_Component": "scripts/36_delta_hedge.R",
-      "Control_Framework": "SR 11-7",
+      "Control_ID": "CTRL-032",
       "Control_Reference": "Model Validation",
-      "Control_Description": "Discrete replication error simulation provides internal validation lens for option-adjusted solvency headroom resilience",
-      "Evidence_Type": "Delta-hedge artifact",
       "Coverage_Assessment": "PARTIAL",
       "Gap_Flag": "OPERATOR_DEPENDENT",
       "Notes": "Continuous-trading and liquidity assumptions are not fully valid in private credit"
     },
     {
-      "SIRA_Component": "notebooks/SIRA_REVIEWER_CHECKLIST.md",
-      "Control_Framework": "SR 11-7",
+      "Control_ID": "CTRL-038",
       "Control_Reference": "Model Validation",
-      "Control_Description": "Structured review checklist mapping validation criteria to notebook cells, source documents, and evidence artefacts.",
-      "Evidence_Type": "Validation checklist",
       "Coverage_Assessment": "PARTIAL",
       "Gap_Flag": "OPERATOR_DEPENDENT",
       "Notes": "Section 8 contains operator-owned evidence requirements outside repository boundary."
