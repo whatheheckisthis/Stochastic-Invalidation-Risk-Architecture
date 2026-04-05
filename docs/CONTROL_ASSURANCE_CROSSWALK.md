@@ -1,4 +1,4 @@
-# GRC Control Rationale & Assurance Crosswalk (SIRA + IĀTŌ)
+# Control Assurance Crosswalk 
 
 ## 1.0 Purpose
 
@@ -61,7 +61,7 @@ The mapped controls are interpreted as inputs to frequency, vulnerability/contro
 
 ### 4.4 NIST RMF lifecycle framing alignment
 
-The mapped controls are situated in RMF lifecycle context (Categorize, Select, Implement, Assess, Authorize, Monitor, Respond/Govern overlays) for assurance framing only.
+The mapped controls are situated in the RMF lifecycle context (Categorize, Select, Implement, Assess, Authorize, Monitor, Respond/Govern overlays) for assurance framing only.
 
 ---
 
