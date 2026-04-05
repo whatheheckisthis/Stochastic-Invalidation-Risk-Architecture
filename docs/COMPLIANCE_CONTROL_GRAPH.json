@@ -1,0 +1,6794 @@
+{
+  "nodes": {
+    "N1": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "config/sira.toml",
+      "control_tag": "Model_Development_Change_Control"
+    },
+    "N2": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SR 11-7",
+      "control_tag": "Model_Development_Change_Control"
+    },
+    "N3": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Model Development-Change Control",
+      "control_tag": "Model_Development_Change_Control"
+    },
+    "N4": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Centralized declaration of scenario/distribution/signal parameters with controlled updates and reproducible intent register",
+      "control_tag": "Model_Development_Change_Control"
+    },
+    "N5": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Configuration baseline + git history",
+      "control_tag": "Model_Development_Change_Control"
+    },
+    "N6": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "PARTIAL",
+      "control_tag": "Model_Development_Change_Control"
+    },
+    "N7": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "OPERATOR_DEPENDENT",
+      "control_tag": "Model_Development_Change_Control"
+    },
+    "N8": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Architecture centralizes parameter control but approval workflow and signatory controls are operator-managed",
+      "control_tag": "Model_Development_Change_Control"
+    },
+    "N9": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "config/sira.toml",
+      "control_tag": "CC8_1_Change_Management"
+    },
+    "N10": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SOC 2",
+      "control_tag": "CC8_1_Change_Management"
+    },
+    "N11": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "CC8.1 Change Management",
+      "control_tag": "CC8_1_Change_Management"
+    },
+    "N12": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Parameter changes are isolated to TOML and can be reviewed as discrete configuration diffs",
+      "control_tag": "CC8_1_Change_Management"
+    },
+    "N13": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Versioned config diff evidence",
+      "control_tag": "CC8_1_Change_Management"
+    },
+    "N14": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "PARTIAL",
+      "control_tag": "CC8_1_Change_Management"
+    },
+    "N15": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "OPERATOR_DEPENDENT",
+      "control_tag": "CC8_1_Change_Management"
+    },
+    "N16": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Supports traceability; formal change authorization requires external process",
+      "control_tag": "CC8_1_Change_Management"
+    },
+    "N17": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/00_env_check.R",
+      "control_tag": "Application_Control_Patch_Version_Discipline"
+    },
+    "N18": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "Essential Eight ML4",
+      "control_tag": "Application_Control_Patch_Version_Discipline"
+    },
+    "N19": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Application Control + Patch/Version Discipline",
+      "control_tag": "Application_Control_Patch_Version_Discipline"
+    },
+    "N20": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Preflight enforces runtime prerequisites and config parseability before execution to reduce uncontrolled runtime variance",
+      "control_tag": "Application_Control_Patch_Version_Discipline"
+    },
+    "N21": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Pre-execution check logs",
+      "control_tag": "Application_Control_Patch_Version_Discipline"
+    },
+    "N22": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "PARTIAL",
+      "control_tag": "Application_Control_Patch_Version_Discipline"
+    },
+    "N23": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "OPERATOR_DEPENDENT",
+      "control_tag": "Application_Control_Patch_Version_Discipline"
+    },
+    "N24": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "No centralized endpoint attestation in-repo",
+      "control_tag": "Application_Control_Patch_Version_Discipline"
+    },
+    "N25": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/00_env_check.R",
+      "control_tag": "ISM_1486_ISM_1544_System_Hardening_and_Verification"
+    },
+    "N26": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "ISM",
+      "control_tag": "ISM_1486_ISM_1544_System_Hardening_and_Verification"
+    },
+    "N27": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "ISM-1486/ISM-1544 (System Hardening and Verification)",
+      "control_tag": "ISM_1486_ISM_1544_System_Hardening_and_Verification"
+    },
+    "N28": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Environment and dependency validation prior to analytical execution supports controlled operating baseline",
+      "control_tag": "ISM_1486_ISM_1544_System_Hardening_and_Verification"
+    },
+    "N29": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Runtime validation output",
+      "control_tag": "ISM_1486_ISM_1544_System_Hardening_and_Verification"
+    },
+    "N30": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "ISM_1486_ISM_1544_System_Hardening_and_Verification"
+    },
+    "N31": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "ISM_1486_ISM_1544_System_Hardening_and_Verification"
+    },
+    "N32": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Control objective met within local execution boundary",
+      "control_tag": "ISM_1486_ISM_1544_System_Hardening_and_Verification"
+    },
+    "N33": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/02_analysis.R (Beta distribution logic)",
+      "control_tag": "LGD_Estimation_Governance"
+    },
+    "N34": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "Basel III IRB",
+      "control_tag": "LGD_Estimation_Governance"
+    },
+    "N35": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "LGD Estimation Governance",
+      "control_tag": "LGD_Estimation_Governance"
+    },
+    "N36": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Bounded recovery modelling with scenario-specific Beta parameters provides stress-LGD proxy inputs without IRB equivalence claim",
+      "control_tag": "LGD_Estimation_Governance"
+    },
+    "N37": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Model logic review + scenario output evidence",
+      "control_tag": "LGD_Estimation_Governance"
+    },
+    "N38": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "DECLARED_LIMITATION",
+      "control_tag": "LGD_Estimation_Governance"
+    },
+    "N39": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "LGD_Estimation_Governance"
+    },
+    "N40": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Explicit non-goal prevents misclassification as IRB capital model",
+      "control_tag": "LGD_Estimation_Governance"
+    },
+    "N41": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/02_analysis.R (Beta distribution logic)",
+      "control_tag": "Outcomes_Analysis_and_Ongoing_Monitoring"
+    },
+    "N42": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SR 11-7",
+      "control_tag": "Outcomes_Analysis_and_Ongoing_Monitoring"
+    },
+    "N43": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Outcomes Analysis and Ongoing Monitoring",
+      "control_tag": "Outcomes_Analysis_and_Ongoing_Monitoring"
+    },
+    "N44": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Beta parameterized stress engine is deterministic under CFG runtime seed and auditable at run level",
+      "control_tag": "Outcomes_Analysis_and_Ongoing_Monitoring"
+    },
+    "N45": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Reproducible run logs + seeded outputs",
+      "control_tag": "Outcomes_Analysis_and_Ongoing_Monitoring"
+    },
+    "N46": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "PARTIAL",
+      "control_tag": "Outcomes_Analysis_and_Ongoing_Monitoring"
+    },
+    "N47": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "OPERATOR_DEPENDENT",
+      "control_tag": "Outcomes_Analysis_and_Ongoing_Monitoring"
+    },
+    "N48": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Formal validation testing and challenger benchmarking not yet codified",
+      "control_tag": "Outcomes_Analysis_and_Ongoing_Monitoring"
+    },
+    "N49": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/02_analysis.R (Power Law logic)",
+      "control_tag": "Stress_Calibration_and_Tail_Risk_Capture"
+    },
+    "N50": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "FRTB Article 325",
+      "control_tag": "Stress_Calibration_and_Tail_Risk_Capture"
+    },
+    "N51": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Stress Calibration and Tail Risk Capture",
+      "control_tag": "Stress_Calibration_and_Tail_Risk_Capture"
+    },
+    "N52": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Power-law tail construction addresses non-linear jump risk under counterparty and hyperinflation scenarios",
+      "control_tag": "Stress_Calibration_and_Tail_Risk_Capture"
+    },
+    "N53": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Scenario tail-behaviour evidence",
+      "control_tag": "Stress_Calibration_and_Tail_Risk_Capture"
+    },
+    "N54": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "PARTIAL",
+      "control_tag": "Stress_Calibration_and_Tail_Risk_Capture"
+    },
+    "N55": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "OPERATOR_DEPENDENT",
+      "control_tag": "Stress_Calibration_and_Tail_Risk_Capture"
+    },
+    "N56": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Requires operator-owned empirical calibration justification",
+      "control_tag": "Stress_Calibration_and_Tail_Risk_Capture"
+    },
+    "N57": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/03_visualize.R output",
+      "control_tag": "Accuracy_and_Integrity_of_Risk_Data_Aggregation"
+    },
+    "N58": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "BCBS 239 Principle 6",
+      "control_tag": "Accuracy_and_Integrity_of_Risk_Data_Aggregation"
+    },
+    "N59": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Accuracy and Integrity of Risk Data Aggregation",
+      "control_tag": "Accuracy_and_Integrity_of_Risk_Data_Aggregation"
+    },
+    "N60": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Risk signal aggregation by scenario with deterministic ordering and standardized summary table generation",
+      "control_tag": "Accuracy_and_Integrity_of_Risk_Data_Aggregation"
+    },
+    "N61": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Generated chart + terminal summary table",
+      "control_tag": "Accuracy_and_Integrity_of_Risk_Data_Aggregation"
+    },
+    "N62": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Accuracy_and_Integrity_of_Risk_Data_Aggregation"
+    },
+    "N63": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Accuracy_and_Integrity_of_Risk_Data_Aggregation"
+    },
+    "N64": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Output integrity is machine reproducible from identical inputs and seed",
+      "control_tag": "Accuracy_and_Integrity_of_Risk_Data_Aggregation"
+    },
+    "N65": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "run_all.R orchestration",
+      "control_tag": "CC7_2_Monitoring_and_Exception_Handling"
+    },
+    "N66": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SOC 2",
+      "control_tag": "CC7_2_Monitoring_and_Exception_Handling"
+    },
+    "N67": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "CC7.2 Monitoring and Exception Handling",
+      "control_tag": "CC7_2_Monitoring_and_Exception_Handling"
+    },
+    "N68": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Ordered stage execution with fail-fast error handling and explicit success/failure runtime emission",
+      "control_tag": "CC7_2_Monitoring_and_Exception_Handling"
+    },
+    "N69": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Pipeline execution logs",
+      "control_tag": "CC7_2_Monitoring_and_Exception_Handling"
+    },
+    "N70": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "CC7_2_Monitoring_and_Exception_Handling"
+    },
+    "N71": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "CC7_2_Monitoring_and_Exception_Handling"
+    },
+    "N72": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Meets pipeline integrity objective for local batch execution",
+      "control_tag": "CC7_2_Monitoring_and_Exception_Handling"
+    },
+    "N73": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "Synthetic fallback (deterministic seed)",
+      "control_tag": "Input_Data_Integrity_and_Lineage_Disclosure"
+    },
+    "N74": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "BCBS 239 Principle 6",
+      "control_tag": "Input_Data_Integrity_and_Lineage_Disclosure"
+    },
+    "N75": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Input Data Integrity and Lineage Disclosure",
+      "control_tag": "Input_Data_Integrity_and_Lineage_Disclosure"
+    },
+    "N76": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Deterministic synthetic fallback ensures continuity while preserving explicit data mode metadata for lineage visibility",
+      "control_tag": "Input_Data_Integrity_and_Lineage_Disclosure"
+    },
+    "N77": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Metadata record + runtime data mode output",
+      "control_tag": "Input_Data_Integrity_and_Lineage_Disclosure"
+    },
+    "N78": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Input_Data_Integrity_and_Lineage_Disclosure"
+    },
+    "N79": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Input_Data_Integrity_and_Lineage_Disclosure"
+    },
+    "N80": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Governed manifest, lineage, and hash controls prevent silent synthetic fallback for live data conditions within repository boundary",
+      "control_tag": "Input_Data_Integrity_and_Lineage_Disclosure"
+    },
+    "N81": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "SELL/HOLD signal output",
+      "control_tag": "Use_Test_and_Governance_Boundary"
+    },
+    "N82": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "Basel III IRB",
+      "control_tag": "Use_Test_and_Governance_Boundary"
+    },
+    "N83": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Use Test and Governance Boundary",
+      "control_tag": "Use_Test_and_Governance_Boundary"
+    },
+    "N84": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Signal is pre-trade analytical triage output and not an automated execution or regulatory capital decision engine",
+      "control_tag": "Use_Test_and_Governance_Boundary"
+    },
+    "N85": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Signal logic + non-goals register",
+      "control_tag": "Use_Test_and_Governance_Boundary"
+    },
+    "N86": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "DECLARED_LIMITATION",
+      "control_tag": "Use_Test_and_Governance_Boundary"
+    },
+    "N87": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Use_Test_and_Governance_Boundary"
+    },
+    "N88": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Must remain subordinate to instrument-level credit analysis and policy controls",
+      "control_tag": "Use_Test_and_Governance_Boundary"
+    },
+    "N89": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "Non-goals register",
+      "control_tag": "Model_Boundary_and_Intended_Use_Documentation"
+    },
+    "N90": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SR 11-7",
+      "control_tag": "Model_Boundary_and_Intended_Use_Documentation"
+    },
+    "N91": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Model Boundary and Intended Use Documentation",
+      "control_tag": "Model_Boundary_and_Intended_Use_Documentation"
+    },
+    "N92": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Explicit documentation of non-claims constrains misuse and supports inventory classification and governance review",
+      "control_tag": "Model_Boundary_and_Intended_Use_Documentation"
+    },
+    "N93": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "README non-goals section",
+      "control_tag": "Model_Boundary_and_Intended_Use_Documentation"
+    },
+    "N94": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Model_Boundary_and_Intended_Use_Documentation"
+    },
+    "N95": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Model_Boundary_and_Intended_Use_Documentation"
+    },
+    "N96": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Provides enforceable boundary conditions for model risk committees",
+      "control_tag": "Model_Boundary_and_Intended_Use_Documentation"
+    },
+    "N97": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "Air-gap compatibility",
+      "control_tag": "Operational_Resilience_Recovery_Preparedness"
+    },
+    "N98": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "Essential Eight ML4",
+      "control_tag": "Operational_Resilience_Recovery_Preparedness"
+    },
+    "N99": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Operational Resilience/Recovery Preparedness",
+      "control_tag": "Operational_Resilience_Recovery_Preparedness"
+    },
+    "N100": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "No external network dependency at runtime supports continuity in disconnected environments",
+      "control_tag": "Operational_Resilience_Recovery_Preparedness"
+    },
+    "N101": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Runtime dependency manifest + offline execution evidence",
+      "control_tag": "Operational_Resilience_Recovery_Preparedness"
+    },
+    "N102": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "PARTIAL",
+      "control_tag": "Operational_Resilience_Recovery_Preparedness"
+    },
+    "N103": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "OPERATOR_DEPENDENT",
+      "control_tag": "Operational_Resilience_Recovery_Preparedness"
+    },
+    "N104": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Validated runtime manifest custody and release governance are external",
+      "control_tag": "Operational_Resilience_Recovery_Preparedness"
+    },
+    "N105": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "Air-gap compatibility",
+      "control_tag": "ISM_0604_ISM_1148_Network_Isolation_and_Continuity"
+    },
+    "N106": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "ISM",
+      "control_tag": "ISM_0604_ISM_1148_Network_Isolation_and_Continuity"
+    },
+    "N107": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "ISM-0604/ISM-1148 (Network Isolation and Continuity)",
+      "control_tag": "ISM_0604_ISM_1148_Network_Isolation_and_Continuity"
+    },
+    "N108": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Terminal-native offline operation aligns with isolated environment execution requirements",
+      "control_tag": "ISM_0604_ISM_1148_Network_Isolation_and_Continuity"
+    },
+    "N109": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Offline run evidence",
+      "control_tag": "ISM_0604_ISM_1148_Network_Isolation_and_Continuity"
+    },
+    "N110": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "PARTIAL",
+      "control_tag": "ISM_0604_ISM_1148_Network_Isolation_and_Continuity"
+    },
+    "N111": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "OPERATOR_DEPENDENT",
+      "control_tag": "ISM_0604_ISM_1148_Network_Isolation_and_Continuity"
+    },
+    "N112": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Control satisfaction depends on operator enclave configuration",
+      "control_tag": "ISM_0604_ISM_1148_Network_Isolation_and_Continuity"
+    },
+    "N113": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "run_all.R orchestration",
+      "control_tag": "CC6_6_Logical_and_Procedural_Access_to_Change_Execution"
+    },
+    "N114": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SOC 2",
+      "control_tag": "CC6_6_Logical_and_Procedural_Access_to_Change_Execution"
+    },
+    "N115": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "CC6.6 Logical and Procedural Access to Change Execution",
+      "control_tag": "CC6_6_Logical_and_Procedural_Access_to_Change_Execution"
+    },
+    "N116": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Single entry-point run orchestration limits ad hoc stage bypass and supports controlled execution path",
+      "control_tag": "CC6_6_Logical_and_Procedural_Access_to_Change_Execution"
+    },
+    "N117": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Entrypoint script + invocation records",
+      "control_tag": "CC6_6_Logical_and_Procedural_Access_to_Change_Execution"
+    },
+    "N118": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "PARTIAL",
+      "control_tag": "CC6_6_Logical_and_Procedural_Access_to_Change_Execution"
+    },
+    "N119": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "OPERATOR_DEPENDENT",
+      "control_tag": "CC6_6_Logical_and_Procedural_Access_to_Change_Execution"
+    },
+    "N120": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Access controls around execution host are outside repository scope",
+      "control_tag": "CC6_6_Logical_and_Procedural_Access_to_Change_Execution"
+    },
+    "N121": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/02_analysis.R (Power Law logic)",
+      "control_tag": "Non_Modellable_Risk_Factor_Stress_Capture"
+    },
+    "N122": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "FRTB Article 325",
+      "control_tag": "Non_Modellable_Risk_Factor_Stress_Capture"
+    },
+    "N123": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Non-Modellable Risk Factor Stress Capture",
+      "control_tag": "Non_Modellable_Risk_Factor_Stress_Capture"
+    },
+    "N124": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Jump-risk oriented stress regime supports severe tail scenario evaluation where linear assumptions understate risk",
+      "control_tag": "Non_Modellable_Risk_Factor_Stress_Capture"
+    },
+    "N125": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Scenario-level signal and ruin-flag outputs",
+      "control_tag": "Non_Modellable_Risk_Factor_Stress_Capture"
+    },
+    "N126": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "PARTIAL",
+      "control_tag": "Non_Modellable_Risk_Factor_Stress_Capture"
+    },
+    "N127": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "OPERATOR_DEPENDENT",
+      "control_tag": "Non_Modellable_Risk_Factor_Stress_Capture"
+    },
+    "N128": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Formal linkage to desk-level FRTB governance requires operator framework mapping",
+      "control_tag": "Non_Modellable_Risk_Factor_Stress_Capture"
+    },
+    "N129": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/10_liability_engine.R",
+      "control_tag": "Assumption_Governance_and_Liability_Boundary_Control"
+    },
+    "N130": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SR 11-7",
+      "control_tag": "Assumption_Governance_and_Liability_Boundary_Control"
+    },
+    "N131": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Assumption Governance and Liability Boundary Control",
+      "control_tag": "Assumption_Governance_and_Liability_Boundary_Control"
+    },
+    "N132": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Liability stack assumptions are TOML-governed and explicitly stress-adjusted under hyperinflation to surface headroom breach risk",
+      "control_tag": "Assumption_Governance_and_Liability_Boundary_Control"
+    },
+    "N133": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Config diffs + deterministic run output",
+      "control_tag": "Assumption_Governance_and_Liability_Boundary_Control"
+    },
+    "N134": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "PARTIAL",
+      "control_tag": "Assumption_Governance_and_Liability_Boundary_Control"
+    },
+    "N135": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "OPERATOR_DEPENDENT",
+      "control_tag": "Assumption_Governance_and_Liability_Boundary_Control"
+    },
+    "N136": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Requires documented owner and approval process for payout-rate and inflation assumptions",
+      "control_tag": "Assumption_Governance_and_Liability_Boundary_Control"
+    },
+    "N137": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/11_credit_deployment.R",
+      "control_tag": "Income_vs_Loss_Stress_Transparency"
+    },
+    "N138": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "Basel III IRB",
+      "control_tag": "Income_vs_Loss_Stress_Transparency"
+    },
+    "N139": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Income-vs-Loss Stress Transparency",
+      "control_tag": "Income_vs_Loss_Stress_Transparency"
+    },
+    "N140": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Spread engine computes gross and default-adjusted net income with scenario LGD proxy linkage while preserving non-IRB positioning",
+      "control_tag": "Income_vs_Loss_Stress_Transparency"
+    },
+    "N141": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Scenario-level spread output + seeded reproducibility evidence",
+      "control_tag": "Income_vs_Loss_Stress_Transparency"
+    },
+    "N142": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "DECLARED_LIMITATION",
+      "control_tag": "Income_vs_Loss_Stress_Transparency"
+    },
+    "N143": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Income_vs_Loss_Stress_Transparency"
+    },
+    "N144": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Analytical stress layer only and not insurer/regulatory capital output",
+      "control_tag": "Income_vs_Loss_Stress_Transparency"
+    },
+    "N145": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/12_spread_stress.R",
+      "control_tag": "Risk_Aggregation_and_State_Classification_Integrity"
+    },
+    "N146": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "BCBS 239 Principle 6",
+      "control_tag": "Risk_Aggregation_and_State_Classification_Integrity"
+    },
+    "N147": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Risk Aggregation and State Classification Integrity",
+      "control_tag": "Risk_Aggregation_and_State_Classification_Integrity"
+    },
+    "N148": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Cross-scenario aggregation emits deterministic SOLVENT/WATCH/BREACH states with worst-case identification and headroom summaries",
+      "control_tag": "Risk_Aggregation_and_State_Classification_Integrity"
+    },
+    "N149": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Machine-generated aggregate table + metadata artifact",
+      "control_tag": "Risk_Aggregation_and_State_Classification_Integrity"
+    },
+    "N150": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Risk_Aggregation_and_State_Classification_Integrity"
+    },
+    "N151": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Risk_Aggregation_and_State_Classification_Integrity"
+    },
+    "N152": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Aggregation logic and signal counts are reproducible from fixed config+seed",
+      "control_tag": "Risk_Aggregation_and_State_Classification_Integrity"
+    },
+    "N153": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/13_capital_stack_viz.R",
+      "control_tag": "CC7_2_Monitoring_and_Exception_Visibility"
+    },
+    "N154": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SOC 2",
+      "control_tag": "CC7_2_Monitoring_and_Exception_Visibility"
+    },
+    "N155": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "CC7.2 Monitoring and Exception Visibility",
+      "control_tag": "CC7_2_Monitoring_and_Exception_Visibility"
+    },
+    "N156": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Terminal-native capital stack summary and color-coded chart provide consistent scenario-level operational visibility for escalation decisions",
+      "control_tag": "CC7_2_Monitoring_and_Exception_Visibility"
+    },
+    "N157": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Terminal summary + output artifacts",
+      "control_tag": "CC7_2_Monitoring_and_Exception_Visibility"
+    },
+    "N158": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "PARTIAL",
+      "control_tag": "CC7_2_Monitoring_and_Exception_Visibility"
+    },
+    "N159": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "OPERATOR_DEPENDENT",
+      "control_tag": "CC7_2_Monitoring_and_Exception_Visibility"
+    },
+    "N160": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Escalation ownership and notification workflow remain external governance controls",
+      "control_tag": "CC7_2_Monitoring_and_Exception_Visibility"
+    },
+    "N161": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "data/manifest/data_manifest.toml",
+      "control_tag": "Data_Architecture_and_Infrastructure"
+    },
+    "N162": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "BCBS 239 Principle 2",
+      "control_tag": "Data_Architecture_and_Infrastructure"
+    },
+    "N163": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Data Architecture and Infrastructure",
+      "control_tag": "Data_Architecture_and_Infrastructure"
+    },
+    "N164": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Manifest establishes controlled, versioned dataset registry with mode segregation and approval fields for governed ingestion.",
+      "control_tag": "Data_Architecture_and_Infrastructure"
+    },
+    "N165": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Versioned manifest artifact + preflight summary logs",
+      "control_tag": "Data_Architecture_and_Infrastructure"
+    },
+    "N166": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Data_Architecture_and_Infrastructure"
+    },
+    "N167": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Data_Architecture_and_Infrastructure"
+    },
+    "N168": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Repository-embedded data architecture control implemented.",
+      "control_tag": "Data_Architecture_and_Infrastructure"
+    },
+    "N169": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "data/lineage/*.toml",
+      "control_tag": "Accuracy_and_Integrity"
+    },
+    "N170": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "BCBS 239 Principle 3",
+      "control_tag": "Accuracy_and_Integrity"
+    },
+    "N171": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Accuracy and Integrity",
+      "control_tag": "Accuracy_and_Integrity"
+    },
+    "N172": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Per-file lineage records capture dataset origin, generation method, schema version, and approval lifecycle metadata.",
+      "control_tag": "Accuracy_and_Integrity"
+    },
+    "N173": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Lineage TOML records + manifest linkage",
+      "control_tag": "Accuracy_and_Integrity"
+    },
+    "N174": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Accuracy_and_Integrity"
+    },
+    "N175": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Accuracy_and_Integrity"
+    },
+    "N176": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Lineage integrity controls enforced for governed datasets.",
+      "control_tag": "Accuracy_and_Integrity"
+    },
+    "N177": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/00_env_check.R (SHA-256 verification)",
+      "control_tag": "Integrity_Verification_Controls"
+    },
+    "N178": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "ISM",
+      "control_tag": "Integrity_Verification_Controls"
+    },
+    "N179": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Integrity Verification Controls",
+      "control_tag": "Integrity_Verification_Controls"
+    },
+    "N180": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Preflight recomputes SHA-256 for active manifest datasets and halts on live hash failure to prevent unverified ingestion.",
+      "control_tag": "Integrity_Verification_Controls"
+    },
+    "N181": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Preflight hash verification output",
+      "control_tag": "Integrity_Verification_Controls"
+    },
+    "N182": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Integrity_Verification_Controls"
+    },
+    "N183": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Integrity_Verification_Controls"
+    },
+    "N184": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Integrity verification embedded in runtime gate.",
+      "control_tag": "Integrity_Verification_Controls"
+    },
+    "N185": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/20_dcf.R",
+      "control_tag": "Outcomes_Analysis"
+    },
+    "N186": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SR 11-7",
+      "control_tag": "Outcomes_Analysis"
+    },
+    "N187": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Outcomes Analysis",
+      "control_tag": "Outcomes_Analysis"
+    },
+    "N188": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Stress-conditioned DCF engine links scenario recoveries to valuation erosion and impairment signaling for model outcomes analysis",
+      "control_tag": "Outcomes_Analysis"
+    },
+    "N189": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Scenario valuation output + impairment signal evidence",
+      "control_tag": "Outcomes_Analysis"
+    },
+    "N190": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "PARTIAL",
+      "control_tag": "Outcomes_Analysis"
+    },
+    "N191": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "OPERATOR_DEPENDENT",
+      "control_tag": "Outcomes_Analysis"
+    },
+    "N192": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Threshold ownership and validation cadence require committee governance",
+      "control_tag": "Outcomes_Analysis"
+    },
+    "N193": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/21_ma.R",
+      "control_tag": "CC3_Risk_Assessment"
+    },
+    "N194": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SOC 2",
+      "control_tag": "CC3_Risk_Assessment"
+    },
+    "N195": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "CC3 Risk Assessment",
+      "control_tag": "CC3_Risk_Assessment"
+    },
+    "N196": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "M&A screen formalizes acquisition decision thresholds under stress and captures review/pass triggers for near-threshold outcomes",
+      "control_tag": "CC3_Risk_Assessment"
+    },
+    "N197": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Scenario screening output + threshold config evidence",
+      "control_tag": "CC3_Risk_Assessment"
+    },
+    "N198": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "PARTIAL",
+      "control_tag": "CC3_Risk_Assessment"
+    },
+    "N199": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "OPERATOR_DEPENDENT",
+      "control_tag": "CC3_Risk_Assessment"
+    },
+    "N200": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Acquisition override workflow and approvals remain operator-managed",
+      "control_tag": "CC3_Risk_Assessment"
+    },
+    "N201": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/23_lbo.R",
+      "control_tag": "Leverage_Stress_and_Tail_Resilience"
+    },
+    "N202": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "FRTB Article 325",
+      "control_tag": "Leverage_Stress_and_Tail_Resilience"
+    },
+    "N203": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Leverage Stress and Tail Resilience",
+      "control_tag": "Leverage_Stress_and_Tail_Resilience"
+    },
+    "N204": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "LBO stress module evaluates DSCR and stressed IRR viability under scenario-conditioned exit values to expose leverage fragility",
+      "control_tag": "Leverage_Stress_and_Tail_Resilience"
+    },
+    "N205": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Scenario DSCR/IRR output + viability states",
+      "control_tag": "Leverage_Stress_and_Tail_Resilience"
+    },
+    "N206": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "PARTIAL",
+      "control_tag": "Leverage_Stress_and_Tail_Resilience"
+    },
+    "N207": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "OPERATOR_DEPENDENT",
+      "control_tag": "Leverage_Stress_and_Tail_Resilience"
+    },
+    "N208": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Calibration linkage to desk governance and leverage policy remains external",
+      "control_tag": "Leverage_Stress_and_Tail_Resilience"
+    },
+    "N209": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/24_irr.R",
+      "control_tag": "Ongoing_Monitoring"
+    },
+    "N210": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SR 11-7",
+      "control_tag": "Ongoing_Monitoring"
+    },
+    "N211": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Ongoing Monitoring",
+      "control_tag": "Ongoing_Monitoring"
+    },
+    "N212": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "IRR attribution module decomposes return drivers and recomputes stressed IRR per scenario for monitoring against floor and target thresholds",
+      "control_tag": "Ongoing_Monitoring"
+    },
+    "N213": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "IRR attribution artifacts + stressed signal evidence",
+      "control_tag": "Ongoing_Monitoring"
+    },
+    "N214": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "PARTIAL",
+      "control_tag": "Ongoing_Monitoring"
+    },
+    "N215": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "OPERATOR_DEPENDENT",
+      "control_tag": "Ongoing_Monitoring"
+    },
+    "N216": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Target/floor governance and monitoring escalation remain external",
+      "control_tag": "Ongoing_Monitoring"
+    },
+    "N217": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/25_deal_summary.R",
+      "control_tag": "Output_Integrity_and_Aggregation_Consistency"
+    },
+    "N218": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "BCBS 239 Principle 6",
+      "control_tag": "Output_Integrity_and_Aggregation_Consistency"
+    },
+    "N219": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Output Integrity and Aggregation Consistency",
+      "control_tag": "Output_Integrity_and_Aggregation_Consistency"
+    },
+    "N220": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Deal intelligence aggregator consolidates lens outputs and capital stack signals into deterministic committee summaries with worst-case identification",
+      "control_tag": "Output_Integrity_and_Aggregation_Consistency"
+    },
+    "N221": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Consolidated summary artifact + metadata record",
+      "control_tag": "Output_Integrity_and_Aggregation_Consistency"
+    },
+    "N222": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Output_Integrity_and_Aggregation_Consistency"
+    },
+    "N223": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Output_Integrity_and_Aggregation_Consistency"
+    },
+    "N224": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Unified output integrity is reproducible from governed inputs and fixed seed",
+      "control_tag": "Output_Integrity_and_Aggregation_Consistency"
+    },
+    "N225": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/30_bs_core.R",
+      "control_tag": "Conceptual_Soundness"
+    },
+    "N226": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SR 11-7",
+      "control_tag": "Conceptual_Soundness"
+    },
+    "N227": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Conceptual Soundness",
+      "control_tag": "Conceptual_Soundness"
+    },
+    "N228": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Derivation and runtime implementation are documented from replicating-portfolio PDE basis with explicit risk-neutral drift elimination",
+      "control_tag": "Conceptual_Soundness"
+    },
+    "N229": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Script header + preflight halt artifact",
+      "control_tag": "Conceptual_Soundness"
+    },
+    "N230": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Conceptual_Soundness"
+    },
+    "N231": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "OPERATOR_DEPENDENT",
+      "control_tag": "Conceptual_Soundness"
+    },
+    "N232": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Empirical volatility calibration remains operator owned",
+      "control_tag": "Conceptual_Soundness"
+    },
+    "N233": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/30b_greeks.R",
+      "control_tag": "Ongoing_Monitoring"
+    },
+    "N234": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SR 11-7",
+      "control_tag": "Ongoing_Monitoring"
+    },
+    "N235": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Ongoing Monitoring",
+      "control_tag": "Ongoing_Monitoring"
+    },
+    "N236": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Analytical Greeks and delta-gamma-vega scenario decomposition provide continuous sensitivity monitoring and explainability",
+      "control_tag": "Ongoing_Monitoring"
+    },
+    "N237": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Greeks output table",
+      "control_tag": "Ongoing_Monitoring"
+    },
+    "N238": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Ongoing_Monitoring"
+    },
+    "N239": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Ongoing_Monitoring"
+    },
+    "N240": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Closed-form Greeks are analytical and calibration-independent",
+      "control_tag": "Ongoing_Monitoring"
+    },
+    "N241": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/30b_greeks.R",
+      "control_tag": "Greeks_based_P_L_Attribution"
+    },
+    "N242": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "FRTB",
+      "control_tag": "Greeks_based_P_L_Attribution"
+    },
+    "N243": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Greeks-based P&L Attribution",
+      "control_tag": "Greeks_based_P_L_Attribution"
+    },
+    "N244": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Scenario P&L decomposition emitted as delta gamma vega totals per option position",
+      "control_tag": "Greeks_based_P_L_Attribution"
+    },
+    "N245": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Options summary artifact",
+      "control_tag": "Greeks_based_P_L_Attribution"
+    },
+    "N246": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Greeks_based_P_L_Attribution"
+    },
+    "N247": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Greeks_based_P_L_Attribution"
+    },
+    "N248": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Practitioner-standard attribution implemented",
+      "control_tag": "Greeks_based_P_L_Attribution"
+    },
+    "N249": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "scripts/36_delta_hedge.R",
+      "control_tag": "Model_Validation"
+    },
+    "N250": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SR 11-7",
+      "control_tag": "Model_Validation"
+    },
+    "N251": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Model Validation",
+      "control_tag": "Model_Validation"
+    },
+    "N252": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Discrete replication error simulation provides internal validation lens for option-adjusted solvency headroom resilience",
+      "control_tag": "Model_Validation"
+    },
+    "N253": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Delta-hedge artifact",
+      "control_tag": "Model_Validation"
+    },
+    "N254": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "PARTIAL",
+      "control_tag": "Model_Validation"
+    },
+    "N255": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "OPERATOR_DEPENDENT",
+      "control_tag": "Model_Validation"
+    },
+    "N256": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Continuous-trading and liquidity assumptions are not fully valid in private credit",
+      "control_tag": "Model_Validation"
+    },
+    "N257": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "notebooks/sira_scenarios.ipynb",
+      "control_tag": "Outcomes_Analysis_and_Ongoing_Monitoring"
+    },
+    "N258": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SR 11-7",
+      "control_tag": "Outcomes_Analysis_and_Ongoing_Monitoring"
+    },
+    "N259": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Outcomes Analysis and Ongoing Monitoring",
+      "control_tag": "Outcomes_Analysis_and_Ongoing_Monitoring"
+    },
+    "N260": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Read-only inspection surface. Deterministic from declared seed. Does not modify governed artefacts.",
+      "control_tag": "Outcomes_Analysis_and_Ongoing_Monitoring"
+    },
+    "N261": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Notebook execution evidence",
+      "control_tag": "Outcomes_Analysis_and_Ongoing_Monitoring"
+    },
+    "N262": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Outcomes_Analysis_and_Ongoing_Monitoring"
+    },
+    "N263": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Outcomes_Analysis_and_Ongoing_Monitoring"
+    },
+    "N264": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Read-only inspection surface. Deterministic from declared seed. Does not modify governed artefacts.",
+      "control_tag": "Outcomes_Analysis_and_Ongoing_Monitoring"
+    },
+    "N265": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "notebooks/SIRA_READER_GUIDE.md",
+      "control_tag": "Model_Documentation"
+    },
+    "N266": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SR 11-7",
+      "control_tag": "Model_Documentation"
+    },
+    "N267": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Model Documentation",
+      "control_tag": "Model_Documentation"
+    },
+    "N268": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Orientation and navigation document that makes notebook governance artefacts discoverable to any reviewer.",
+      "control_tag": "Model_Documentation"
+    },
+    "N269": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Documentation artefact",
+      "control_tag": "Model_Documentation"
+    },
+    "N270": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Model_Documentation"
+    },
+    "N271": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Model_Documentation"
+    },
+    "N272": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Entry-point guide for self-contained review package.",
+      "control_tag": "Model_Documentation"
+    },
+    "N273": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "notebooks/SIRA_METHODOLOGY.md",
+      "control_tag": "Conceptual_Soundness"
+    },
+    "N274": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SR 11-7",
+      "control_tag": "Conceptual_Soundness"
+    },
+    "N275": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Conceptual Soundness",
+      "control_tag": "Conceptual_Soundness"
+    },
+    "N276": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Narrative methodology record linking design choices to governed intent across stress, signal, capital stack, and options layers.",
+      "control_tag": "Conceptual_Soundness"
+    },
+    "N277": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Documentation artefact",
+      "control_tag": "Conceptual_Soundness"
+    },
+    "N278": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Conceptual_Soundness"
+    },
+    "N279": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Conceptual_Soundness"
+    },
+    "N280": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Contextual companion to assumptions registry for senior reviewers.",
+      "control_tag": "Conceptual_Soundness"
+    },
+    "N281": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "notebooks/SIRA_PATH_RESOLVER.md",
+      "control_tag": "Configuration_Management"
+    },
+    "N282": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "ISM",
+      "control_tag": "Configuration_Management"
+    },
+    "N283": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Configuration Management",
+      "control_tag": "Configuration_Management"
+    },
+    "N284": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Technical governance record for deterministic TOML path resolution with fail-loud behavior and operator mitigations.",
+      "control_tag": "Configuration_Management"
+    },
+    "N285": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Operational control documentation",
+      "control_tag": "Configuration_Management"
+    },
+    "N286": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Configuration_Management"
+    },
+    "N287": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Configuration_Management"
+    },
+    "N288": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Documents strategy order, failure behavior, and audit trail expectations.",
+      "control_tag": "Configuration_Management"
+    },
+    "N289": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "notebooks/SIRA_RNORM_RATIONALE.md",
+      "control_tag": "Model_Development_Documentation"
+    },
+    "N290": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SR 11-7",
+      "control_tag": "Model_Development_Documentation"
+    },
+    "N291": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Model Development Documentation",
+      "control_tag": "Model_Development_Documentation"
+    },
+    "N292": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Governance rationale preserving Gaussian reference draws as structural evidence for distribution selection decisions.",
+      "control_tag": "Model_Development_Documentation"
+    },
+    "N293": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Documentation artefact",
+      "control_tag": "Model_Development_Documentation"
+    },
+    "N294": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Model_Development_Documentation"
+    },
+    "N295": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Model_Development_Documentation"
+    },
+    "N296": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Defines removal preconditions and cross-document maintenance obligations.",
+      "control_tag": "Model_Development_Documentation"
+    },
+    "N297": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "notebooks/SIRA_REVIEWER_CHECKLIST.md",
+      "control_tag": "Model_Validation"
+    },
+    "N298": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SR 11-7",
+      "control_tag": "Model_Validation"
+    },
+    "N299": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Model Validation",
+      "control_tag": "Model_Validation"
+    },
+    "N300": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Structured review checklist mapping validation criteria to notebook cells, source documents, and evidence artefacts.",
+      "control_tag": "Model_Validation"
+    },
+    "N301": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Validation checklist",
+      "control_tag": "Model_Validation"
+    },
+    "N302": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "PARTIAL",
+      "control_tag": "Model_Validation"
+    },
+    "N303": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "OPERATOR_DEPENDENT",
+      "control_tag": "Model_Validation"
+    },
+    "N304": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Section 8 contains operator-owned evidence requirements outside repository boundary.",
+      "control_tag": "Model_Validation"
+    },
+    "N305": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "LICENSE",
+      "control_tag": "Copyright_and_redistribution"
+    },
+    "N306": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "Apache 2.0",
+      "control_tag": "Copyright_and_redistribution"
+    },
+    "N307": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Copyright and redistribution",
+      "control_tag": "Copyright_and_redistribution"
+    },
+    "N308": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Standard Apache License 2.0 terms at repository root",
+      "control_tag": "Copyright_and_redistribution"
+    },
+    "N309": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "License document",
+      "control_tag": "Copyright_and_redistribution"
+    },
+    "N310": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Copyright_and_redistribution"
+    },
+    "N311": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Copyright_and_redistribution"
+    },
+    "N312": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "License instrument governing redistribution and derivative rights.",
+      "control_tag": "Copyright_and_redistribution"
+    },
+    "N313": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "NOTICE",
+      "control_tag": "Attribution_notice"
+    },
+    "N314": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "Apache 2.0",
+      "control_tag": "Attribution_notice"
+    },
+    "N315": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Attribution notice",
+      "control_tag": "Attribution_notice"
+    },
+    "N316": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Repository root NOTICE file for required attribution carriage",
+      "control_tag": "Attribution_notice"
+    },
+    "N317": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Notice document",
+      "control_tag": "Attribution_notice"
+    },
+    "N318": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Attribution_notice"
+    },
+    "N319": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Attribution_notice"
+    },
+    "N320": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Supports Apache 2.0 Section 4(d) notice handling.",
+      "control_tag": "Attribution_notice"
+    },
+    "N321": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "notebooks/DISCLAIMER.md",
+      "control_tag": "Academic_use_boundary"
+    },
+    "N322": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "Intellectual integrity",
+      "control_tag": "Academic_use_boundary"
+    },
+    "N323": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Academic use boundary",
+      "control_tag": "Academic_use_boundary"
+    },
+    "N324": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Protective academic-use boundary and scope guidance for notebook literature suite",
+      "control_tag": "Academic_use_boundary"
+    },
+    "N325": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Disclaimer document",
+      "control_tag": "Academic_use_boundary"
+    },
+    "N326": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Academic_use_boundary"
+    },
+    "N327": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Academic_use_boundary"
+    },
+    "N328": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Disclaimer is distinct from license terms and does not modify Apache 2.0.",
+      "control_tag": "Academic_use_boundary"
+    },
+    "N329": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "notebooks/NOTICE_BLOCK.md",
+      "control_tag": "Notice_block_canonical_source"
+    },
+    "N330": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "Configuration management",
+      "control_tag": "Notice_block_canonical_source"
+    },
+    "N331": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Notice block canonical source",
+      "control_tag": "Notice_block_canonical_source"
+    },
+    "N332": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Single-source canonical notice block with propagation procedure",
+      "control_tag": "Notice_block_canonical_source"
+    },
+    "N333": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Canonical notice reference",
+      "control_tag": "Notice_block_canonical_source"
+    },
+    "N334": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Notice_block_canonical_source"
+    },
+    "N335": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Notice_block_canonical_source"
+    },
+    "N336": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Defines maintenance sequence to prevent notice text drift.",
+      "control_tag": "Notice_block_canonical_source"
+    },
+    "N337": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "docs/ETHOS.md",
+      "control_tag": "Architecture_level_hardening_declaration"
+    },
+    "N338": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "ISM",
+      "control_tag": "Architecture_level_hardening_declaration"
+    },
+    "N339": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Architecture-level hardening declaration",
+      "control_tag": "Architecture_level_hardening_declaration"
+    },
+    "N340": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Architecture-level hardening declaration codified as the governing operating model for the IĀTŌ stack",
+      "control_tag": "Architecture_level_hardening_declaration"
+    },
+    "N341": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Governance document",
+      "control_tag": "Architecture_level_hardening_declaration"
+    },
+    "N342": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Architecture_level_hardening_declaration"
+    },
+    "N343": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Architecture_level_hardening_declaration"
+    },
+    "N344": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Primary architectural control declaration",
+      "control_tag": "Architecture_level_hardening_declaration"
+    },
+    "N345": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "docs/ETHOS.md",
+      "control_tag": "Operating_model_declaration"
+    },
+    "N346": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "Essential Eight ML4",
+      "control_tag": "Operating_model_declaration"
+    },
+    "N347": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Operating model declaration",
+      "control_tag": "Operating_model_declaration"
+    },
+    "N348": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Operating model declaration maps stack-level execution constraints to E8 ML4 hardening posture",
+      "control_tag": "Operating_model_declaration"
+    },
+    "N349": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Governance document",
+      "control_tag": "Operating_model_declaration"
+    },
+    "N350": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Operating_model_declaration"
+    },
+    "N351": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Operating_model_declaration"
+    },
+    "N352": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Primary operating model declaration",
+      "control_tag": "Operating_model_declaration"
+    },
+    "N353": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "docs/DELIVERY.md",
+      "control_tag": "CC3_Risk_assessment_and_gap_analysis"
+    },
+    "N354": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SOC 2",
+      "control_tag": "CC3_Risk_assessment_and_gap_analysis"
+    },
+    "N355": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "CC3 Risk assessment and gap analysis",
+      "control_tag": "CC3_Risk_assessment_and_gap_analysis"
+    },
+    "N356": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Engagement model defines fixed-scope control gap analysis and exception accountability artefacts",
+      "control_tag": "CC3_Risk_assessment_and_gap_analysis"
+    },
+    "N357": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Governance document",
+      "control_tag": "CC3_Risk_assessment_and_gap_analysis"
+    },
+    "N358": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "CC3_Risk_assessment_and_gap_analysis"
+    },
+    "N359": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "CC3_Risk_assessment_and_gap_analysis"
+    },
+    "N360": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Phase 0 control-gap governance",
+      "control_tag": "CC3_Risk_assessment_and_gap_analysis"
+    },
+    "N361": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "docs/DELIVERY.md",
+      "control_tag": "Evidence_artefact_production"
+    },
+    "N362": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "ISM",
+      "control_tag": "Evidence_artefact_production"
+    },
+    "N363": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Evidence artefact production",
+      "control_tag": "Evidence_artefact_production"
+    },
+    "N364": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Delivery framework specifies required evidence artefacts and custody model for control closure verification",
+      "control_tag": "Evidence_artefact_production"
+    },
+    "N365": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Governance document",
+      "control_tag": "Evidence_artefact_production"
+    },
+    "N366": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Evidence_artefact_production"
+    },
+    "N367": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Evidence_artefact_production"
+    },
+    "N368": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Evidence pack production control",
+      "control_tag": "Evidence_artefact_production"
+    },
+    "N369": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "docs/DELIVERY.md",
+      "control_tag": "Audit_logging_evidence_mapping"
+    },
+    "N370": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "Essential Eight ML4",
+      "control_tag": "Audit_logging_evidence_mapping"
+    },
+    "N371": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Audit logging evidence mapping",
+      "control_tag": "Audit_logging_evidence_mapping"
+    },
+    "N372": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Delivery artefact mapping binds MCP session logs to ML4 audit logging objectives",
+      "control_tag": "Audit_logging_evidence_mapping"
+    },
+    "N373": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Governance document",
+      "control_tag": "Audit_logging_evidence_mapping"
+    },
+    "N374": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Audit_logging_evidence_mapping"
+    },
+    "N375": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Audit_logging_evidence_mapping"
+    },
+    "N376": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Audit artefact mapping for ML4",
+      "control_tag": "Audit_logging_evidence_mapping"
+    },
+    "N377": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "Hyperlink audit (this prompt)",
+      "control_tag": "Documentation_integrity"
+    },
+    "N378": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "ISM",
+      "control_tag": "Documentation_integrity"
+    },
+    "N379": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Documentation integrity",
+      "control_tag": "Documentation_integrity"
+    },
+    "N380": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Hyperlink audit validates referenced internal documents and links remain resolvable for governance traceability",
+      "control_tag": "Documentation_integrity"
+    },
+    "N381": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Documentation QA artefact",
+      "control_tag": "Documentation_integrity"
+    },
+    "N382": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Documentation_integrity"
+    },
+    "N383": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Documentation_integrity"
+    },
+    "N384": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Supports documentation integrity and audit readiness",
+      "control_tag": "Documentation_integrity"
+    },
+    "N385": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "Navigation graph",
+      "control_tag": "Traceability_primary_document_chain"
+    },
+    "N386": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "ISM",
+      "control_tag": "Traceability_primary_document_chain"
+    },
+    "N387": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Traceability — primary document chain",
+      "control_tag": "Traceability_primary_document_chain"
+    },
+    "N388": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Navigation graph maps primary document chain and dependency traversal for control evidence discoverability",
+      "control_tag": "Traceability_primary_document_chain"
+    },
+    "N389": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Traceability map",
+      "control_tag": "Traceability_primary_document_chain"
+    },
+    "N390": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Traceability_primary_document_chain"
+    },
+    "N391": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Traceability_primary_document_chain"
+    },
+    "N392": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Maintains deterministic navigation across governance artefacts",
+      "control_tag": "Traceability_primary_document_chain"
+    },
+    "N393": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "docs/SIRA_EVIDENCE_GAP_REGISTER.md",
+      "control_tag": "Model_Boundary_Documentation"
+    },
+    "N394": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SR 11-7",
+      "control_tag": "Model_Boundary_Documentation"
+    },
+    "N395": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Model Boundary Documentation",
+      "control_tag": "Model_Boundary_Documentation"
+    },
+    "N396": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Evidence gap register declares bounded pre-data stage limitations and closure paths",
+      "control_tag": "Model_Boundary_Documentation"
+    },
+    "N397": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Governance document",
+      "control_tag": "Model_Boundary_Documentation"
+    },
+    "N398": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Model_Boundary_Documentation"
+    },
+    "N399": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Model_Boundary_Documentation"
+    },
+    "N400": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Explicit governance boundary for declared evidence gaps",
+      "control_tag": "Model_Boundary_Documentation"
+    },
+    "N401": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "docs/SIRA_EVIDENCE_GAP_REGISTER.md",
+      "control_tag": "Pre_validation_Stage_Declaration"
+    },
+    "N402": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SR 11-7",
+      "control_tag": "Pre_validation_Stage_Declaration"
+    },
+    "N403": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Pre-validation Stage Declaration",
+      "control_tag": "Pre_validation_Stage_Declaration"
+    },
+    "N404": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Register classifies stochastic output, calibration, and backtesting as governed pre-validation gaps with operator closure actions",
+      "control_tag": "Pre_validation_Stage_Declaration"
+    },
+    "N405": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Governance document",
+      "control_tag": "Pre_validation_Stage_Declaration"
+    },
+    "N406": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Pre_validation_Stage_Declaration"
+    },
+    "N407": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Pre_validation_Stage_Declaration"
+    },
+    "N408": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Stage declaration prevents misclassification as design failure",
+      "control_tag": "Pre_validation_Stage_Declaration"
+    },
+    "N409": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "notebooks/sira_non_goals_table.md",
+      "control_tag": "Model_Boundary_Documentation_canonical_location"
+    },
+    "N410": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "SR 11-7",
+      "control_tag": "Model_Boundary_Documentation_canonical_location"
+    },
+    "N411": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Model Boundary Documentation — canonical location",
+      "control_tag": "Model_Boundary_Documentation_canonical_location"
+    },
+    "N412": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Canonical non-goals register location for runtime boundary declarations",
+      "control_tag": "Model_Boundary_Documentation_canonical_location"
+    },
+    "N413": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Governance document",
+      "control_tag": "Model_Boundary_Documentation_canonical_location"
+    },
+    "N414": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Model_Boundary_Documentation_canonical_location"
+    },
+    "N415": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Model_Boundary_Documentation_canonical_location"
+    },
+    "N416": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Single authoritative location replaces inline reproductions",
+      "control_tag": "Model_Boundary_Documentation_canonical_location"
+    },
+    "N417": {
+      "node_type": "Control",
+      "source_field": "SIRA_Component",
+      "field_value": "notebooks/README_QUICKSTART.md (host deps)",
+      "control_tag": "Configuration_Management_dependency_scope_declaration"
+    },
+    "N418": {
+      "node_type": "Framework",
+      "source_field": "Control_Framework",
+      "field_value": "ISM",
+      "control_tag": "Configuration_Management_dependency_scope_declaration"
+    },
+    "N419": {
+      "node_type": "Mapping",
+      "source_field": "Control_Reference",
+      "field_value": "Configuration Management — dependency scope declaration",
+      "control_tag": "Configuration_Management_dependency_scope_declaration"
+    },
+    "N420": {
+      "node_type": "Mapping",
+      "source_field": "Control_Description",
+      "field_value": "Host-layer dependency scope clearly separated from MCP runtime dependency scope",
+      "control_tag": "Configuration_Management_dependency_scope_declaration"
+    },
+    "N421": {
+      "node_type": "Evidence",
+      "source_field": "Evidence_Type",
+      "field_value": "Documentation artefact",
+      "control_tag": "Configuration_Management_dependency_scope_declaration"
+    },
+    "N422": {
+      "node_type": "Mapping",
+      "source_field": "Coverage_Assessment",
+      "field_value": "FULL",
+      "control_tag": "Configuration_Management_dependency_scope_declaration"
+    },
+    "N423": {
+      "node_type": "Mapping",
+      "source_field": "Gap_Flag",
+      "field_value": "NO",
+      "control_tag": "Configuration_Management_dependency_scope_declaration"
+    },
+    "N424": {
+      "node_type": "Evidence",
+      "source_field": "Notes",
+      "field_value": "Dependency scope declaration aligns operator preflight and runtime boundaries",
+      "control_tag": "Configuration_Management_dependency_scope_declaration"
+    }
+  },
+  "adjacency": {
+    "outgoing": {
+      "N1": [],
+      "N2": [
+        {
+          "to": "N1",
+          "relationship_type": "references"
+        }
+      ],
+      "N3": [
+        {
+          "to": "N1",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N4": [
+        {
+          "to": "N1",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N5": [
+        {
+          "to": "N1",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N6": [
+        {
+          "to": "N1",
+          "relationship_type": "supports"
+        }
+      ],
+      "N7": [
+        {
+          "to": "N1",
+          "relationship_type": "supports"
+        }
+      ],
+      "N8": [
+        {
+          "to": "N1",
+          "relationship_type": "supports"
+        }
+      ],
+      "N9": [],
+      "N10": [
+        {
+          "to": "N9",
+          "relationship_type": "references"
+        }
+      ],
+      "N11": [
+        {
+          "to": "N9",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N12": [
+        {
+          "to": "N9",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N13": [
+        {
+          "to": "N9",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N14": [
+        {
+          "to": "N9",
+          "relationship_type": "supports"
+        }
+      ],
+      "N15": [
+        {
+          "to": "N9",
+          "relationship_type": "supports"
+        }
+      ],
+      "N16": [
+        {
+          "to": "N9",
+          "relationship_type": "supports"
+        }
+      ],
+      "N17": [],
+      "N18": [
+        {
+          "to": "N17",
+          "relationship_type": "references"
+        }
+      ],
+      "N19": [
+        {
+          "to": "N17",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N20": [
+        {
+          "to": "N17",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N21": [
+        {
+          "to": "N17",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N22": [
+        {
+          "to": "N17",
+          "relationship_type": "supports"
+        }
+      ],
+      "N23": [
+        {
+          "to": "N17",
+          "relationship_type": "supports"
+        }
+      ],
+      "N24": [
+        {
+          "to": "N17",
+          "relationship_type": "supports"
+        }
+      ],
+      "N25": [],
+      "N26": [
+        {
+          "to": "N25",
+          "relationship_type": "references"
+        }
+      ],
+      "N27": [
+        {
+          "to": "N25",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N28": [
+        {
+          "to": "N25",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N29": [
+        {
+          "to": "N25",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N30": [
+        {
+          "to": "N25",
+          "relationship_type": "supports"
+        }
+      ],
+      "N31": [
+        {
+          "to": "N25",
+          "relationship_type": "supports"
+        }
+      ],
+      "N32": [
+        {
+          "to": "N25",
+          "relationship_type": "supports"
+        }
+      ],
+      "N33": [],
+      "N34": [
+        {
+          "to": "N33",
+          "relationship_type": "references"
+        }
+      ],
+      "N35": [
+        {
+          "to": "N33",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N36": [
+        {
+          "to": "N33",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N37": [
+        {
+          "to": "N33",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N38": [
+        {
+          "to": "N33",
+          "relationship_type": "supports"
+        }
+      ],
+      "N39": [
+        {
+          "to": "N33",
+          "relationship_type": "supports"
+        }
+      ],
+      "N40": [
+        {
+          "to": "N33",
+          "relationship_type": "supports"
+        }
+      ],
+      "N41": [],
+      "N42": [
+        {
+          "to": "N41",
+          "relationship_type": "references"
+        }
+      ],
+      "N43": [
+        {
+          "to": "N41",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N44": [
+        {
+          "to": "N41",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N45": [
+        {
+          "to": "N41",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N46": [
+        {
+          "to": "N41",
+          "relationship_type": "supports"
+        }
+      ],
+      "N47": [
+        {
+          "to": "N41",
+          "relationship_type": "supports"
+        }
+      ],
+      "N48": [
+        {
+          "to": "N41",
+          "relationship_type": "supports"
+        }
+      ],
+      "N49": [],
+      "N50": [
+        {
+          "to": "N49",
+          "relationship_type": "references"
+        }
+      ],
+      "N51": [
+        {
+          "to": "N49",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N52": [
+        {
+          "to": "N49",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N53": [
+        {
+          "to": "N49",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N54": [
+        {
+          "to": "N49",
+          "relationship_type": "supports"
+        }
+      ],
+      "N55": [
+        {
+          "to": "N49",
+          "relationship_type": "supports"
+        }
+      ],
+      "N56": [
+        {
+          "to": "N49",
+          "relationship_type": "supports"
+        }
+      ],
+      "N57": [],
+      "N58": [
+        {
+          "to": "N57",
+          "relationship_type": "references"
+        }
+      ],
+      "N59": [
+        {
+          "to": "N57",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N60": [
+        {
+          "to": "N57",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N61": [
+        {
+          "to": "N57",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N62": [
+        {
+          "to": "N57",
+          "relationship_type": "supports"
+        }
+      ],
+      "N63": [
+        {
+          "to": "N57",
+          "relationship_type": "supports"
+        }
+      ],
+      "N64": [
+        {
+          "to": "N57",
+          "relationship_type": "supports"
+        }
+      ],
+      "N65": [],
+      "N66": [
+        {
+          "to": "N65",
+          "relationship_type": "references"
+        }
+      ],
+      "N67": [
+        {
+          "to": "N65",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N68": [
+        {
+          "to": "N65",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N69": [
+        {
+          "to": "N65",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N70": [
+        {
+          "to": "N65",
+          "relationship_type": "supports"
+        }
+      ],
+      "N71": [
+        {
+          "to": "N65",
+          "relationship_type": "supports"
+        }
+      ],
+      "N72": [
+        {
+          "to": "N65",
+          "relationship_type": "supports"
+        }
+      ],
+      "N73": [],
+      "N74": [
+        {
+          "to": "N73",
+          "relationship_type": "references"
+        }
+      ],
+      "N75": [
+        {
+          "to": "N73",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N76": [
+        {
+          "to": "N73",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N77": [
+        {
+          "to": "N73",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N78": [
+        {
+          "to": "N73",
+          "relationship_type": "supports"
+        }
+      ],
+      "N79": [
+        {
+          "to": "N73",
+          "relationship_type": "supports"
+        }
+      ],
+      "N80": [
+        {
+          "to": "N73",
+          "relationship_type": "supports"
+        }
+      ],
+      "N81": [],
+      "N82": [
+        {
+          "to": "N81",
+          "relationship_type": "references"
+        }
+      ],
+      "N83": [
+        {
+          "to": "N81",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N84": [
+        {
+          "to": "N81",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N85": [
+        {
+          "to": "N81",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N86": [
+        {
+          "to": "N81",
+          "relationship_type": "supports"
+        }
+      ],
+      "N87": [
+        {
+          "to": "N81",
+          "relationship_type": "supports"
+        }
+      ],
+      "N88": [
+        {
+          "to": "N81",
+          "relationship_type": "supports"
+        }
+      ],
+      "N89": [],
+      "N90": [
+        {
+          "to": "N89",
+          "relationship_type": "references"
+        }
+      ],
+      "N91": [
+        {
+          "to": "N89",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N92": [
+        {
+          "to": "N89",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N93": [
+        {
+          "to": "N89",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N94": [
+        {
+          "to": "N89",
+          "relationship_type": "supports"
+        }
+      ],
+      "N95": [
+        {
+          "to": "N89",
+          "relationship_type": "supports"
+        }
+      ],
+      "N96": [
+        {
+          "to": "N89",
+          "relationship_type": "supports"
+        }
+      ],
+      "N97": [],
+      "N98": [
+        {
+          "to": "N97",
+          "relationship_type": "references"
+        }
+      ],
+      "N99": [
+        {
+          "to": "N97",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N100": [
+        {
+          "to": "N97",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N101": [
+        {
+          "to": "N97",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N102": [
+        {
+          "to": "N97",
+          "relationship_type": "supports"
+        }
+      ],
+      "N103": [
+        {
+          "to": "N97",
+          "relationship_type": "supports"
+        }
+      ],
+      "N104": [
+        {
+          "to": "N97",
+          "relationship_type": "supports"
+        }
+      ],
+      "N105": [],
+      "N106": [
+        {
+          "to": "N105",
+          "relationship_type": "references"
+        }
+      ],
+      "N107": [
+        {
+          "to": "N105",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N108": [
+        {
+          "to": "N105",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N109": [
+        {
+          "to": "N105",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N110": [
+        {
+          "to": "N105",
+          "relationship_type": "supports"
+        }
+      ],
+      "N111": [
+        {
+          "to": "N105",
+          "relationship_type": "supports"
+        }
+      ],
+      "N112": [
+        {
+          "to": "N105",
+          "relationship_type": "supports"
+        }
+      ],
+      "N113": [],
+      "N114": [
+        {
+          "to": "N113",
+          "relationship_type": "references"
+        }
+      ],
+      "N115": [
+        {
+          "to": "N113",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N116": [
+        {
+          "to": "N113",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N117": [
+        {
+          "to": "N113",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N118": [
+        {
+          "to": "N113",
+          "relationship_type": "supports"
+        }
+      ],
+      "N119": [
+        {
+          "to": "N113",
+          "relationship_type": "supports"
+        }
+      ],
+      "N120": [
+        {
+          "to": "N113",
+          "relationship_type": "supports"
+        }
+      ],
+      "N121": [],
+      "N122": [
+        {
+          "to": "N121",
+          "relationship_type": "references"
+        }
+      ],
+      "N123": [
+        {
+          "to": "N121",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N124": [
+        {
+          "to": "N121",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N125": [
+        {
+          "to": "N121",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N126": [
+        {
+          "to": "N121",
+          "relationship_type": "supports"
+        }
+      ],
+      "N127": [
+        {
+          "to": "N121",
+          "relationship_type": "supports"
+        }
+      ],
+      "N128": [
+        {
+          "to": "N121",
+          "relationship_type": "supports"
+        }
+      ],
+      "N129": [],
+      "N130": [
+        {
+          "to": "N129",
+          "relationship_type": "references"
+        }
+      ],
+      "N131": [
+        {
+          "to": "N129",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N132": [
+        {
+          "to": "N129",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N133": [
+        {
+          "to": "N129",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N134": [
+        {
+          "to": "N129",
+          "relationship_type": "supports"
+        }
+      ],
+      "N135": [
+        {
+          "to": "N129",
+          "relationship_type": "supports"
+        }
+      ],
+      "N136": [
+        {
+          "to": "N129",
+          "relationship_type": "supports"
+        }
+      ],
+      "N137": [],
+      "N138": [
+        {
+          "to": "N137",
+          "relationship_type": "references"
+        }
+      ],
+      "N139": [
+        {
+          "to": "N137",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N140": [
+        {
+          "to": "N137",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N141": [
+        {
+          "to": "N137",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N142": [
+        {
+          "to": "N137",
+          "relationship_type": "supports"
+        }
+      ],
+      "N143": [
+        {
+          "to": "N137",
+          "relationship_type": "supports"
+        }
+      ],
+      "N144": [
+        {
+          "to": "N137",
+          "relationship_type": "supports"
+        }
+      ],
+      "N145": [],
+      "N146": [
+        {
+          "to": "N145",
+          "relationship_type": "references"
+        }
+      ],
+      "N147": [
+        {
+          "to": "N145",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N148": [
+        {
+          "to": "N145",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N149": [
+        {
+          "to": "N145",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N150": [
+        {
+          "to": "N145",
+          "relationship_type": "supports"
+        }
+      ],
+      "N151": [
+        {
+          "to": "N145",
+          "relationship_type": "supports"
+        }
+      ],
+      "N152": [
+        {
+          "to": "N145",
+          "relationship_type": "supports"
+        }
+      ],
+      "N153": [],
+      "N154": [
+        {
+          "to": "N153",
+          "relationship_type": "references"
+        }
+      ],
+      "N155": [
+        {
+          "to": "N153",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N156": [
+        {
+          "to": "N153",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N157": [
+        {
+          "to": "N153",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N158": [
+        {
+          "to": "N153",
+          "relationship_type": "supports"
+        }
+      ],
+      "N159": [
+        {
+          "to": "N153",
+          "relationship_type": "supports"
+        }
+      ],
+      "N160": [
+        {
+          "to": "N153",
+          "relationship_type": "supports"
+        }
+      ],
+      "N161": [],
+      "N162": [
+        {
+          "to": "N161",
+          "relationship_type": "references"
+        }
+      ],
+      "N163": [
+        {
+          "to": "N161",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N164": [
+        {
+          "to": "N161",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N165": [
+        {
+          "to": "N161",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N166": [
+        {
+          "to": "N161",
+          "relationship_type": "supports"
+        }
+      ],
+      "N167": [
+        {
+          "to": "N161",
+          "relationship_type": "supports"
+        }
+      ],
+      "N168": [
+        {
+          "to": "N161",
+          "relationship_type": "supports"
+        }
+      ],
+      "N169": [],
+      "N170": [
+        {
+          "to": "N169",
+          "relationship_type": "references"
+        }
+      ],
+      "N171": [
+        {
+          "to": "N169",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N172": [
+        {
+          "to": "N169",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N173": [
+        {
+          "to": "N169",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N174": [
+        {
+          "to": "N169",
+          "relationship_type": "supports"
+        }
+      ],
+      "N175": [
+        {
+          "to": "N169",
+          "relationship_type": "supports"
+        }
+      ],
+      "N176": [
+        {
+          "to": "N169",
+          "relationship_type": "supports"
+        }
+      ],
+      "N177": [],
+      "N178": [
+        {
+          "to": "N177",
+          "relationship_type": "references"
+        }
+      ],
+      "N179": [
+        {
+          "to": "N177",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N180": [
+        {
+          "to": "N177",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N181": [
+        {
+          "to": "N177",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N182": [
+        {
+          "to": "N177",
+          "relationship_type": "supports"
+        }
+      ],
+      "N183": [
+        {
+          "to": "N177",
+          "relationship_type": "supports"
+        }
+      ],
+      "N184": [
+        {
+          "to": "N177",
+          "relationship_type": "supports"
+        }
+      ],
+      "N185": [],
+      "N186": [
+        {
+          "to": "N185",
+          "relationship_type": "references"
+        }
+      ],
+      "N187": [
+        {
+          "to": "N185",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N188": [
+        {
+          "to": "N185",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N189": [
+        {
+          "to": "N185",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N190": [
+        {
+          "to": "N185",
+          "relationship_type": "supports"
+        }
+      ],
+      "N191": [
+        {
+          "to": "N185",
+          "relationship_type": "supports"
+        }
+      ],
+      "N192": [
+        {
+          "to": "N185",
+          "relationship_type": "supports"
+        }
+      ],
+      "N193": [],
+      "N194": [
+        {
+          "to": "N193",
+          "relationship_type": "references"
+        }
+      ],
+      "N195": [
+        {
+          "to": "N193",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N196": [
+        {
+          "to": "N193",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N197": [
+        {
+          "to": "N193",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N198": [
+        {
+          "to": "N193",
+          "relationship_type": "supports"
+        }
+      ],
+      "N199": [
+        {
+          "to": "N193",
+          "relationship_type": "supports"
+        }
+      ],
+      "N200": [
+        {
+          "to": "N193",
+          "relationship_type": "supports"
+        }
+      ],
+      "N201": [],
+      "N202": [
+        {
+          "to": "N201",
+          "relationship_type": "references"
+        }
+      ],
+      "N203": [
+        {
+          "to": "N201",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N204": [
+        {
+          "to": "N201",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N205": [
+        {
+          "to": "N201",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N206": [
+        {
+          "to": "N201",
+          "relationship_type": "supports"
+        }
+      ],
+      "N207": [
+        {
+          "to": "N201",
+          "relationship_type": "supports"
+        }
+      ],
+      "N208": [
+        {
+          "to": "N201",
+          "relationship_type": "supports"
+        }
+      ],
+      "N209": [],
+      "N210": [
+        {
+          "to": "N209",
+          "relationship_type": "references"
+        }
+      ],
+      "N211": [
+        {
+          "to": "N209",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N212": [
+        {
+          "to": "N209",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N213": [
+        {
+          "to": "N209",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N214": [
+        {
+          "to": "N209",
+          "relationship_type": "supports"
+        }
+      ],
+      "N215": [
+        {
+          "to": "N209",
+          "relationship_type": "supports"
+        }
+      ],
+      "N216": [
+        {
+          "to": "N209",
+          "relationship_type": "supports"
+        }
+      ],
+      "N217": [],
+      "N218": [
+        {
+          "to": "N217",
+          "relationship_type": "references"
+        }
+      ],
+      "N219": [
+        {
+          "to": "N217",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N220": [
+        {
+          "to": "N217",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N221": [
+        {
+          "to": "N217",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N222": [
+        {
+          "to": "N217",
+          "relationship_type": "supports"
+        }
+      ],
+      "N223": [
+        {
+          "to": "N217",
+          "relationship_type": "supports"
+        }
+      ],
+      "N224": [
+        {
+          "to": "N217",
+          "relationship_type": "supports"
+        }
+      ],
+      "N225": [],
+      "N226": [
+        {
+          "to": "N225",
+          "relationship_type": "references"
+        }
+      ],
+      "N227": [
+        {
+          "to": "N225",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N228": [
+        {
+          "to": "N225",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N229": [
+        {
+          "to": "N225",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N230": [
+        {
+          "to": "N225",
+          "relationship_type": "supports"
+        }
+      ],
+      "N231": [
+        {
+          "to": "N225",
+          "relationship_type": "supports"
+        }
+      ],
+      "N232": [
+        {
+          "to": "N225",
+          "relationship_type": "supports"
+        }
+      ],
+      "N233": [],
+      "N234": [
+        {
+          "to": "N233",
+          "relationship_type": "references"
+        }
+      ],
+      "N235": [
+        {
+          "to": "N233",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N236": [
+        {
+          "to": "N233",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N237": [
+        {
+          "to": "N233",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N238": [
+        {
+          "to": "N233",
+          "relationship_type": "supports"
+        }
+      ],
+      "N239": [
+        {
+          "to": "N233",
+          "relationship_type": "supports"
+        }
+      ],
+      "N240": [
+        {
+          "to": "N233",
+          "relationship_type": "supports"
+        }
+      ],
+      "N241": [],
+      "N242": [
+        {
+          "to": "N241",
+          "relationship_type": "references"
+        }
+      ],
+      "N243": [
+        {
+          "to": "N241",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N244": [
+        {
+          "to": "N241",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N245": [
+        {
+          "to": "N241",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N246": [
+        {
+          "to": "N241",
+          "relationship_type": "supports"
+        }
+      ],
+      "N247": [
+        {
+          "to": "N241",
+          "relationship_type": "supports"
+        }
+      ],
+      "N248": [
+        {
+          "to": "N241",
+          "relationship_type": "supports"
+        }
+      ],
+      "N249": [],
+      "N250": [
+        {
+          "to": "N249",
+          "relationship_type": "references"
+        }
+      ],
+      "N251": [
+        {
+          "to": "N249",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N252": [
+        {
+          "to": "N249",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N253": [
+        {
+          "to": "N249",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N254": [
+        {
+          "to": "N249",
+          "relationship_type": "supports"
+        }
+      ],
+      "N255": [
+        {
+          "to": "N249",
+          "relationship_type": "supports"
+        }
+      ],
+      "N256": [
+        {
+          "to": "N249",
+          "relationship_type": "supports"
+        }
+      ],
+      "N257": [],
+      "N258": [
+        {
+          "to": "N257",
+          "relationship_type": "references"
+        }
+      ],
+      "N259": [
+        {
+          "to": "N257",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N260": [
+        {
+          "to": "N257",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N261": [
+        {
+          "to": "N257",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N262": [
+        {
+          "to": "N257",
+          "relationship_type": "supports"
+        }
+      ],
+      "N263": [
+        {
+          "to": "N257",
+          "relationship_type": "supports"
+        }
+      ],
+      "N264": [
+        {
+          "to": "N257",
+          "relationship_type": "supports"
+        }
+      ],
+      "N265": [],
+      "N266": [
+        {
+          "to": "N265",
+          "relationship_type": "references"
+        }
+      ],
+      "N267": [
+        {
+          "to": "N265",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N268": [
+        {
+          "to": "N265",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N269": [
+        {
+          "to": "N265",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N270": [
+        {
+          "to": "N265",
+          "relationship_type": "supports"
+        }
+      ],
+      "N271": [
+        {
+          "to": "N265",
+          "relationship_type": "supports"
+        }
+      ],
+      "N272": [
+        {
+          "to": "N265",
+          "relationship_type": "supports"
+        }
+      ],
+      "N273": [],
+      "N274": [
+        {
+          "to": "N273",
+          "relationship_type": "references"
+        }
+      ],
+      "N275": [
+        {
+          "to": "N273",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N276": [
+        {
+          "to": "N273",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N277": [
+        {
+          "to": "N273",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N278": [
+        {
+          "to": "N273",
+          "relationship_type": "supports"
+        }
+      ],
+      "N279": [
+        {
+          "to": "N273",
+          "relationship_type": "supports"
+        }
+      ],
+      "N280": [
+        {
+          "to": "N273",
+          "relationship_type": "supports"
+        }
+      ],
+      "N281": [],
+      "N282": [
+        {
+          "to": "N281",
+          "relationship_type": "references"
+        }
+      ],
+      "N283": [
+        {
+          "to": "N281",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N284": [
+        {
+          "to": "N281",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N285": [
+        {
+          "to": "N281",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N286": [
+        {
+          "to": "N281",
+          "relationship_type": "supports"
+        }
+      ],
+      "N287": [
+        {
+          "to": "N281",
+          "relationship_type": "supports"
+        }
+      ],
+      "N288": [
+        {
+          "to": "N281",
+          "relationship_type": "supports"
+        }
+      ],
+      "N289": [],
+      "N290": [
+        {
+          "to": "N289",
+          "relationship_type": "references"
+        }
+      ],
+      "N291": [
+        {
+          "to": "N289",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N292": [
+        {
+          "to": "N289",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N293": [
+        {
+          "to": "N289",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N294": [
+        {
+          "to": "N289",
+          "relationship_type": "supports"
+        }
+      ],
+      "N295": [
+        {
+          "to": "N289",
+          "relationship_type": "supports"
+        }
+      ],
+      "N296": [
+        {
+          "to": "N289",
+          "relationship_type": "supports"
+        }
+      ],
+      "N297": [],
+      "N298": [
+        {
+          "to": "N297",
+          "relationship_type": "references"
+        }
+      ],
+      "N299": [
+        {
+          "to": "N297",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N300": [
+        {
+          "to": "N297",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N301": [
+        {
+          "to": "N297",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N302": [
+        {
+          "to": "N297",
+          "relationship_type": "supports"
+        }
+      ],
+      "N303": [
+        {
+          "to": "N297",
+          "relationship_type": "supports"
+        }
+      ],
+      "N304": [
+        {
+          "to": "N297",
+          "relationship_type": "supports"
+        }
+      ],
+      "N305": [],
+      "N306": [
+        {
+          "to": "N305",
+          "relationship_type": "references"
+        }
+      ],
+      "N307": [
+        {
+          "to": "N305",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N308": [
+        {
+          "to": "N305",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N309": [
+        {
+          "to": "N305",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N310": [
+        {
+          "to": "N305",
+          "relationship_type": "supports"
+        }
+      ],
+      "N311": [
+        {
+          "to": "N305",
+          "relationship_type": "supports"
+        }
+      ],
+      "N312": [
+        {
+          "to": "N305",
+          "relationship_type": "supports"
+        }
+      ],
+      "N313": [],
+      "N314": [
+        {
+          "to": "N313",
+          "relationship_type": "references"
+        }
+      ],
+      "N315": [
+        {
+          "to": "N313",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N316": [
+        {
+          "to": "N313",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N317": [
+        {
+          "to": "N313",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N318": [
+        {
+          "to": "N313",
+          "relationship_type": "supports"
+        }
+      ],
+      "N319": [
+        {
+          "to": "N313",
+          "relationship_type": "supports"
+        }
+      ],
+      "N320": [
+        {
+          "to": "N313",
+          "relationship_type": "supports"
+        }
+      ],
+      "N321": [],
+      "N322": [
+        {
+          "to": "N321",
+          "relationship_type": "references"
+        }
+      ],
+      "N323": [
+        {
+          "to": "N321",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N324": [
+        {
+          "to": "N321",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N325": [
+        {
+          "to": "N321",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N326": [
+        {
+          "to": "N321",
+          "relationship_type": "supports"
+        }
+      ],
+      "N327": [
+        {
+          "to": "N321",
+          "relationship_type": "supports"
+        }
+      ],
+      "N328": [
+        {
+          "to": "N321",
+          "relationship_type": "supports"
+        }
+      ],
+      "N329": [],
+      "N330": [
+        {
+          "to": "N329",
+          "relationship_type": "references"
+        }
+      ],
+      "N331": [
+        {
+          "to": "N329",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N332": [
+        {
+          "to": "N329",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N333": [
+        {
+          "to": "N329",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N334": [
+        {
+          "to": "N329",
+          "relationship_type": "supports"
+        }
+      ],
+      "N335": [
+        {
+          "to": "N329",
+          "relationship_type": "supports"
+        }
+      ],
+      "N336": [
+        {
+          "to": "N329",
+          "relationship_type": "supports"
+        }
+      ],
+      "N337": [],
+      "N338": [
+        {
+          "to": "N337",
+          "relationship_type": "references"
+        }
+      ],
+      "N339": [
+        {
+          "to": "N337",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N340": [
+        {
+          "to": "N337",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N341": [
+        {
+          "to": "N337",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N342": [
+        {
+          "to": "N337",
+          "relationship_type": "supports"
+        }
+      ],
+      "N343": [
+        {
+          "to": "N337",
+          "relationship_type": "supports"
+        }
+      ],
+      "N344": [
+        {
+          "to": "N337",
+          "relationship_type": "supports"
+        }
+      ],
+      "N345": [],
+      "N346": [
+        {
+          "to": "N345",
+          "relationship_type": "references"
+        }
+      ],
+      "N347": [
+        {
+          "to": "N345",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N348": [
+        {
+          "to": "N345",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N349": [
+        {
+          "to": "N345",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N350": [
+        {
+          "to": "N345",
+          "relationship_type": "supports"
+        }
+      ],
+      "N351": [
+        {
+          "to": "N345",
+          "relationship_type": "supports"
+        }
+      ],
+      "N352": [
+        {
+          "to": "N345",
+          "relationship_type": "supports"
+        }
+      ],
+      "N353": [],
+      "N354": [
+        {
+          "to": "N353",
+          "relationship_type": "references"
+        }
+      ],
+      "N355": [
+        {
+          "to": "N353",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N356": [
+        {
+          "to": "N353",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N357": [
+        {
+          "to": "N353",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N358": [
+        {
+          "to": "N353",
+          "relationship_type": "supports"
+        }
+      ],
+      "N359": [
+        {
+          "to": "N353",
+          "relationship_type": "supports"
+        }
+      ],
+      "N360": [
+        {
+          "to": "N353",
+          "relationship_type": "supports"
+        }
+      ],
+      "N361": [],
+      "N362": [
+        {
+          "to": "N361",
+          "relationship_type": "references"
+        }
+      ],
+      "N363": [
+        {
+          "to": "N361",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N364": [
+        {
+          "to": "N361",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N365": [
+        {
+          "to": "N361",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N366": [
+        {
+          "to": "N361",
+          "relationship_type": "supports"
+        }
+      ],
+      "N367": [
+        {
+          "to": "N361",
+          "relationship_type": "supports"
+        }
+      ],
+      "N368": [
+        {
+          "to": "N361",
+          "relationship_type": "supports"
+        }
+      ],
+      "N369": [],
+      "N370": [
+        {
+          "to": "N369",
+          "relationship_type": "references"
+        }
+      ],
+      "N371": [
+        {
+          "to": "N369",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N372": [
+        {
+          "to": "N369",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N373": [
+        {
+          "to": "N369",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N374": [
+        {
+          "to": "N369",
+          "relationship_type": "supports"
+        }
+      ],
+      "N375": [
+        {
+          "to": "N369",
+          "relationship_type": "supports"
+        }
+      ],
+      "N376": [
+        {
+          "to": "N369",
+          "relationship_type": "supports"
+        }
+      ],
+      "N377": [],
+      "N378": [
+        {
+          "to": "N377",
+          "relationship_type": "references"
+        }
+      ],
+      "N379": [
+        {
+          "to": "N377",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N380": [
+        {
+          "to": "N377",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N381": [
+        {
+          "to": "N377",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N382": [
+        {
+          "to": "N377",
+          "relationship_type": "supports"
+        }
+      ],
+      "N383": [
+        {
+          "to": "N377",
+          "relationship_type": "supports"
+        }
+      ],
+      "N384": [
+        {
+          "to": "N377",
+          "relationship_type": "supports"
+        }
+      ],
+      "N385": [],
+      "N386": [
+        {
+          "to": "N385",
+          "relationship_type": "references"
+        }
+      ],
+      "N387": [
+        {
+          "to": "N385",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N388": [
+        {
+          "to": "N385",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N389": [
+        {
+          "to": "N385",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N390": [
+        {
+          "to": "N385",
+          "relationship_type": "supports"
+        }
+      ],
+      "N391": [
+        {
+          "to": "N385",
+          "relationship_type": "supports"
+        }
+      ],
+      "N392": [
+        {
+          "to": "N385",
+          "relationship_type": "supports"
+        }
+      ],
+      "N393": [],
+      "N394": [
+        {
+          "to": "N393",
+          "relationship_type": "references"
+        }
+      ],
+      "N395": [
+        {
+          "to": "N393",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N396": [
+        {
+          "to": "N393",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N397": [
+        {
+          "to": "N393",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N398": [
+        {
+          "to": "N393",
+          "relationship_type": "supports"
+        }
+      ],
+      "N399": [
+        {
+          "to": "N393",
+          "relationship_type": "supports"
+        }
+      ],
+      "N400": [
+        {
+          "to": "N393",
+          "relationship_type": "supports"
+        }
+      ],
+      "N401": [],
+      "N402": [
+        {
+          "to": "N401",
+          "relationship_type": "references"
+        }
+      ],
+      "N403": [
+        {
+          "to": "N401",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N404": [
+        {
+          "to": "N401",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N405": [
+        {
+          "to": "N401",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N406": [
+        {
+          "to": "N401",
+          "relationship_type": "supports"
+        }
+      ],
+      "N407": [
+        {
+          "to": "N401",
+          "relationship_type": "supports"
+        }
+      ],
+      "N408": [
+        {
+          "to": "N401",
+          "relationship_type": "supports"
+        }
+      ],
+      "N409": [],
+      "N410": [
+        {
+          "to": "N409",
+          "relationship_type": "references"
+        }
+      ],
+      "N411": [
+        {
+          "to": "N409",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N412": [
+        {
+          "to": "N409",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N413": [
+        {
+          "to": "N409",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N414": [
+        {
+          "to": "N409",
+          "relationship_type": "supports"
+        }
+      ],
+      "N415": [
+        {
+          "to": "N409",
+          "relationship_type": "supports"
+        }
+      ],
+      "N416": [
+        {
+          "to": "N409",
+          "relationship_type": "supports"
+        }
+      ],
+      "N417": [],
+      "N418": [
+        {
+          "to": "N417",
+          "relationship_type": "references"
+        }
+      ],
+      "N419": [
+        {
+          "to": "N417",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N420": [
+        {
+          "to": "N417",
+          "relationship_type": "maps_to"
+        }
+      ],
+      "N421": [
+        {
+          "to": "N417",
+          "relationship_type": "evidences"
+        }
+      ],
+      "N422": [
+        {
+          "to": "N417",
+          "relationship_type": "supports"
+        }
+      ],
+      "N423": [
+        {
+          "to": "N417",
+          "relationship_type": "supports"
+        }
+      ],
+      "N424": [
+        {
+          "to": "N417",
+          "relationship_type": "supports"
+        }
+      ]
+    },
+    "incoming": {
+      "N1": [
+        {
+          "from": "N2",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N3",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N4",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N5",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N6",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N7",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N8",
+          "relationship_type": "supports"
+        }
+      ],
+      "N2": [],
+      "N3": [],
+      "N4": [],
+      "N5": [],
+      "N6": [],
+      "N7": [],
+      "N8": [],
+      "N9": [
+        {
+          "from": "N10",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N11",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N12",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N13",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N14",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N15",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N16",
+          "relationship_type": "supports"
+        }
+      ],
+      "N10": [],
+      "N11": [],
+      "N12": [],
+      "N13": [],
+      "N14": [],
+      "N15": [],
+      "N16": [],
+      "N17": [
+        {
+          "from": "N18",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N19",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N20",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N21",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N22",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N23",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N24",
+          "relationship_type": "supports"
+        }
+      ],
+      "N18": [],
+      "N19": [],
+      "N20": [],
+      "N21": [],
+      "N22": [],
+      "N23": [],
+      "N24": [],
+      "N25": [
+        {
+          "from": "N26",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N27",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N28",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N29",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N30",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N31",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N32",
+          "relationship_type": "supports"
+        }
+      ],
+      "N26": [],
+      "N27": [],
+      "N28": [],
+      "N29": [],
+      "N30": [],
+      "N31": [],
+      "N32": [],
+      "N33": [
+        {
+          "from": "N34",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N35",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N36",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N37",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N38",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N39",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N40",
+          "relationship_type": "supports"
+        }
+      ],
+      "N34": [],
+      "N35": [],
+      "N36": [],
+      "N37": [],
+      "N38": [],
+      "N39": [],
+      "N40": [],
+      "N41": [
+        {
+          "from": "N42",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N43",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N44",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N45",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N46",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N47",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N48",
+          "relationship_type": "supports"
+        }
+      ],
+      "N42": [],
+      "N43": [],
+      "N44": [],
+      "N45": [],
+      "N46": [],
+      "N47": [],
+      "N48": [],
+      "N49": [
+        {
+          "from": "N50",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N51",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N52",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N53",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N54",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N55",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N56",
+          "relationship_type": "supports"
+        }
+      ],
+      "N50": [],
+      "N51": [],
+      "N52": [],
+      "N53": [],
+      "N54": [],
+      "N55": [],
+      "N56": [],
+      "N57": [
+        {
+          "from": "N58",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N59",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N60",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N61",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N62",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N63",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N64",
+          "relationship_type": "supports"
+        }
+      ],
+      "N58": [],
+      "N59": [],
+      "N60": [],
+      "N61": [],
+      "N62": [],
+      "N63": [],
+      "N64": [],
+      "N65": [
+        {
+          "from": "N66",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N67",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N68",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N69",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N70",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N71",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N72",
+          "relationship_type": "supports"
+        }
+      ],
+      "N66": [],
+      "N67": [],
+      "N68": [],
+      "N69": [],
+      "N70": [],
+      "N71": [],
+      "N72": [],
+      "N73": [
+        {
+          "from": "N74",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N75",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N76",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N77",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N78",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N79",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N80",
+          "relationship_type": "supports"
+        }
+      ],
+      "N74": [],
+      "N75": [],
+      "N76": [],
+      "N77": [],
+      "N78": [],
+      "N79": [],
+      "N80": [],
+      "N81": [
+        {
+          "from": "N82",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N83",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N84",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N85",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N86",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N87",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N88",
+          "relationship_type": "supports"
+        }
+      ],
+      "N82": [],
+      "N83": [],
+      "N84": [],
+      "N85": [],
+      "N86": [],
+      "N87": [],
+      "N88": [],
+      "N89": [
+        {
+          "from": "N90",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N91",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N92",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N93",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N94",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N95",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N96",
+          "relationship_type": "supports"
+        }
+      ],
+      "N90": [],
+      "N91": [],
+      "N92": [],
+      "N93": [],
+      "N94": [],
+      "N95": [],
+      "N96": [],
+      "N97": [
+        {
+          "from": "N98",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N99",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N100",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N101",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N102",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N103",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N104",
+          "relationship_type": "supports"
+        }
+      ],
+      "N98": [],
+      "N99": [],
+      "N100": [],
+      "N101": [],
+      "N102": [],
+      "N103": [],
+      "N104": [],
+      "N105": [
+        {
+          "from": "N106",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N107",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N108",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N109",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N110",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N111",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N112",
+          "relationship_type": "supports"
+        }
+      ],
+      "N106": [],
+      "N107": [],
+      "N108": [],
+      "N109": [],
+      "N110": [],
+      "N111": [],
+      "N112": [],
+      "N113": [
+        {
+          "from": "N114",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N115",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N116",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N117",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N118",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N119",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N120",
+          "relationship_type": "supports"
+        }
+      ],
+      "N114": [],
+      "N115": [],
+      "N116": [],
+      "N117": [],
+      "N118": [],
+      "N119": [],
+      "N120": [],
+      "N121": [
+        {
+          "from": "N122",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N123",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N124",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N125",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N126",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N127",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N128",
+          "relationship_type": "supports"
+        }
+      ],
+      "N122": [],
+      "N123": [],
+      "N124": [],
+      "N125": [],
+      "N126": [],
+      "N127": [],
+      "N128": [],
+      "N129": [
+        {
+          "from": "N130",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N131",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N132",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N133",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N134",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N135",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N136",
+          "relationship_type": "supports"
+        }
+      ],
+      "N130": [],
+      "N131": [],
+      "N132": [],
+      "N133": [],
+      "N134": [],
+      "N135": [],
+      "N136": [],
+      "N137": [
+        {
+          "from": "N138",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N139",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N140",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N141",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N142",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N143",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N144",
+          "relationship_type": "supports"
+        }
+      ],
+      "N138": [],
+      "N139": [],
+      "N140": [],
+      "N141": [],
+      "N142": [],
+      "N143": [],
+      "N144": [],
+      "N145": [
+        {
+          "from": "N146",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N147",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N148",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N149",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N150",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N151",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N152",
+          "relationship_type": "supports"
+        }
+      ],
+      "N146": [],
+      "N147": [],
+      "N148": [],
+      "N149": [],
+      "N150": [],
+      "N151": [],
+      "N152": [],
+      "N153": [
+        {
+          "from": "N154",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N155",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N156",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N157",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N158",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N159",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N160",
+          "relationship_type": "supports"
+        }
+      ],
+      "N154": [],
+      "N155": [],
+      "N156": [],
+      "N157": [],
+      "N158": [],
+      "N159": [],
+      "N160": [],
+      "N161": [
+        {
+          "from": "N162",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N163",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N164",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N165",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N166",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N167",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N168",
+          "relationship_type": "supports"
+        }
+      ],
+      "N162": [],
+      "N163": [],
+      "N164": [],
+      "N165": [],
+      "N166": [],
+      "N167": [],
+      "N168": [],
+      "N169": [
+        {
+          "from": "N170",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N171",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N172",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N173",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N174",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N175",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N176",
+          "relationship_type": "supports"
+        }
+      ],
+      "N170": [],
+      "N171": [],
+      "N172": [],
+      "N173": [],
+      "N174": [],
+      "N175": [],
+      "N176": [],
+      "N177": [
+        {
+          "from": "N178",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N179",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N180",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N181",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N182",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N183",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N184",
+          "relationship_type": "supports"
+        }
+      ],
+      "N178": [],
+      "N179": [],
+      "N180": [],
+      "N181": [],
+      "N182": [],
+      "N183": [],
+      "N184": [],
+      "N185": [
+        {
+          "from": "N186",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N187",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N188",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N189",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N190",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N191",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N192",
+          "relationship_type": "supports"
+        }
+      ],
+      "N186": [],
+      "N187": [],
+      "N188": [],
+      "N189": [],
+      "N190": [],
+      "N191": [],
+      "N192": [],
+      "N193": [
+        {
+          "from": "N194",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N195",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N196",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N197",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N198",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N199",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N200",
+          "relationship_type": "supports"
+        }
+      ],
+      "N194": [],
+      "N195": [],
+      "N196": [],
+      "N197": [],
+      "N198": [],
+      "N199": [],
+      "N200": [],
+      "N201": [
+        {
+          "from": "N202",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N203",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N204",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N205",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N206",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N207",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N208",
+          "relationship_type": "supports"
+        }
+      ],
+      "N202": [],
+      "N203": [],
+      "N204": [],
+      "N205": [],
+      "N206": [],
+      "N207": [],
+      "N208": [],
+      "N209": [
+        {
+          "from": "N210",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N211",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N212",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N213",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N214",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N215",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N216",
+          "relationship_type": "supports"
+        }
+      ],
+      "N210": [],
+      "N211": [],
+      "N212": [],
+      "N213": [],
+      "N214": [],
+      "N215": [],
+      "N216": [],
+      "N217": [
+        {
+          "from": "N218",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N219",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N220",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N221",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N222",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N223",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N224",
+          "relationship_type": "supports"
+        }
+      ],
+      "N218": [],
+      "N219": [],
+      "N220": [],
+      "N221": [],
+      "N222": [],
+      "N223": [],
+      "N224": [],
+      "N225": [
+        {
+          "from": "N226",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N227",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N228",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N229",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N230",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N231",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N232",
+          "relationship_type": "supports"
+        }
+      ],
+      "N226": [],
+      "N227": [],
+      "N228": [],
+      "N229": [],
+      "N230": [],
+      "N231": [],
+      "N232": [],
+      "N233": [
+        {
+          "from": "N234",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N235",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N236",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N237",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N238",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N239",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N240",
+          "relationship_type": "supports"
+        }
+      ],
+      "N234": [],
+      "N235": [],
+      "N236": [],
+      "N237": [],
+      "N238": [],
+      "N239": [],
+      "N240": [],
+      "N241": [
+        {
+          "from": "N242",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N243",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N244",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N245",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N246",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N247",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N248",
+          "relationship_type": "supports"
+        }
+      ],
+      "N242": [],
+      "N243": [],
+      "N244": [],
+      "N245": [],
+      "N246": [],
+      "N247": [],
+      "N248": [],
+      "N249": [
+        {
+          "from": "N250",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N251",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N252",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N253",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N254",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N255",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N256",
+          "relationship_type": "supports"
+        }
+      ],
+      "N250": [],
+      "N251": [],
+      "N252": [],
+      "N253": [],
+      "N254": [],
+      "N255": [],
+      "N256": [],
+      "N257": [
+        {
+          "from": "N258",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N259",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N260",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N261",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N262",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N263",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N264",
+          "relationship_type": "supports"
+        }
+      ],
+      "N258": [],
+      "N259": [],
+      "N260": [],
+      "N261": [],
+      "N262": [],
+      "N263": [],
+      "N264": [],
+      "N265": [
+        {
+          "from": "N266",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N267",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N268",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N269",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N270",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N271",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N272",
+          "relationship_type": "supports"
+        }
+      ],
+      "N266": [],
+      "N267": [],
+      "N268": [],
+      "N269": [],
+      "N270": [],
+      "N271": [],
+      "N272": [],
+      "N273": [
+        {
+          "from": "N274",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N275",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N276",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N277",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N278",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N279",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N280",
+          "relationship_type": "supports"
+        }
+      ],
+      "N274": [],
+      "N275": [],
+      "N276": [],
+      "N277": [],
+      "N278": [],
+      "N279": [],
+      "N280": [],
+      "N281": [
+        {
+          "from": "N282",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N283",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N284",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N285",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N286",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N287",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N288",
+          "relationship_type": "supports"
+        }
+      ],
+      "N282": [],
+      "N283": [],
+      "N284": [],
+      "N285": [],
+      "N286": [],
+      "N287": [],
+      "N288": [],
+      "N289": [
+        {
+          "from": "N290",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N291",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N292",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N293",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N294",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N295",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N296",
+          "relationship_type": "supports"
+        }
+      ],
+      "N290": [],
+      "N291": [],
+      "N292": [],
+      "N293": [],
+      "N294": [],
+      "N295": [],
+      "N296": [],
+      "N297": [
+        {
+          "from": "N298",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N299",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N300",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N301",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N302",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N303",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N304",
+          "relationship_type": "supports"
+        }
+      ],
+      "N298": [],
+      "N299": [],
+      "N300": [],
+      "N301": [],
+      "N302": [],
+      "N303": [],
+      "N304": [],
+      "N305": [
+        {
+          "from": "N306",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N307",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N308",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N309",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N310",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N311",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N312",
+          "relationship_type": "supports"
+        }
+      ],
+      "N306": [],
+      "N307": [],
+      "N308": [],
+      "N309": [],
+      "N310": [],
+      "N311": [],
+      "N312": [],
+      "N313": [
+        {
+          "from": "N314",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N315",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N316",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N317",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N318",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N319",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N320",
+          "relationship_type": "supports"
+        }
+      ],
+      "N314": [],
+      "N315": [],
+      "N316": [],
+      "N317": [],
+      "N318": [],
+      "N319": [],
+      "N320": [],
+      "N321": [
+        {
+          "from": "N322",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N323",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N324",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N325",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N326",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N327",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N328",
+          "relationship_type": "supports"
+        }
+      ],
+      "N322": [],
+      "N323": [],
+      "N324": [],
+      "N325": [],
+      "N326": [],
+      "N327": [],
+      "N328": [],
+      "N329": [
+        {
+          "from": "N330",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N331",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N332",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N333",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N334",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N335",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N336",
+          "relationship_type": "supports"
+        }
+      ],
+      "N330": [],
+      "N331": [],
+      "N332": [],
+      "N333": [],
+      "N334": [],
+      "N335": [],
+      "N336": [],
+      "N337": [
+        {
+          "from": "N338",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N339",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N340",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N341",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N342",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N343",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N344",
+          "relationship_type": "supports"
+        }
+      ],
+      "N338": [],
+      "N339": [],
+      "N340": [],
+      "N341": [],
+      "N342": [],
+      "N343": [],
+      "N344": [],
+      "N345": [
+        {
+          "from": "N346",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N347",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N348",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N349",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N350",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N351",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N352",
+          "relationship_type": "supports"
+        }
+      ],
+      "N346": [],
+      "N347": [],
+      "N348": [],
+      "N349": [],
+      "N350": [],
+      "N351": [],
+      "N352": [],
+      "N353": [
+        {
+          "from": "N354",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N355",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N356",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N357",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N358",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N359",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N360",
+          "relationship_type": "supports"
+        }
+      ],
+      "N354": [],
+      "N355": [],
+      "N356": [],
+      "N357": [],
+      "N358": [],
+      "N359": [],
+      "N360": [],
+      "N361": [
+        {
+          "from": "N362",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N363",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N364",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N365",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N366",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N367",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N368",
+          "relationship_type": "supports"
+        }
+      ],
+      "N362": [],
+      "N363": [],
+      "N364": [],
+      "N365": [],
+      "N366": [],
+      "N367": [],
+      "N368": [],
+      "N369": [
+        {
+          "from": "N370",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N371",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N372",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N373",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N374",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N375",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N376",
+          "relationship_type": "supports"
+        }
+      ],
+      "N370": [],
+      "N371": [],
+      "N372": [],
+      "N373": [],
+      "N374": [],
+      "N375": [],
+      "N376": [],
+      "N377": [
+        {
+          "from": "N378",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N379",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N380",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N381",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N382",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N383",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N384",
+          "relationship_type": "supports"
+        }
+      ],
+      "N378": [],
+      "N379": [],
+      "N380": [],
+      "N381": [],
+      "N382": [],
+      "N383": [],
+      "N384": [],
+      "N385": [
+        {
+          "from": "N386",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N387",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N388",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N389",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N390",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N391",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N392",
+          "relationship_type": "supports"
+        }
+      ],
+      "N386": [],
+      "N387": [],
+      "N388": [],
+      "N389": [],
+      "N390": [],
+      "N391": [],
+      "N392": [],
+      "N393": [
+        {
+          "from": "N394",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N395",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N396",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N397",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N398",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N399",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N400",
+          "relationship_type": "supports"
+        }
+      ],
+      "N394": [],
+      "N395": [],
+      "N396": [],
+      "N397": [],
+      "N398": [],
+      "N399": [],
+      "N400": [],
+      "N401": [
+        {
+          "from": "N402",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N403",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N404",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N405",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N406",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N407",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N408",
+          "relationship_type": "supports"
+        }
+      ],
+      "N402": [],
+      "N403": [],
+      "N404": [],
+      "N405": [],
+      "N406": [],
+      "N407": [],
+      "N408": [],
+      "N409": [
+        {
+          "from": "N410",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N411",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N412",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N413",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N414",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N415",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N416",
+          "relationship_type": "supports"
+        }
+      ],
+      "N410": [],
+      "N411": [],
+      "N412": [],
+      "N413": [],
+      "N414": [],
+      "N415": [],
+      "N416": [],
+      "N417": [
+        {
+          "from": "N418",
+          "relationship_type": "references"
+        },
+        {
+          "from": "N419",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N420",
+          "relationship_type": "maps_to"
+        },
+        {
+          "from": "N421",
+          "relationship_type": "evidences"
+        },
+        {
+          "from": "N422",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N423",
+          "relationship_type": "supports"
+        },
+        {
+          "from": "N424",
+          "relationship_type": "supports"
+        }
+      ],
+      "N418": [],
+      "N419": [],
+      "N420": [],
+      "N421": [],
+      "N422": [],
+      "N423": [],
+      "N424": []
+    }
+  }
+}
