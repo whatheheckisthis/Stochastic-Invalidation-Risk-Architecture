@@ -1,19 +1,27 @@
-# Technical Crosswalk — GRC-Driven Design Elements (SIRA + IĀTŌ)
+# GRC Control Rationale & Assurance Crosswalk (SIRA + IĀTŌ)
 
-## Purpose
+## 1.0 Purpose
 
-This crosswalk isolates **only** the platform elements that exist because of explicit GRC principles, then maps them to:
+This document is a derived governance interpretation layer that explains why implemented controls exist and how they align to assurance frameworks.
+
+This document is **not** a source of system truth, does **not** define runtime behavior, and does **not** override implementation artifacts.
+
+---
+
+## 2.0 Scope
+
+This crosswalk maps implemented controls to governance and assurance frameworks only:
 
 - **OCEG GRC Capability Model concepts** (purpose limitation, traceability, non-autonomy, Principled Performance)
 - **NZISM** governance/assurance intent (risk-based controls, evidence, accreditation readiness)
 - **FAIR** quantification constructs (loss event scenarios, control effectiveness/variance, loss magnitude drivers)
 - **NIST RMF (light wrapper)** for lifecycle assurance framing
 
-The goal is to preserve the "why" so controls are not mistaken for cargo-cult governance.
+No behavioral definitions are established in this document.
 
 ---
 
-## Crosswalk Table
+## 3.0 Crosswalk Table
 
 ### Design intent → control mechanics → assurance mapping
 
@@ -37,30 +45,26 @@ The goal is to preserve the "why" so controls are not mistaken for cargo-cult go
 
 ---
 
-## FAIR Interpretation Section
+## 4.0 Governance Interpretation Layer
 
-### FAIR-oriented interpretation for cyber scenarios (ransomware / supply-chain)
+### 4.1 OCEG GRC model alignment
 
-Use the above controls as **scenario variables**, not check-boxes:
+The mapped controls demonstrate governance intent through purpose limitation, traceability, non-autonomy, and Principled Performance as explanatory anchors for implemented mechanics.
 
-1. **Threat event frequency inputs**
-   - Action-surface controls (single dispatch, enumerated actions, XSD gating) reduce opportunity for unsafe or malicious execution paths.
-2. **Vulnerability/control strength inputs**
-   - Preflight rigor, hash verification, and state-deviation rebuild semantics are direct proxies for preventive and detective control strength.
-3. **Loss magnitude shaping**
-   - Rootless isolation, network mode constraints, and intended-use boundaries reduce probable primary/secondary loss ranges.
-4. **Control invalidation modelling**
-   - SIRA stochastic invalidation layer supports representing degraded control effectiveness under systemic shocks.
+### 4.2 NZISM assurance expectations alignment
+
+The mapped controls are presented as evidence-oriented governance mechanisms supporting risk-based control operation, accreditation readiness, and auditable assurance posture.
+
+### 4.3 FAIR risk quantification alignment
+
+The mapped controls are interpreted as inputs to frequency, vulnerability/control strength, and loss magnitude reasoning, including stress/invalidation considerations, without redefining control behavior.
+
+### 4.4 NIST RMF lifecycle framing alignment
+
+The mapped controls are situated in RMF lifecycle context (Categorize, Select, Implement, Assess, Authorize, Monitor, Respond/Govern overlays) for assurance framing only.
 
 ---
 
-## Governance Narrative
+## 5.0 Control Integrity Rule
 
-### Minimal governance narrative (to avoid cargo-cult controls)
-
-- **Purpose limitation:** The system is explicit about what it is *not* authorized to do (non-goals, disclaimers, bounded actions).
-- **Traceability:** Every governed action and dataset path is reconstructable (logs, manifest, lineage, deterministic config).
-- **Non-autonomy:** Controls intentionally block autonomous drift (deny-by-default actions, hard halts, no silent fallback).
-- **Principled Performance:** Controls are engineered as runtime mechanics with measurable evidence, then stress-tested under failure conditions.
-
-If a future control cannot be mapped to one of those four principles **and** an evidence artefact, it should be treated as non-governed overhead.
+This document is derived from implemented system controls and must not be used as a source of truth for runtime behavior.
