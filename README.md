@@ -13,7 +13,6 @@
 [![Approach](https://img.shields.io/badge/Approach-Governance%20%26%20Auditability%20by%20Design-2E7D32?style=flat-square)](#)
 [![Runtime](https://img.shields.io/badge/Runtime-Controlled%20R%20Execution%20Environment-276DC3?style=flat-square)](#)
 [![Config](https://img.shields.io/badge/Config-Policy--Driven%20TOML%20Configuration-8B5CF6?style=flat-square)](#)
-[![Env](https://img.shields.io/badge/Env-Controlled%20%2F%20Air--Gapped%20Deployment-333333?style=flat-square)](#)
 
 
 ### 1.0 Executive Summary — Assurance Architecture
@@ -32,17 +31,21 @@
 
 >SIRA functions as the **analytical risk engine** under model risk governance frameworks. It is responsible for scenario-conditioned stochastic modelling and risk signal generation.
 
-### 2.1.1 Control Function & GRC Mapping Matrix
+### 2.1.1 Control Function & Mapping Matrix
 
-| Control Domain | Control Function | Description | GRC Mapping |
-|----------------|------------------|-------------|-------------|
-| Scenario Stress Testing | Multi-regime simulation | Executes stress scenarios across defined adverse conditions | SR 11-7, FRTB |
-| Asset Recovery Modelling | Distressed valuation dynamics | Simulates recovery trajectories for stressed credit assets | Basel III IRB |
-| Risk Classification | Binary signal generation | Produces deterministic risk outputs (signal / no signal) | Model Risk Governance |
-| Output Lineage Control | Traceable model outputs | Ensures full reconstruction of model state and outputs | BCBS 239 |
-| Model Governance Alignment | Regulatory mapping | Ensures structured compliance alignment across frameworks | SOC 2, SR 11-7 |
+All practice artefacts and automated workflows are governed by the following control index, mapped specifically to the Trans-Tasman regulatory landscape.
+
+| Control Domain | Control Function | Technical Description | Regulatory Mapping |
+| :--- | :--- | :--- | :--- |
+| **Scenario Stress Testing** | Multi-regime simulation | Executes stochastic and deterministic stress scenarios across defined adverse economic conditions. | **APRA CPS 220**, **APS 117** (IRRBB) |
+| **Asset Recovery Modelling** | Distressed valuation dynamics | Simulates recovery trajectories and LGD (Loss Given Default) for stressed credit assets. | **APRA APS 113**, **AASB 9** |
+| **Risk Classification** | Binary signal generation | Produces deterministic risk signals with enforced sensitivity thresholds and exception handling. | **APRA CPG 235**, **Model Risk Governance** |
+| **Output Lineage Control** | Traceable model outputs | Ensures full reconstruction of model state and execution logs via immutable, timestamped binary assertions. | **APRA CPS 230**, **NZISM Section 14** |
+| **Model Governance Alignment** | Regulatory mapping | Structured alignment of model validation artefacts to internal and external control frameworks. | **APRA CPS 234**, **NZFMA Conduct Standards** |
+| **Execution Integrity** | Orchestration assurance | Enforces rootless container execution and XSD-validated policy declarations at the configuration phase. | **ASD Essential Eight ML3**, **NZISM Section 16** |
 
 ---
+
 
 ### 2.2 IĀTŌ-MCP — Execution Governance & Control Plane
 
